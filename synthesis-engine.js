@@ -14,8 +14,8 @@ const studentData = [
     "whatsOnYourDesk": "Clic-keez & lotsa paper",
     "linkedinLink": "https://www.linkedin.com/in/sarah-manning-030117337/",
     "images": {
-      "default": "sarah-manning-default.jpg",
-      "alt": "sarah-manning-alt.jpg"
+      "default": "sarah-manning1.jpg",
+      "alt": "sarah-manning2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Beetlejuice"
@@ -35,8 +35,8 @@ const studentData = [
     "whatsOnYourDesk": "Minimum 3 beverages",
     "linkedinLink": "www.linkedin.com/in/maggie-brigleb-2498ab311",
     "images": {
-      "default": "maggie-brigleb-default.jpg",
-      "alt": "maggie-brigleb-alt.jpg"
+      "default": "maggie-brigleb1.jpg",
+      "alt": "maggie-brigleb2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Susan Sontag"
@@ -56,8 +56,8 @@ const studentData = [
     "whatsOnYourDesk": "My cat, Probably",
     "linkedinLink": "https://www.linkedin.com/in/addison-champaign-270648267",
     "images": {
-      "default": "addison-champaign-default.jpg",
-      "alt": "addison-champaign-alt.jpg"
+      "default": "addison-champaign1.jpg",
+      "alt": "addison-champaign2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Wolf Parade"
@@ -77,8 +77,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "www.linkedin.com/in/angelroman07",
     "images": {
-      "default": "angel-roman-default.jpg",
-      "alt": "angel-roman-alt.jpg"
+      "default": "angel-roman1.jpg",
+      "alt": "angel-roman2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Angel Roman"
@@ -98,8 +98,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "www.linkedin.com/in/nathalia-posadas-a328822a3",
     "images": {
-      "default": "nathalia-posadas-default.jpg",
-      "alt": "nathalia-posadas-alt.jpg"
+      "default": "nathalia-posadas1.jpg",
+      "alt": "nathalia-posadas2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Nathalia"
@@ -119,8 +119,8 @@ const studentData = [
     "whatsOnYourDesk": "My cat Ciggy",
     "linkedinLink": "",
     "images": {
-      "default": "savannah-flores-default.jpg",
-      "alt": "savannah-flores-alt.jpg"
+      "default": "savannah-flores1.jpg",
+      "alt": "savannah-flores2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Maya Angelou"
@@ -140,8 +140,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/jordan-mason-75578b33a/",
     "images": {
-      "default": "jordan-mason-default.jpg",
-      "alt": "jordan-mason-alt.jpg"
+      "default": "jordan-mason1.jpg",
+      "alt": "jordan-mason2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -161,8 +161,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/dylancrose",
     "images": {
-      "default": "dylan-crose-default.jpg",
-      "alt": "dylan-crose-alt.jpg"
+      "default": "dylan-crose1.jpg",
+      "alt": "dylan-crose2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "FLCL"
@@ -182,8 +182,8 @@ const studentData = [
     "whatsOnYourDesk": "Like 6 monitors",
     "linkedinLink": "linkedin.com/in/yasseen-elassar",
     "images": {
-      "default": "yasseen-elassar-default.jpg",
-      "alt": "yasseen-elassar-alt.jpg"
+      "default": "yaseen-elassar1.jpg",
+      "alt": "yaseen-elassar2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Robert A. Heinlein"
@@ -203,8 +203,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/emmaline-benson/",
     "images": {
-      "default": "emmaline-benson-default.jpg",
-      "alt": "emmaline-benson-alt.jpg"
+      "default": "emmaline-benson1.jpg",
+      "alt": "emmaline-benson2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "My Mom"
@@ -224,8 +224,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "",
     "images": {
-      "default": "kristina-sustaita-default.jpg",
-      "alt": "kristina-sustaita-alt.jpg"
+      "default": "christina-sustanita1.jpg",
+      "alt": "christina-sustanita2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Ron Swanson"
@@ -245,8 +245,8 @@ const studentData = [
     "whatsOnYourDesk": "A smiski cheering me on",
     "linkedinLink": "https://www.linkedin.com/in/caroline-trang-a410a7329/",
     "images": {
-      "default": "caroline-trang-default.jpg",
-      "alt": "caroline-trang-alt.jpg"
+      "default": "caroline-trang1.jpg",
+      "alt": "caroline-trang2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Beth Spencer"
@@ -266,8 +266,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/mason-nguyen-b27631352/",
     "images": {
-      "default": "mason-nguyen-default.jpg",
-      "alt": "mason-nguyen-alt.jpg"
+      "default": "mason-nguyen1.jpg",
+      "alt": "mason-nguyen2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Ray Bradbury (Fahrenheit 451)"
@@ -287,8 +287,8 @@ const studentData = [
     "whatsOnYourDesk": "So much Climbing Chalk",
     "linkedinLink": "www.linkedin.com/in/emily-milo-4012b1278",
     "images": {
-      "default": "emily-milo-default.jpg",
-      "alt": "emily-milo-alt.jpg"
+      "default": "emily-milo1.jpg",
+      "alt": "emily-milo2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "A Wind In The Door"
@@ -308,8 +308,8 @@ const studentData = [
     "whatsOnYourDesk": "Laptop and Caffeine",
     "linkedinLink": "https://www.linkedin.com/in/danny-davis-97b32a252/",
     "images": {
-      "default": "daniel-davis-default.jpg",
-      "alt": "daniel-davis-alt.jpg"
+      "default": "Daniel-davis1.jpg",
+      "alt": "Daniel-davis2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Hermann Hesse"
@@ -329,8 +329,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/isaiasjperez/",
     "images": {
-      "default": "isaias-perez-default.jpg",
-      "alt": "isaias-perez-alt.jpg"
+      "default": "isaias-perez1.jpg",
+      "alt": "isaias-perez2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Ray Bradbury"
@@ -350,8 +350,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/naiadoesdesign/",
     "images": {
-      "default": "naia-kaparaju-default.jpg",
-      "alt": "naia-kaparaju-alt.jpg"
+      "default": "naia-kaparaju1.jpg",
+      "alt": "naia-kaparaju2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Ariana Grande"
@@ -371,8 +371,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "linkedin.com/in/gregoryknipp",
     "images": {
-      "default": "gregory-knipp-default.jpg",
-      "alt": "gregory-knipp-alt.jpg"
+      "default": "greg-knipp1.jpg",
+      "alt": "greg-knipp2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -392,8 +392,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/cole-jacob-59739a353/",
     "images": {
-      "default": "cole-jacob-default.jpg",
-      "alt": "cole-jacob-alt.jpg"
+      "default": "cole-jacob1.jpg",
+      "alt": "cole-jacob2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -413,8 +413,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/nicholas-bookout-090237367/",
     "images": {
-      "default": "nicholas-bookout-default.jpg",
-      "alt": "nicholas-bookout-alt.jpg"
+      "default": "nick-bookout1.jpg",
+      "alt": "nick-bookout2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -434,8 +434,8 @@ const studentData = [
     "whatsOnYourDesk": "Not one pencil with lead",
     "linkedinLink": "https://www.linkedin.com/in/mace-klein-artz/",
     "images": {
-      "default": "mace-klein-default.jpg",
-      "alt": "mace-klein-alt.jpg"
+      "default": "mace-klein1.jpg",
+      "alt": "mace-klein2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Jim Henson"
@@ -455,8 +455,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/cogan-mcbride-0b7a4128a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     "images": {
-      "default": "cogan-mcbride-default.jpg",
-      "alt": "cogan-mcbride-alt.jpg"
+      "default": "cogan-mcbride1.jpg",
+      "alt": "cogan-mcbride2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Matthew Mcconaughey"
@@ -476,8 +476,8 @@ const studentData = [
     "whatsOnYourDesk": "Yarn, PCB Coaster, Wichu",
     "linkedinLink": "https://www.linkedin.com/in/alejandrasosalopez/",
     "images": {
-      "default": "alejandra-sosa-default.jpg",
-      "alt": "alejandra-sosa-alt.jpg"
+      "default": "ale-sosa.jpg",
+      "alt": "ale-sosa1.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Elliott Smith"
@@ -497,8 +497,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/mia-kromer-a34437264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     "images": {
-      "default": "mia-kromer-default.jpg",
-      "alt": "mia-kromer-alt.jpg"
+      "default": "mia-kromer1.jpg",
+      "alt": "mia-kromer2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Annie Dillard, The Writing Life"
@@ -518,8 +518,8 @@ const studentData = [
     "whatsOnYourDesk": "Too many sticky notes",
     "linkedinLink": "https://www.linkedin.com/in/edrick-warren/",
     "images": {
-      "default": "edrick-warren-default.jpg",
-      "alt": "edrick-warren-alt.jpg"
+      "default": "edrick-warren1.jpg",
+      "alt": "edrick-warren2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Jake The Dog"
@@ -539,8 +539,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/kasey-mcmullen/",
     "images": {
-      "default": "kasey-mcmullen-default.jpg",
-      "alt": "kasey-mcmullen-alt.jpg"
+      "default": "Kasey-McMullen1.jpg",
+      "alt": "Kasey-McMullen2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Alan Watts"
@@ -560,8 +560,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/shayne-sutton-360a78312/",
     "images": {
-      "default": "shayne-sutton-default.jpg",
-      "alt": "shayne-sutton-alt.jpg"
+      "default": "shayne-sutton1.jpg",
+      "alt": "shayne-sutton2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -581,8 +581,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "www.linkedin.com/in/emily-chu-designs",
     "images": {
-      "default": "emily-chu-default.jpg",
-      "alt": "emily-chu-alt.jpg"
+      "default": "emily-chu1.jpg",
+      "alt": "emily-chu2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -602,8 +602,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/grace-nielsen-125043367/",
     "images": {
-      "default": "grace-nielsen-default.jpg",
-      "alt": "grace-nielsen-alt.jpg"
+      "default": "grace-nielsen1.jpg",
+      "alt": "grace-nielsen2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Dolly Parton"
@@ -623,8 +623,8 @@ const studentData = [
     "whatsOnYourDesk": "To-do sticky notes",
     "linkedinLink": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
     "images": {
-      "default": "jez-brown-default.jpg",
-      "alt": "jez-brown-alt.jpg"
+      "default": "jez-brown1.jpg",
+      "alt": "jez-brown2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Paul Rand"
@@ -644,8 +644,8 @@ const studentData = [
     "whatsOnYourDesk": "Laptop, Charger, And too many tabs open",
     "linkedinLink": "",
     "images": {
-      "default": "yula-muhamadiva-default.jpg",
-      "alt": "yula-muhamadiva-alt.jpg"
+      "default": "yuladraft.jpg",
+      "alt": "yuladraft-2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Yula"
@@ -665,8 +665,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/karen-palacios-99a242270/",
     "images": {
-      "default": "karen-palacios-default.jpg",
-      "alt": "karen-palacios-alt.jpg"
+      "default": "karen-palacios1.jpg",
+      "alt": "karen-palacios2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Matthew Perry"
@@ -686,8 +686,8 @@ const studentData = [
     "whatsOnYourDesk": "Graphite pencils",
     "linkedinLink": "",
     "images": {
-      "default": "alex-yen-default.jpg",
-      "alt": "alex-yen-alt.jpg"
+      "default": "alex1.jpg",
+      "alt": "alex2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Alex"
@@ -707,8 +707,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/connor-le-85b42023b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     "images": {
-      "default": "connor-le-default.jpg",
-      "alt": "connor-le-alt.jpg"
+      "default": "connor-le1.jpg",
+      "alt": "connor-le2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -728,8 +728,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "www.linkedin.com/in/guadalupe-acosta-arroyo-248190380",
     "images": {
-      "default": "lupita-acosta-arroyo-default.jpg",
-      "alt": "lupita-acosta-arroyo-alt.jpg"
+      "default": "lupita-acosta-arroyo1.jpg",
+      "alt": "lupita-acosta-arroyo2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Cravity 'Colorful'"
@@ -749,8 +749,8 @@ const studentData = [
     "whatsOnYourDesk": "Rosie's album",
     "linkedinLink": "www.linkedin.com/in/contacttienpham",
     "images": {
-      "default": "kristen-pham-default.jpg",
-      "alt": "kristen-pham-alt.jpg"
+      "default": "kristen-pham1.jpg",
+      "alt": "kristen-pham2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -770,8 +770,8 @@ const studentData = [
     "whatsOnYourDesk": "Trinkets",
     "linkedinLink": "https://www.linkedin.com/in/robert-robinson-807137223/",
     "images": {
-      "default": "robert-robinson-default.jpg",
-      "alt": "robert-robinson-alt.jpg"
+      "default": "robert-robinson1.jpg",
+      "alt": "robert-robinson2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Jake The Dog"
@@ -791,8 +791,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/gabriel-irvine",
     "images": {
-      "default": "gabriel-irvine-default.jpg",
-      "alt": "gabriel-irvine-alt.jpg"
+      "default": "gabriel-irvine1.jpg",
+      "alt": "gabriel-irvine2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Richard Siken"
@@ -812,8 +812,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "www.linkedin.com/in/rowan-chadick-a90646303",
     "images": {
-      "default": "rowan-chadick-default.jpg",
-      "alt": "rowan-chadick-alt.jpg"
+      "default": "rowan-chadick1.jpg",
+      "alt": "rowan-chadick2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Broad City"
@@ -833,8 +833,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/lucy-morley-ab6b02296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     "images": {
-      "default": "lucy-morley-default.jpg",
-      "alt": "lucy-morley-alt.jpg"
+      "default": "lucy-morely1.jpg",
+      "alt": "lucy-morely2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -854,8 +854,8 @@ const studentData = [
     "whatsOnYourDesk": "SD cards & my cats",
     "linkedinLink": "https://www.linkedin.com/in/dylanandrewescobar?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     "images": {
-      "default": "dylan-escobar-default.jpg",
-      "alt": "dylan-escobar-alt.jpg"
+      "default": "dylan-escobar1.jpg",
+      "alt": "dylan-escobar2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Kanye West"
@@ -875,8 +875,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "",
     "images": {
-      "default": "clint-pickett-default.jpg",
-      "alt": "clint-pickett-alt.jpg"
+      "default": "clint-pickett1.jpg",
+      "alt": "clint-pickett2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Ethan Hawke"
@@ -896,8 +896,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/ava-warren-b1a868325/",
     "images": {
-      "default": "ava-warren-default.jpg",
-      "alt": "ava-warren-alt.jpg"
+      "default": "ava-warren1.jpg",
+      "alt": "ava-warren2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Antoine De Saint-Exupéry"
@@ -917,8 +917,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/paige-goose-erickson",
     "images": {
-      "default": "paige-erickson-default.jpg",
-      "alt": "paige-erickson-alt.jpg"
+      "default": "paige-erickson1.jpg",
+      "alt": "paige-erickson2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Dieter F. Uchtdorf"
@@ -938,8 +938,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "www.linkedin.com/in/summer-belle-puryear",
     "images": {
-      "default": "summer-belle-puryear-default.jpg",
-      "alt": "summer-belle-puryear-alt.jpg"
+      "default": "summer-belle-puryear1.jpg",
+      "alt": "summer-belle-puryear2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "The Beatles"
@@ -959,8 +959,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/lucykatedesign/",
     "images": {
-      "default": "lucy-kate-default.jpg",
-      "alt": "lucy-kate-alt.jpg"
+      "default": "lucy-beaty1.jpg",
+      "alt": "lucy-beaty2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "LK"
@@ -980,8 +980,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "linkedin.com/in/jarell-carr-bb87a832b",
     "images": {
-      "default": "jarell-carr-default.jpg",
-      "alt": "jarell-carr-alt.jpg"
+      "default": "Jarell-Carr1.jpg",
+      "alt": "Jarell-Carr2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -1001,8 +1001,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/madison-rey-690464309?trk=contact-info",
     "images": {
-      "default": "madison-rey-default.jpg",
-      "alt": "madison-rey-alt.jpg"
+      "default": "madison-rey1.jpg",
+      "alt": "madison-rey2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Spider-Man"
@@ -1022,8 +1022,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "",
     "images": {
-      "default": "zain-fernandez-default.jpg",
-      "alt": "zain-fernandez-alt.jpg"
+      "default": "zain-fernandez1.jpg",
+      "alt": "zain-fernandez2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -1043,8 +1043,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/austindaubert/",
     "images": {
-      "default": "austin-daubert-default.jpg",
-      "alt": "austin-daubert-alt.jpg"
+      "default": "austin-daubert1.jpg",
+      "alt": "austin-daubert2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Asato Asato"
@@ -1064,8 +1064,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "www.linkedin.com/in/h-brandt",
     "images": {
-      "default": "heidi-brandt-default.jpg",
-      "alt": "heidi-brandt-alt.jpg"
+      "default": "heidi-brandt1.jpg",
+      "alt": "heidi-brandt2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Matthew Gray Gubler"
@@ -1085,8 +1085,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "www.linkedin.com/in/ryan-lemoine-b04a663b2",
     "images": {
-      "default": "ryan-lemoine-default.jpg",
-      "alt": "ryan-lemoine-alt.jpg"
+      "default": "ryan-lemoine1.jpg",
+      "alt": "ryan-lemoine2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -1106,8 +1106,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "www.linkedin.com/in/jacksonpickettdesign",
     "images": {
-      "default": "jackson-pickett-default.jpg",
-      "alt": "jackson-pickett-alt.jpg"
+      "default": "jackson-pickett1.jpg",
+      "alt": "jackson-pickett2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "JP"
@@ -1127,8 +1127,8 @@ const studentData = [
     "whatsOnYourDesk": "Candles, Old projects",
     "linkedinLink": "www.linkedin.com/in/julietwork",
     "images": {
-      "default": "juliet-work-default.jpg",
-      "alt": "juliet-work-alt.jpg"
+      "default": "juliet-work1.jpg",
+      "alt": "juliet-work2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Eve Babitz"
@@ -1148,8 +1148,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/riana-de-luna-936185296",
     "images": {
-      "default": "riana-de-luna-default.jpg",
-      "alt": "riana-de-luna-alt.jpg"
+      "default": "riana-de-luna1.jpg",
+      "alt": "riana-de-luna2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "My Mom"
@@ -1169,8 +1169,8 @@ const studentData = [
     "whatsOnYourDesk": "Various figurines",
     "linkedinLink": "https://www.linkedin.com/in/derick-gafford-a307272a9/",
     "images": {
-      "default": "derick-gafford-default.jpg",
-      "alt": "derick-gafford-alt.jpg"
+      "default": "derick-gafford1.jpg",
+      "alt": "derick-gafford2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Paula Scher"
@@ -1190,8 +1190,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/beth-raup-754a533b2/",
     "images": {
-      "default": "beth-raup-default.jpg",
-      "alt": "beth-raup-alt.jpg"
+      "default": "bethany-raup1.jpg",
+      "alt": "bethany-raup2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Beth Raup"
@@ -1211,8 +1211,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "http://linkedin.com/in/autumn-potter-65281b270",
     "images": {
-      "default": "autumn-potter-default.jpg",
-      "alt": "autumn-potter-alt.jpg"
+      "default": "autumn-potter1.jpg",
+      "alt": "autumn-potter2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Mom’s Spaghetti"
@@ -1232,8 +1232,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/lilliana-boon-7a2ba9313/",
     "images": {
-      "default": "lilliana-boon-default.jpg",
-      "alt": "lilliana-boon-alt.jpg"
+      "default": "lilliana-boon1.jpg",
+      "alt": "lilliana-boon2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
@@ -1253,8 +1253,8 @@ const studentData = [
     "whatsOnYourDesk": "A plethora of lip balms",
     "linkedinLink": "www.linkedin.com/in/arianna-saco-6049a8300",
     "images": {
-      "default": "arianna-saco-default.jpg",
-      "alt": "arianna-saco-alt.jpg"
+      "default": "arianna-saco1.jpg",
+      "alt": "arianna-saco2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Marc Jacobs"
@@ -1274,8 +1274,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "",
     "images": {
-      "default": "nicholas-patterson-default.jpg",
-      "alt": "nicholas-patterson-alt.jpg"
+      "default": "nick-patterson1.jpg",
+      "alt": "nick-patterson2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Kurt Vonnegut"
@@ -1295,8 +1295,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/jayda-robertson-285a56313/",
     "images": {
-      "default": "jayda-robertson-default.jpg",
-      "alt": "jayda-robertson-alt.jpg"
+      "default": "jayda-robertson1.jpg",
+      "alt": "jayda-robertson2.jpg"
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
