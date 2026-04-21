@@ -1334,6 +1334,8 @@ const studentData = [
       ".skeleton-li-icon-wrap img:last-of-type,.skeleton-web-icon-wrap img:last-of-type{opacity:0;transition:opacity .25s}" +
       "[data-id=card-link-linkedin]:hover .skeleton-li-icon-wrap img:first-of-type,[data-id=card-link-website]:hover .skeleton-web-icon-wrap img:first-of-type{opacity:0!important}" +
       "[data-id=card-link-linkedin]:hover .skeleton-li-icon-wrap img:last-of-type,[data-id=card-link-website]:hover .skeleton-web-icon-wrap img:last-of-type{opacity:1!important}" +
+      "img[data-id=card-image-default],img[data-id=card-image-alt]{object-fit:cover;width:100%;height:100%;display:block}" +
+      "[data-id=card-image-default]:not(img),[data-id=card-image-alt]:not(img){background-size:cover;background-position:center;width:100%;height:100%}" +
       ".skeleton-card [data-id=card-body-mask]{pointer-events:none}";
     var styleTag = document.createElement("style");
     styleTag.id = STYLE_ID;
