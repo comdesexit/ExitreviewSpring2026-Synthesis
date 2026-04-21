@@ -1489,13 +1489,13 @@ const studentData = [
     if (liLink && student.linkedinLink) liLink.href = student.linkedinLink;
     if (webLink) {
       var ws = nh(student.websiteLink);
-      if (ws) {
-        webLink.href = ws;
-        webLink.style.display = "";
-      } else {
-        webLink.href = "#";
-        webLink.style.display = "none";
-      }
+      webLink.href = ws || "#";
+      webLink.style.display = "";
+      webLink.onclick = ws
+        ? null
+        : function (e) {
+            e.preventDefault();
+          };
     }
     var imgDef = q("card-image-default");
     var imgAlt = q("card-image-alt");
