@@ -1316,6 +1316,7 @@ const studentData = [
   if (!document.getElementById(STYLE_ID)) {
     var interactionCSS =
       "#student-grid{--card-slide-y:-278px}" +
+      "@media screen and (min-width:992px){#student-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;column-gap:clamp(6px,1vw,18px)!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;padding-right:clamp(16px,2.5vw,48px)!important;padding-left:clamp(16px,2.5vw,48px)!important}#student-grid > .skeleton-card{min-width:0!important}}" +
       "#student-grid .wfh{display:none}" +
       ".wft{mix-blend-mode:multiply;transition:background .15s;background:transparent}" +
       ".wft.wfc0:is(.wfp,:hover){background:#28b5ff}" +
