@@ -1315,7 +1315,7 @@ const studentData = [
   var STYLE_ID = "w1";
   if (!document.getElementById(STYLE_ID)) {
     var interactionCSS =
-      ".synthesis-sidebar{position:sticky!important;top:12px!important;z-index:5!important;align-self:flex-start!important}" +
+      ".synthesis-sidebar{position:sticky!important;top:48px!important;z-index:5!important;align-self:flex-start!important}" +
       "#student-grid{--card-slide-y:-278px}" +
       "@media screen and (min-width:992px){#student-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;column-gap:clamp(6px,1vw,18px)!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;padding-right:clamp(16px,2.5vw,48px)!important;padding-left:clamp(16px,2.5vw,48px)!important}#student-grid > .skeleton-card{min-width:0!important}}" +
       "#student-grid > .skeleton-card.wfh{opacity:0;transform:scale(0.95);pointer-events:none;visibility:hidden;width:0!important;min-width:0!important;max-width:0!important;margin:0!important;padding:0!important;border-width:0!important;overflow:hidden!important;transition:opacity .45s cubic-bezier(0.22,1,0.36,1),transform .45s cubic-bezier(0.22,1,0.36,1),max-width .5s cubic-bezier(0.22,1,0.36,1),width .5s cubic-bezier(0.22,1,0.36,1),padding .4s ease,margin .4s ease}" +
