@@ -1409,7 +1409,7 @@ const studentData = [
   }
   var fragment = document.createDocumentFragment();
   var firstClone = null;
-  var P = "images/portraits/";
+  var P = "Synthesis-Images/Portraits/";
   studentData.forEach(function (student) {
     var card = skeleton.cloneNode(true);
     card.style.display = "flex";
