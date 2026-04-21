@@ -1300,6 +1300,27 @@ const studentData = [
     },
     "websiteLink": "",
     "quoteAttribution": "Me"
+  },
+  {
+    "preferredName": "Steve Rodriguez-Logsdon",
+    "focusTags": "Branding, Art Direction, Illustration",
+    "seniorQuote": "\"A young visual designer in Texas, Just looking to help out.\"",
+    "designStats": "Go-to font:, Recharges with:, Collecting:",
+    "goToFont": "Laptop Techno",
+    "currentlyInspiredBy": "",
+    "currentlyCollecting": "Cameras",
+    "rechargesWith": "The Sun",
+    "favoriteColorHex": "",
+    "myTools": "",
+    "whatsPlaying": "",
+    "whatsOnYourDesk": "",
+    "linkedinLink": "",
+    "images": {
+      "default": "steve1.jpg",
+      "alt": "steve2.jpg"
+    },
+    "websiteLink": "",
+    "quoteAttribution": "Me"
   }
 ];
 
