@@ -1461,9 +1461,15 @@ const studentData = [
       tag3 = q("card-tag-3");
     function tagText(wrap, text) {
       if (!wrap) return;
-      var inner = wrap.querySelector(".skeleton-tag-label");
-      if (inner) inner.textContent = text;
-      else wrap.textContent = text;
+      var inner =
+        wrap.querySelector(".skeleton-tag-label") || wrap.querySelector("p");
+      if (!inner) {
+        wrap.textContent = "";
+        inner = document.createElement("p");
+        inner.className = "skeleton-tag-label";
+        wrap.appendChild(inner);
+      }
+      inner.textContent = text;
     }
     if (tag1) {
       if (tags[0]) tagText(tag1, tags[0]);
