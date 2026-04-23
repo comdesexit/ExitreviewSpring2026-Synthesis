@@ -1344,6 +1344,7 @@ const studentData = [
       "#student-grid,#student-grid .skeleton-card,#student-grid .skeleton-card *{font-family:" +
       cardFont +
       "!important}" +
+      "#student-grid .skeleton-tag-label,.synthesis-sidebar .tag-label{font-weight:600!important}" +
       "@media screen and (min-width:992px){#student-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;column-gap:clamp(6px,1vw,18px)!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;padding-right:clamp(16px,2.5vw,48px)!important;padding-left:clamp(16px,2.5vw,48px)!important}#student-grid > .skeleton-card{min-width:0!important}}" +
       "#student-grid > .skeleton-card.wfh{opacity:0;transform:scale(0.95);pointer-events:none;visibility:hidden;width:0!important;min-width:0!important;max-width:0!important;margin:0!important;padding:0!important;border-width:0!important;overflow:hidden!important;transition:opacity .45s cubic-bezier(0.22,1,0.36,1),transform .45s cubic-bezier(0.22,1,0.36,1),max-width .5s cubic-bezier(0.22,1,0.36,1),width .5s cubic-bezier(0.22,1,0.36,1),padding .4s ease,margin .4s ease}" +
       "@media (prefers-reduced-motion:reduce){#student-grid > .skeleton-card.wfh{transition:none!important;transform:none}}" +
