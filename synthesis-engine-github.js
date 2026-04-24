@@ -1374,7 +1374,27 @@ const studentData = [
       "[data-id=card-link-linkedin]:hover .skeleton-li-icon-wrap img:last-of-type,[data-id=card-link-website]:hover .skeleton-web-icon-wrap img:last-of-type{opacity:1!important}" +
       "img[data-id=card-image-default],img[data-id=card-image-alt]{object-fit:cover;width:100%;height:100%;display:block}" +
       "[data-id=card-image-default]:not(img),[data-id=card-image-alt]:not(img){background-size:cover;background-position:center;width:100%;height:100%}" +
-      ".skeleton-card [data-id=card-body-mask]{pointer-events:none}";
+      ".skeleton-card [data-id=card-body-mask]{pointer-events:none}" +
+      /* Mobile / tablet: keep filters in document flow so they do not sit on top of the card grid.
+         Webflow often pairs a sticky sidebar with a multi-column layout; sticky + z-index can read as a
+         floating layer on narrow viewports. */
+      "@media screen and (max-width:991px){" +
+      "body.synthesis-dynamic-main .synthesis-sidebar{" +
+      "position:relative!important;top:auto!important;bottom:auto!important;" +
+      "left:auto!important;right:auto!important;inset:auto!important;" +
+      "z-index:2!important;align-self:stretch!important;width:100%!important;max-width:none!important;" +
+      "margin:0 0 1rem!important;box-sizing:border-box!important;" +
+      "transform:none!important}" +
+      "body.synthesis-dynamic-main .synthesis-sidebar.w-dyn-list," +
+      "body.synthesis-dynamic-main .synthesis-sidebar .w-dyn-items{" +
+      "display:flex!important;flex-wrap:wrap!important;gap:8px 10px!important;" +
+      "align-items:flex-start!important;justify-content:flex-start!important}" +
+      "body.synthesis-dynamic-main .synthesis-sidebar a.wft," +
+      "body.synthesis-dynamic-main .synthesis-sidebar a.tag-item{" +
+      "flex:0 0 auto!important;margin:0!important}" +
+      "body.synthesis-dynamic-main .synthesis-sidebar," +
+      "body.synthesis-dynamic-main #student-grid{grid-column:1/-1!important;width:100%!important;max-width:100%!important}" +
+      "}";
     var styleTag = document.createElement("style");
     styleTag.id = STYLE_ID;
     styleTag.textContent = interactionCSS;
