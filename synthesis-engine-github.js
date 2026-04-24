@@ -1333,12 +1333,19 @@ const studentData = [
   if (typeof studentData === "undefined" || !grid || !skeleton) return;
   if (grid.dataset.g1 === "1") return;
   grid.dataset.g1 = "1";
+  // Let page height follow filtered card count; site wrappers use min-height:100vh in Webflow.
+  // Footer later: keep these wrappers in document flow so a block footer below main stacks naturally;
+  // for a sticky-to-viewport footer, use flex column + flex-grow on main or min-height on an outer shell.
+  document.body.classList.add("synthesis-dynamic-main");
   var STYLE_ID = "w1";
   if (!document.getElementById(STYLE_ID)) {
     // Use the same family name as Synthesis page head (WebFont.load → "Geist"); avoids a
     // second @font-face (variable woff2 + format quirks) and generic sans-serif → Arial fallback.
     var cardFont = "Geist, system-ui, sans-serif";
     var interactionCSS =
+      "body.synthesis-dynamic-main .page-wrapper," +
+      "body.synthesis-dynamic-main .cd-page-wrapper," +
+      "body.synthesis-dynamic-main .synthesis-page-wrap{min-height:auto!important}" +
       ".synthesis-sidebar{position:sticky!important;top:48px!important;z-index:5!important;align-self:flex-start!important}" +
       "#student-grid{--card-slide-y:-278px}" +
       "#student-grid,#student-grid .skeleton-card,#student-grid .skeleton-card *{font-family:" +
