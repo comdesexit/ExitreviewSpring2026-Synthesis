@@ -1333,6 +1333,11 @@ const studentData = [
   if (typeof studentData === "undefined" || !grid || !skeleton) return;
   if (grid.dataset.g1 === "1") return;
   grid.dataset.g1 = "1";
+  var defaultPortfolioBtnLabel = "Website";
+  var skWebLabel = skeleton.querySelector("#card-link-website .skeleton-web-label");
+  if (skWebLabel && skWebLabel.textContent.trim()) {
+    defaultPortfolioBtnLabel = skWebLabel.textContent.trim();
+  }
   // Let page height follow filtered card count; site wrappers use min-height:100vh in Webflow.
   // Footer later: keep these wrappers in document flow so a block footer below main stacks naturally;
   // for a sticky-to-viewport footer, use flex column + flex-grow on main or min-height on an outer shell.
@@ -1365,16 +1370,21 @@ const studentData = [
       "[data-id=card-switch-icon] img{opacity:1;transition:opacity .35s}" +
       "#student-grid [data-id=card-slide-wrapper]{transition:transform .45s ease!important}" +
       "#student-grid .skeleton-card.is-open [data-id=card-slide-wrapper]{transform:translate3d(0,var(--card-slide-y),0)!important}" +
-      "[data-id=card-link-linkedin]:hover,[data-id=card-link-website]:hover{background:#e1008d!important}" +
-      ".skeleton-web-button:hover .skeleton-web-label{color:#fff!important}" +
+      "[data-id=card-link-linkedin]:hover,[data-id=card-link-website]:not(.is-portfolio-soon):hover{background:#e1008d!important}" +
+      "[data-id=card-link-website]:not(.is-portfolio-soon):hover .skeleton-web-label{color:#fff!important}" +
       ".skeleton-li-icon-wrap img,.skeleton-web-icon-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}" +
       ".skeleton-li-icon-wrap img:first-of-type,.skeleton-web-icon-wrap img:first-of-type{opacity:1;transition:opacity .25s}" +
       ".skeleton-li-icon-wrap img:last-of-type,.skeleton-web-icon-wrap img:last-of-type{opacity:0;transition:opacity .25s}" +
-      "[data-id=card-link-linkedin]:hover .skeleton-li-icon-wrap img:first-of-type,[data-id=card-link-website]:hover .skeleton-web-icon-wrap img:first-of-type{opacity:0!important}" +
-      "[data-id=card-link-linkedin]:hover .skeleton-li-icon-wrap img:last-of-type,[data-id=card-link-website]:hover .skeleton-web-icon-wrap img:last-of-type{opacity:1!important}" +
+      "[data-id=card-link-linkedin]:hover .skeleton-li-icon-wrap img:first-of-type,[data-id=card-link-website]:not(.is-portfolio-soon):hover .skeleton-web-icon-wrap img:first-of-type{opacity:0!important}" +
+      "[data-id=card-link-linkedin]:hover .skeleton-li-icon-wrap img:last-of-type,[data-id=card-link-website]:not(.is-portfolio-soon):hover .skeleton-web-icon-wrap img:last-of-type{opacity:1!important}" +
       "img[data-id=card-image-default],img[data-id=card-image-alt]{object-fit:cover;width:100%;height:100%;display:block}" +
       "[data-id=card-image-default]:not(img),[data-id=card-image-alt]:not(img){background-size:cover;background-position:center;width:100%;height:100%}" +
       ".skeleton-card [data-id=card-body-mask]{pointer-events:none}" +
+      "[data-id=card-link-website].is-portfolio-soon{pointer-events:none!important;cursor:default!important;background:#fff!important;color:#141414!important;text-decoration:none!important}" +
+      "[data-id=card-link-website].is-portfolio-soon:hover{background:#fff!important}" +
+      "[data-id=card-link-website].is-portfolio-soon .skeleton-web-label{color:#141414!important}" +
+      "[data-id=card-link-website].is-portfolio-soon:hover .skeleton-web-label{color:#141414!important}" +
+      "[data-id=card-link-website].is-portfolio-soon .skeleton-web-icon-wrap{display:none!important}" +
       /* Mobile / tablet: keep filters in document flow so they do not sit on top of the card grid.
          Webflow often pairs a sticky sidebar with a multi-column layout; sticky + z-index can read as a
          floating layer on narrow viewports. */
@@ -1534,14 +1544,43 @@ const studentData = [
       webLink = q("card-link-website");
     if (liLink && student.linkedinLink) liLink.href = student.linkedinLink;
     if (webLink) {
-      var ws = nh(student.websiteLink);
-      webLink.href = ws || "#";
-      webLink.style.display = "";
-      webLink.onclick = ws
-        ? null
-        : function (e) {
-            e.preventDefault();
-          };
+      var portfolioHref = nh(student.websiteLink);
+      if (portfolioHref) {
+        webLink.href = portfolioHref;
+        webLink.style.display = "";
+        webLink.style.pointerEvents = "";
+        webLink.onclick = null;
+        webLink.removeAttribute("aria-disabled");
+        webLink.removeAttribute("role");
+        webLink.removeAttribute("aria-label");
+        webLink.removeAttribute("aria-live");
+        webLink.classList.remove("is-portfolio-soon");
+        var webLabelEl = webLink.querySelector(".skeleton-web-label");
+        if (webLabelEl) webLabelEl.textContent = defaultPortfolioBtnLabel;
+        var webIconWrap = webLink.querySelector(".skeleton-web-icon-wrap");
+        if (webIconWrap) webIconWrap.style.display = "";
+      } else {
+        var webParent = webLink.parentNode;
+        var soonEl = document.createElement("div");
+        soonEl.className = (webLink.className + " is-portfolio-soon").trim();
+        soonEl.id = "card-link-website";
+        soonEl.setAttribute("role", "status");
+        soonEl.setAttribute("aria-live", "polite");
+        soonEl.setAttribute("aria-label", "Portfolio coming soon");
+        var srcLbl = webLink.querySelector(".skeleton-web-label");
+        if (srcLbl) {
+          var soonLbl = srcLbl.cloneNode(false);
+          soonLbl.className = srcLbl.className;
+          soonLbl.textContent = "Coming Soon!";
+          soonEl.appendChild(soonLbl);
+        } else {
+          var fallbackLbl = document.createElement("span");
+          fallbackLbl.className = "skeleton-web-label";
+          fallbackLbl.textContent = "Coming Soon!";
+          soonEl.appendChild(fallbackLbl);
+        }
+        webParent.replaceChild(soonEl, webLink);
+      }
     }
     var imgDef = q("card-image-default");
     var imgAlt = q("card-image-alt");
