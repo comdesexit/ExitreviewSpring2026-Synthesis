@@ -1395,8 +1395,9 @@ const studentData = [
          floating layer on narrow viewports. */
       "@media screen and (max-width:720px){" +
       "body.synthesis-dynamic-main .synthesis-nav-btn-corners{display:none!important}" +
-      "body.synthesis-dynamic-main .synthesis-nav-bar{position:sticky;top:0;z-index:120;display:flex;align-items:center;justify-content:space-between;min-height:124px;box-sizing:border-box;padding-left:40px!important;padding-right:40px!important}" +
-      "body.synthesis-dynamic-main .synthesis-nav-left{display:flex;align-items:center;min-height:58px;flex:0 0 auto!important;margin-right:auto}" +
+      "body.synthesis-dynamic-main .synthesis-nav-bar{position:sticky;top:0;z-index:120;display:flex;align-items:center;justify-content:space-between;height:116px;min-height:116px;box-sizing:border-box;padding-left:40px!important;padding-right:40px!important}" +
+      "body.synthesis-dynamic-main .synthesis-nav-left{display:flex;align-items:center;justify-content:flex-start;height:58px;min-height:58px;flex:0 0 auto!important;margin-right:auto}" +
+      "body.synthesis-dynamic-main .synthesis-nav-logo-img{display:block;height:42px;width:auto;object-fit:contain}" +
       "body.synthesis-dynamic-main #synthesis-mobile-toggle{display:inline-flex!important;position:relative;z-index:122;align-items:center;justify-content:center;flex:0 0 auto;width:58px;height:58px;min-width:58px;min-height:58px;padding:0;border:0;background:transparent;cursor:pointer;line-height:0}" +
       "body.synthesis-dynamic-main #synthesis-mobile-toggle img{position:absolute;inset:0;margin:auto;width:54px;height:54px;object-fit:contain;transition:opacity .28s ease,transform .28s ease}" +
       "body.synthesis-dynamic-main #synthesis-mobile-toggle .burger-open{opacity:1;transform:rotate(0deg)}" +
