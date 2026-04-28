@@ -1342,6 +1342,9 @@ const studentData = [
   // Footer later: keep these wrappers in document flow so a block footer below main stacks naturally;
   // for a sticky-to-viewport footer, use flex column + flex-grow on main or min-height on an outer shell.
   document.body.classList.add("synthesis-dynamic-main");
+  var BURGER_OPEN_ICON = "https://cdn.prod.website-files.com/6998c486514bf94d4fda2ae2/69f0eec2cfdca378607202f8_burgeropen.png";
+  var BURGER_CLOSE_ICON = "https://cdn.prod.website-files.com/6998c486514bf94d4fda2ae2/69f0eec3fa4b96304358e49c_burgerclose.png";
+  var SAN_MARCOS_FILM_LAB_LOGO = "https://cdn.prod.website-files.com/6998c486514bf94d4fda2ae2/69f0ef29e55d187717eaa149_San%20Macros%20Film%20Lab%20Logo.png";
   var STYLE_ID = "w1";
   if (!document.getElementById(STYLE_ID)) {
     // Use the same family name as Synthesis page head (WebFont.load → "Geist"); avoids a
@@ -1385,10 +1388,31 @@ const studentData = [
       "[data-id=card-link-website].is-portfolio-soon .skeleton-web-label{color:#141414!important}" +
       "[data-id=card-link-website].is-portfolio-soon:hover .skeleton-web-label{color:#141414!important}" +
       "[data-id=card-link-website].is-portfolio-soon .skeleton-web-icon-wrap{display:none!important}" +
+      "#synthesis-mobile-toggle{display:none}" +
+      "#synthesis-mobile-menu{display:none}" +
       /* Mobile / tablet: keep filters in document flow so they do not sit on top of the card grid.
          Webflow often pairs a sticky sidebar with a multi-column layout; sticky + z-index can read as a
          floating layer on narrow viewports. */
       "@media screen and (max-width:991px){" +
+      "body.synthesis-dynamic-main .synthesis-nav-btn-corners{display:none!important}" +
+      "body.synthesis-dynamic-main .synthesis-nav-bar{position:sticky;top:0;z-index:30}" +
+      "body.synthesis-dynamic-main #synthesis-mobile-toggle{display:inline-flex!important;position:relative;z-index:32;align-items:center;justify-content:center;width:58px;height:58px;padding:0;border:0;background:transparent;cursor:pointer}" +
+      "body.synthesis-dynamic-main #synthesis-mobile-toggle img{position:absolute;inset:0;margin:auto;width:58px;height:58px;object-fit:contain;transition:opacity .28s ease,transform .28s ease}" +
+      "body.synthesis-dynamic-main #synthesis-mobile-toggle .burger-open{opacity:1;transform:rotate(0deg)}" +
+      "body.synthesis-dynamic-main #synthesis-mobile-toggle .burger-close{opacity:0;transform:rotate(-8deg)}" +
+      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-toggle .burger-open{opacity:0;transform:rotate(8deg)}" +
+      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-toggle .burger-close{opacity:1;transform:rotate(0deg)}" +
+      "body.synthesis-dynamic-main #synthesis-mobile-menu{display:block!important;position:sticky;top:84px;z-index:29;padding:16px 24px 24px;background:rgba(253,253,253,.72);-webkit-backdrop-filter:blur(17px);backdrop-filter:blur(17px);border-radius:0 0 8px 8px;max-height:0;overflow:hidden;opacity:0;transform:translateY(-8px);transition:max-height .4s cubic-bezier(.22,1,.36,1),opacity .28s ease,transform .28s ease}" +
+      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu{max-height:78vh;overflow:auto;opacity:1;transform:translateY(0)}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-actions{padding:8px 8px 20px;display:flex;flex-direction:column}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-action-link{display:flex;align-items:center;height:40px;border-bottom:1px solid #141414;color:#030303;font-weight:600;letter-spacing:.01em;text-decoration:none}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-title{margin:0;padding:6px 0 22px;font-size:52px;line-height:.89;color:#030303}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-label{margin:0 0 8px;color:#e1008d;font-size:20px;font-weight:700}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-list{display:flex;flex-direction:column;border-radius:8px;overflow:hidden}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item{display:flex;align-items:flex-end;height:48px;padding:8px;border-bottom:1px solid #030303;background:transparent;text-decoration:none}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item .tag-label{color:#030303;font-size:16px;font-weight:600;letter-spacing:.01em}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfp{background:#e1008d!important}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfp .tag-label{color:#fff!important}" +
       "body.synthesis-dynamic-main .synthesis-sidebar{" +
       "position:relative!important;top:auto!important;bottom:auto!important;" +
       "left:auto!important;right:auto!important;inset:auto!important;" +
@@ -1404,6 +1428,7 @@ const studentData = [
       "flex:0 0 auto!important;margin:0!important}" +
       "body.synthesis-dynamic-main .synthesis-sidebar," +
       "body.synthesis-dynamic-main #student-grid{grid-column:1/-1!important;width:100%!important;max-width:100%!important}" +
+      "body.synthesis-dynamic-main .synthesis-sidebar{display:none!important}" +
       "}";
     var styleTag = document.createElement("style");
     styleTag.id = STYLE_ID;
@@ -1477,6 +1502,109 @@ const studentData = [
     if (t.closest("[data-id=card-link-website]")) return true;
     return false;
   }
+  function setupMobileNav() {
+    var nav = document.getElementById("synthesis-nav");
+    if (!nav || document.getElementById("synthesis-mobile-toggle")) return;
+    var navLeft = nav.querySelector(".synthesis-nav-left");
+    if (!navLeft) return;
+    var archiveA = document.getElementById("nav-skeleton-archive");
+    var behindA = document.getElementById("nav-skeleton-behind");
+    var toggle = document.createElement("button");
+    toggle.id = "synthesis-mobile-toggle";
+    toggle.type = "button";
+    toggle.setAttribute("aria-label", "Toggle mobile menu");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", "synthesis-mobile-menu");
+    var iconOpen = document.createElement("img");
+    iconOpen.src = BURGER_OPEN_ICON;
+    iconOpen.alt = "";
+    iconOpen.setAttribute("aria-hidden", "true");
+    iconOpen.className = "burger-open";
+    var iconClose = document.createElement("img");
+    iconClose.src = BURGER_CLOSE_ICON;
+    iconClose.alt = "";
+    iconClose.setAttribute("aria-hidden", "true");
+    iconClose.className = "burger-close";
+    toggle.appendChild(iconOpen);
+    toggle.appendChild(iconClose);
+    nav.appendChild(toggle);
+
+    var menu = document.createElement("div");
+    menu.id = "synthesis-mobile-menu";
+    menu.setAttribute("aria-hidden", "true");
+    var actions = document.createElement("div");
+    actions.className = "synthesis-mobile-actions";
+    function createAction(label, href) {
+      var a = document.createElement("a");
+      a.href = href || "#";
+      a.className = "synthesis-mobile-action-link";
+      a.textContent = label;
+      actions.appendChild(a);
+    }
+    createAction("Archive", archiveA && archiveA.getAttribute("href"));
+    createAction("Behind the scenes", behindA && behindA.getAttribute("href"));
+    menu.appendChild(actions);
+
+    var title = document.createElement("p");
+    title.className = "synthesis-mobile-title";
+    title.textContent = "meet the designers";
+    menu.appendChild(title);
+
+    var filterLabel = document.createElement("p");
+    filterLabel.className = "synthesis-mobile-filter-label";
+    filterLabel.textContent = "Filter";
+    menu.appendChild(filterLabel);
+
+    var filterList = document.createElement("div");
+    filterList.className = "synthesis-mobile-filter-list";
+    function addFilterItem(label, isAll) {
+      var a = document.createElement("a");
+      a.href = "#";
+      a.className = "synthesis-mobile-filter-item wft";
+      if (isAll) a.setAttribute("data-all-filter", "1");
+      var p = document.createElement("p");
+      p.className = "tag-label";
+      p.textContent = label;
+      a.appendChild(p);
+      filterList.appendChild(a);
+    }
+    addFilterItem("All", true);
+    var used = { all: true };
+    var sidebarLabels = document.querySelectorAll(".synthesis-sidebar .tag-label");
+    sidebarLabels.forEach(function (el) {
+      var t = String(el.textContent || "").trim();
+      var k = t.toLowerCase();
+      if (!t || used[k]) return;
+      used[k] = true;
+      addFilterItem(t, false);
+    });
+    menu.appendChild(filterList);
+    nav.insertAdjacentElement("afterend", menu);
+
+    toggle.addEventListener("click", function () {
+      var open = !document.body.classList.contains("synthesis-mobile-nav-open");
+      document.body.classList.toggle("synthesis-mobile-nav-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      menu.setAttribute("aria-hidden", open ? "false" : "true");
+    });
+  }
+  function setupFooterFilmLabLogo() {
+    var placeholder = document.querySelector(".cd-footer-film-placeholder");
+    if (!placeholder || placeholder.querySelector("img")) return;
+    var img = document.createElement("img");
+    img.src = SAN_MARCOS_FILM_LAB_LOGO;
+    img.alt = "San Marcos Film Lab";
+    img.loading = "lazy";
+    img.style.width = "100%";
+    img.style.height = "100%";
+    img.style.objectFit = "contain";
+    placeholder.setAttribute("role", "img");
+    placeholder.setAttribute("aria-label", "San Marcos Film Lab logo");
+    placeholder.innerHTML = "";
+    placeholder.appendChild(img);
+  }
+  setupMobileNav();
+  setupFooterFilmLabLogo();
   var fragment = document.createDocumentFragment();
   var firstClone = null;
   var P = "https://cdn.jsdelivr.net/gh/comdesexit/ExitreviewSpring2026-Synthesis@main/Synthesis-Images/Portraits/";
@@ -1692,6 +1820,11 @@ const studentData = [
           else hit.classList.remove("wfp");
         }
       }
+      var allBtns = [].slice.call(document.querySelectorAll("[data-all-filter]"));
+      allBtns.forEach(function (btn) {
+        if (sel.length === 0) btn.classList.add("wfp");
+        else btn.classList.remove("wfp");
+      });
     }
     function ca() {
       var o = grid.querySelectorAll(".skeleton-card.is-open"),
@@ -1785,6 +1918,11 @@ const studentData = [
         var lb = String(pill.textContent || "").trim();
         if (!lb) return;
         e.preventDefault();
+        if (nt(lb) === "all") {
+          sel = [];
+          ap();
+          return;
+        }
         tg(lb);
         ap();
       },
