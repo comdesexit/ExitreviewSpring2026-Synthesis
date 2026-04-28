@@ -1461,9 +1461,6 @@ const studentData = [
       "body.synthesis-dynamic-main .synthesis-sidebar-title .mtd-l1,body.synthesis-dynamic-main .synthesis-sidebar-title .mtd-l2{display:inline!important}" +
       "body.synthesis-dynamic-main .synthesis-sidebar-title .mtd-l1{margin-right:.25em}" +
       "body.synthesis-dynamic-main #student-grid{position:relative!important;z-index:1!important}" +
-      "}" +
-      "@media screen and (min-width:721px){" +
-      "body.synthesis-dynamic-main #nav-skeleton-behind{min-width:0!important;width:auto!important;max-width:none!important;flex:0 0 auto!important}" +
       "}";
     var styleTag = document.createElement("style");
     styleTag.id = STYLE_ID;
