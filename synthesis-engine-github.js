@@ -1395,10 +1395,11 @@ const studentData = [
          floating layer on narrow viewports. */
       "@media screen and (max-width:720px){" +
       "body.synthesis-dynamic-main .synthesis-nav-btn-corners{display:none!important}" +
-      "body.synthesis-dynamic-main .synthesis-nav-bar{position:sticky;top:0;z-index:120;display:flex;align-items:center;justify-content:space-between;height:116px;min-height:116px;box-sizing:border-box;padding-left:40px!important;padding-right:40px!important}" +
-      "body.synthesis-dynamic-main .synthesis-nav-left{display:flex;align-items:center;justify-content:flex-start;height:58px;min-height:58px;flex:0 0 auto!important;margin-right:auto}" +
-      "body.synthesis-dynamic-main .synthesis-nav-logo-img{display:block;height:42px;width:auto;object-fit:contain}" +
+      "body.synthesis-dynamic-main .synthesis-nav-bar{position:sticky;top:0;z-index:120;display:block;height:116px;min-height:116px;box-sizing:border-box;padding-left:40px!important;padding-right:40px!important}" +
+      "body.synthesis-dynamic-main .synthesis-nav-left{position:absolute;left:40px;top:50%;display:flex;align-items:center;justify-content:flex-start;height:58px;min-height:58px;transform:translateY(-50%);margin:0}" +
+      "body.synthesis-dynamic-main .synthesis-nav-logo-img{display:block;height:34px;width:auto;object-fit:contain;transform:translateY(3px)}" +
       "body.synthesis-dynamic-main #synthesis-mobile-toggle{display:inline-flex!important;position:relative;z-index:122;align-items:center;justify-content:center;flex:0 0 auto;width:58px;height:58px;min-width:58px;min-height:58px;padding:0;border:0;background:transparent;cursor:pointer;line-height:0}" +
+      "body.synthesis-dynamic-main #synthesis-mobile-toggle{position:absolute!important;right:40px;top:50%!important;transform:translateY(-50%)}" +
       "body.synthesis-dynamic-main #synthesis-mobile-toggle img{position:absolute;inset:0;margin:auto;width:54px;height:54px;object-fit:contain;transition:opacity .28s ease,transform .28s ease}" +
       "body.synthesis-dynamic-main #synthesis-mobile-toggle .burger-open{opacity:1;transform:rotate(0deg)}" +
       "body.synthesis-dynamic-main #synthesis-mobile-toggle .burger-close{opacity:0;transform:rotate(-8deg)}" +
@@ -1412,7 +1413,7 @@ const studentData = [
       "body.synthesis-dynamic-main .synthesis-mobile-title{margin:0;padding:6px 0 22px;font-size:52px;line-height:.89;color:#141414;font-family:'Veelo Neue',Arial,sans-serif;font-weight:400;letter-spacing:0;text-transform:lowercase}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-label{margin:0 0 8px;color:#e1008d;font-size:20px;font-weight:700}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-list{display:flex;flex-direction:column;border:1px solid #141414;border-radius:14px;overflow:hidden;width:100%}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-item{display:flex;align-items:center;min-height:56px;padding:8px 18px;border-bottom:1px solid #141414;background:transparent;text-decoration:none}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item{display:flex;align-items:center;height:40px;padding:0 18px;border-bottom:1px solid #141414;background:transparent;text-decoration:none}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item:last-child{border-bottom:0}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item:first-child{border-top-left-radius:14px;border-top-right-radius:14px}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item:last-child{border-bottom-left-radius:14px;border-bottom-right-radius:14px}" +
