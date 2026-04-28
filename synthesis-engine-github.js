@@ -1402,8 +1402,8 @@ const studentData = [
       "body.synthesis-dynamic-main #synthesis-mobile-toggle .burger-close{opacity:0;transform:rotate(-8deg)}" +
       "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-toggle .burger-open{opacity:0;transform:rotate(8deg)}" +
       "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-toggle .burger-close{opacity:1;transform:rotate(0deg)}" +
-      "body.synthesis-dynamic-main #synthesis-mobile-menu{display:block!important;position:sticky;top:84px;z-index:121;width:100vw;margin-left:calc(50% - 50vw);padding:16px 40px 24px;background:rgba(253,253,253,.72);-webkit-backdrop-filter:blur(17px);backdrop-filter:blur(17px);border-radius:0;max-height:0;overflow:hidden;opacity:0;transform:translateY(-8px);transition:max-height .4s cubic-bezier(.22,1,.36,1),opacity .28s ease,transform .28s ease}" +
-      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu{max-height:78vh;overflow:auto;opacity:1;transform:translateY(0)}" +
+      "body.synthesis-dynamic-main #synthesis-mobile-menu{display:block!important;position:sticky;top:84px;z-index:121;width:100vw;margin-left:calc(50% - 50vw);padding:16px 40px 24px;background:rgba(253,253,253,.72);-webkit-backdrop-filter:blur(17px);backdrop-filter:blur(17px);border-radius:0;height:0;overflow:hidden;opacity:0;transform:translateY(-8px);transition:height .4s cubic-bezier(.22,1,.36,1),opacity .28s ease,transform .28s ease}" +
+      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu{height:calc(100vh - 84px);overflow:auto;opacity:1;transform:translateY(0)}" +
       "body.synthesis-dynamic-main .synthesis-mobile-actions{padding:8px 0 20px;display:flex;flex-wrap:wrap;gap:10px}" +
       "body.synthesis-dynamic-main .synthesis-mobile-action-wrap{flex:1 1 240px;min-width:220px}" +
       "body.synthesis-dynamic-main .synthesis-mobile-action-wrap .cd-donate-btn{width:100%}" +
@@ -1436,6 +1436,16 @@ const studentData = [
       "body.synthesis-dynamic-main #student-grid{grid-column:1/-1!important;width:100%!important;max-width:100%!important}" +
       "body.synthesis-dynamic-main .synthesis-main-columns,body.synthesis-dynamic-main #student-grid,body.synthesis-dynamic-main #student-grid .skeleton-card{position:relative;z-index:1}" +
       "body.synthesis-dynamic-main .synthesis-sidebar{display:none!important}" +
+      "}" +
+      "@media screen and (min-width:721px) and (max-width:991px){" +
+      "body.synthesis-dynamic-main .synthesis-sidebar{" +
+      "position:static!important;top:auto!important;bottom:auto!important;" +
+      "left:auto!important;right:auto!important;inset:auto!important;" +
+      "z-index:2!important;align-self:stretch!important;width:100%!important;max-width:none!important;" +
+      "margin:0 0 1rem!important;transform:none!important}" +
+      "body.synthesis-dynamic-main .synthesis-main-columns{align-items:start!important}" +
+      "body.synthesis-dynamic-main .synthesis-sidebar .w-dyn-items{display:flex!important;flex-wrap:wrap!important;gap:8px 10px!important}" +
+      "body.synthesis-dynamic-main #student-grid{position:relative!important;z-index:1!important}" +
       "}";
     var styleTag = document.createElement("style");
     styleTag.id = STYLE_ID;
@@ -1542,16 +1552,24 @@ const studentData = [
     var actions = document.createElement("div");
     actions.className = "synthesis-mobile-actions";
     function createAction(label, href, isBehind) {
+      var source = isBehind ? behindA : archiveA;
       var wrap = document.createElement("div");
-      wrap.className = "div-block-7 synthesis-nav-btn-corners synthesis-mobile-action-wrap";
+      wrap.className = "div-block-7 synthesis-mobile-action-wrap";
       if (isBehind) wrap.classList.add("synthesis-nav-behind");
-      var a = document.createElement("a");
-      a.href = href || "#";
-      a.className = "link-block cd-donate-btn w-inline-block";
-      var p = document.createElement("p");
-      p.className = "paragraph-2 cd-donate-label";
-      p.textContent = label;
-      a.appendChild(p);
+      var a;
+      if (source) {
+        a = source.cloneNode(true);
+        a.removeAttribute("id");
+        a.href = href || source.getAttribute("href") || "#";
+      } else {
+        a = document.createElement("a");
+        a.href = href || "#";
+        a.className = "link-block cd-donate-btn w-inline-block";
+        var p = document.createElement("p");
+        p.className = "paragraph-2 cd-donate-label";
+        p.textContent = label;
+        a.appendChild(p);
+      }
       wrap.appendChild(a);
       actions.appendChild(wrap);
     }
