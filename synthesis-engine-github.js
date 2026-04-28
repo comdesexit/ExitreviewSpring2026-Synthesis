@@ -1360,6 +1360,7 @@ const studentData = [
       cardFont +
       "!important}" +
       ".synthesis-sidebar .tag-label,.synthesis-sidebar a.tag-item .tag-label{font-weight:600!important;color:#030303!important}" +
+      ".synthesis-sidebar-title .mtd-l1,.synthesis-sidebar-title .mtd-l2{display:block!important}" +
       "@media screen and (min-width:992px){.synthesis-main-columns{column-gap:clamp(10px,1.1vw,16px)!important}.synthesis-main-columns > .synthesis-grid-column{flex:1 1 0%!important;min-width:0!important;width:auto!important;max-width:none!important}.synthesis-main-columns > .synthesis-sidebar{flex:0 0 auto!important}}" +
       "@media screen and (min-width:992px) and (max-width:1360px){.synthesis-sidebar{flex:0 0 clamp(158px,17vw,214px)!important;max-width:clamp(158px,17vw,214px)!important}.synthesis-sidebar .synthesis-sidebar-title{width:clamp(150px,16vw,214px)!important;max-width:100%!important;font-size:clamp(34px,3.9vw,52px)!important;line-height:.82!important}.synthesis-sidebar .synthesis-filter-wrap{width:clamp(150px,16vw,214px)!important;max-width:100%!important}.synthesis-sidebar .tag-item{width:100%!important;max-width:100%!important}}" +
       "@media screen and (min-width:992px) and (max-width:1169px){#student-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;column-gap:clamp(8px,1.2vw,20px)!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;padding-right:clamp(10px,1.3vw,20px)!important;padding-left:clamp(2px,.5vw,8px)!important}#student-grid > .skeleton-card{min-width:0!important}}" +
@@ -1449,9 +1450,11 @@ const studentData = [
       "left:auto!important;right:auto!important;inset:auto!important;" +
       "z-index:2!important;align-self:stretch!important;width:100%!important;max-width:none!important;" +
       "margin:0 0 1rem!important;transform:none!important}" +
-      "body.synthesis-dynamic-main .synthesis-sidebar .synthesis-filter-wrap{max-height:44vh!important;overflow:auto!important;overscroll-behavior:contain!important;padding-right:6px}" +
+      "body.synthesis-dynamic-main .synthesis-sidebar .synthesis-filter-wrap{max-height:none!important;overflow:visible!important;padding-right:0!important}" +
       "body.synthesis-dynamic-main .synthesis-main-columns{align-items:start!important}" +
       "body.synthesis-dynamic-main .synthesis-sidebar .w-dyn-items{display:flex!important;flex-wrap:wrap!important;gap:8px 10px!important}" +
+      "body.synthesis-dynamic-main .synthesis-sidebar-title .mtd-l1,body.synthesis-dynamic-main .synthesis-sidebar-title .mtd-l2{display:inline!important}" +
+      "body.synthesis-dynamic-main .synthesis-sidebar-title .mtd-l1{margin-right:.25em}" +
       "body.synthesis-dynamic-main #student-grid{position:relative!important;z-index:1!important}" +
       "}";
     var styleTag = document.createElement("style");
@@ -1644,6 +1647,14 @@ const studentData = [
     allLink.appendChild(p);
     stack.insertAdjacentElement("afterbegin", allLink);
   }
+  function setupSidebarTitleLines() {
+    var title = document.querySelector(".synthesis-sidebar-title");
+    if (!title || title.getAttribute("data-mtd-lines") === "1") return;
+    var raw = String(title.textContent || "").trim().toLowerCase();
+    if (!raw) return;
+    title.innerHTML = '<span class="mtd-l1">meet the</span><span class="mtd-l2">designers</span>';
+    title.setAttribute("data-mtd-lines", "1");
+  }
   function setupFooterFilmLabLogo() {
     var placeholder = document.querySelector(".cd-footer-film-placeholder");
     if (!placeholder || placeholder.querySelector("img")) return;
@@ -1661,6 +1672,7 @@ const studentData = [
   }
   setupMobileNav();
   setupDesktopAllFilter();
+  setupSidebarTitleLines();
   setupFooterFilmLabLogo();
   var fragment = document.createDocumentFragment();
   var firstClone = null;
