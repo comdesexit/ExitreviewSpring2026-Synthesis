@@ -17,7 +17,7 @@ const studentData = [
       "default": "sarah-manning1.jpg",
       "alt": "sarah-manning2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://sarahmanningdesigns.com",
     "quoteAttribution": "Beetlejuice"
   },
   {
@@ -38,7 +38,7 @@ const studentData = [
       "default": "maggie-brigleb1.jpg",
       "alt": "maggie-brigleb2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://maggiebrigleb.com",
     "quoteAttribution": "Susan Sontag"
   },
   {
@@ -59,7 +59,7 @@ const studentData = [
       "default": "addison-champaign1.jpg",
       "alt": "addison-champaign2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://addisonchampaign.xyz",
     "quoteAttribution": "Wolf Parade"
   },
   {
@@ -80,7 +80,7 @@ const studentData = [
       "default": "angel-roman1.jpg",
       "alt": "angel-roman2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://angelroman.xyz",
     "quoteAttribution": "Angel Roman"
   },
   {
@@ -101,7 +101,7 @@ const studentData = [
       "default": "nathalia-posadas1.jpg",
       "alt": "nathalia-posadas2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://nathaliapdesign.com",
     "quoteAttribution": "Nathalia"
   },
   {
@@ -122,7 +122,7 @@ const studentData = [
       "default": "savannah-flores1.jpg",
       "alt": "savannah-flores2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://savflores.xyz",
     "quoteAttribution": "Maya Angelou"
   },
   {
@@ -143,7 +143,7 @@ const studentData = [
       "default": "jordan-mason1.jpg",
       "alt": "jordan-mason2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://jordanjmasonportfolio.net",
     "quoteAttribution": "Me"
   },
   {
@@ -164,7 +164,7 @@ const studentData = [
       "default": "dylan-crose1.jpg",
       "alt": "dylan-crose2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://studioceres.net",
     "quoteAttribution": "FLCL"
   },
   {
@@ -185,7 +185,7 @@ const studentData = [
       "default": "yaseen-elassar1.jpg",
       "alt": "yaseen-elassar2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://yasseen.design",
     "quoteAttribution": "Robert A. Heinlein"
   },
   {
@@ -206,7 +206,7 @@ const studentData = [
       "default": "emmaline-benson1.jpg",
       "alt": "emmaline-benson2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://emmalinebenson.com",
     "quoteAttribution": "My Mom"
   },
   {
@@ -227,7 +227,7 @@ const studentData = [
       "default": "christina-sustanita1.jpg",
       "alt": "christina-sustanita2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://kristina-sustaita.com",
     "quoteAttribution": "Ron Swanson"
   },
   {
@@ -248,7 +248,7 @@ const studentData = [
       "default": "caroline-trang1.jpg",
       "alt": "caroline-trang2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://carolinetrang.com",
     "quoteAttribution": "Beth Spencer"
   },
   {
@@ -269,7 +269,7 @@ const studentData = [
       "default": "mason-nguyen1.jpg",
       "alt": "mason-nguyen2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://masonswrld.com",
     "quoteAttribution": "Ray Bradbury (Fahrenheit 451)"
   },
   {
@@ -290,7 +290,7 @@ const studentData = [
       "default": "emily-milo1.jpg",
       "alt": "emily-milo2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://emilodesign.com",
     "quoteAttribution": "A Wind In The Door"
   },
   {
@@ -311,7 +311,7 @@ const studentData = [
       "default": "Daniel-davis1.jpg",
       "alt": "Daniel-davis2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://danieldavisdesign.com",
     "quoteAttribution": "Hermann Hesse"
   },
   {
@@ -332,7 +332,7 @@ const studentData = [
       "default": "isaias-perez1.jpg",
       "alt": "isaias-perez2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://isaiasperez.net",
     "quoteAttribution": "Ray Bradbury"
   },
   {
@@ -353,7 +353,7 @@ const studentData = [
       "default": "naia-kaparaju1.jpg",
       "alt": "naia-kaparaju2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://naiadoesdesign.co",
     "quoteAttribution": "Ariana Grande"
   },
   {
@@ -374,7 +374,7 @@ const studentData = [
       "default": "greg-knipp1.jpg",
       "alt": "greg-knipp2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://gregoryknipp.com",
     "quoteAttribution": "Me"
   },
   {
@@ -395,7 +395,7 @@ const studentData = [
       "default": "cole-jacob1.jpg",
       "alt": "cole-jacob2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://colejacob.com",
     "quoteAttribution": "Me"
   },
   {
@@ -416,7 +416,7 @@ const studentData = [
       "default": "nick-bookout1.jpg",
       "alt": "nick-bookout2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://nicholasbookout.com",
     "quoteAttribution": "Me"
   },
   {
@@ -437,7 +437,7 @@ const studentData = [
       "default": "mace-klein1.jpg",
       "alt": "mace-klein2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://wolfbanestudio.portfoliobox.net",
     "quoteAttribution": "Jim Henson"
   },
   {
@@ -458,7 +458,7 @@ const studentData = [
       "default": "cogan-mcbride1.jpg",
       "alt": "cogan-mcbride2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://cogan.myportfolio.com/work",
     "quoteAttribution": "Matthew Mcconaughey"
   },
   {
@@ -479,7 +479,7 @@ const studentData = [
       "default": "ale-sosa.jpg",
       "alt": "ale-sosa1.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://alejandra.design",
     "quoteAttribution": "Elliott Smith"
   },
   {
@@ -500,7 +500,7 @@ const studentData = [
       "default": "mia-kromer1.jpg",
       "alt": "mia-kromer2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://readymag.website/6163390",
     "quoteAttribution": "Annie Dillard, The Writing Life"
   },
   {
@@ -521,7 +521,7 @@ const studentData = [
       "default": "edrick-warren1.jpg",
       "alt": "edrick-warren2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://edrickwarren.com",
     "quoteAttribution": "Jake The Dog"
   },
   {
@@ -542,7 +542,7 @@ const studentData = [
       "default": "Kasey-McMullen1.jpg",
       "alt": "Kasey-McMullen2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://kaseymacdesign.com",
     "quoteAttribution": "Alan Watts"
   },
   {
@@ -563,7 +563,7 @@ const studentData = [
       "default": "shayne-sutton1.jpg",
       "alt": "shayne-sutton2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://shaynesutton.com",
     "quoteAttribution": "Me"
   },
   {
@@ -584,7 +584,7 @@ const studentData = [
       "default": "emily-chu1.jpg",
       "alt": "emily-chu2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://emilychudesigns.com",
     "quoteAttribution": "Me"
   },
   {
@@ -605,7 +605,7 @@ const studentData = [
       "default": "grace-nielsen1.jpg",
       "alt": "grace-nielsen2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://gracenielsen.com",
     "quoteAttribution": "Dolly Parton"
   },
   {
@@ -626,7 +626,7 @@ const studentData = [
       "default": "jez-brown1.jpg",
       "alt": "jez-brown2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://jezbrown.com",
     "quoteAttribution": "Paul Rand"
   },
   {
@@ -647,7 +647,7 @@ const studentData = [
       "default": "yuladraft.jpg",
       "alt": "yuladraft-2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://designedbyyula.com",
     "quoteAttribution": "Yula"
   },
   {
@@ -668,7 +668,7 @@ const studentData = [
       "default": "karen-palacios1.jpg",
       "alt": "karen-palacios2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://karenpalaciosdesigns.xyz",
     "quoteAttribution": "Matthew Perry"
   },
   {
@@ -689,7 +689,7 @@ const studentData = [
       "default": "alex1.jpg",
       "alt": "alex2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://ay-design.xyz",
     "quoteAttribution": "Alex"
   },
   {
@@ -710,7 +710,7 @@ const studentData = [
       "default": "connor-le1.jpg",
       "alt": "connor-le2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://connorledesigns.com",
     "quoteAttribution": "Me"
   },
   {
@@ -731,7 +731,7 @@ const studentData = [
       "default": "lupita-acosta-arroyo1.jpg",
       "alt": "lupita-acosta-arroyo2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://luledesigns.com",
     "quoteAttribution": "Cravity 'Colorful'"
   },
   {
@@ -752,7 +752,7 @@ const studentData = [
       "default": "kristen-pham1.jpg",
       "alt": "kristen-pham2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://kphamdesign.com",
     "quoteAttribution": "Me"
   },
   {
@@ -773,7 +773,7 @@ const studentData = [
       "default": "robert-robinson1.jpg",
       "alt": "robert-robinson2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://robbyrobinsonjr.com",
     "quoteAttribution": "Jake The Dog"
   },
   {
@@ -794,7 +794,7 @@ const studentData = [
       "default": "gabriel-irvine1.jpg",
       "alt": "gabriel-irvine2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://gabrielirvine.com",
     "quoteAttribution": "Richard Siken"
   },
   {
@@ -815,7 +815,7 @@ const studentData = [
       "default": "rowan-chadick1.jpg",
       "alt": "rowan-chadick2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://rowandelaney.design",
     "quoteAttribution": "Broad City"
   },
   {
@@ -836,7 +836,7 @@ const studentData = [
       "default": "lucy-morely1.jpg",
       "alt": "lucy-morely2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://lucygoosydesign.com",
     "quoteAttribution": "Me"
   },
   {
@@ -857,7 +857,7 @@ const studentData = [
       "default": "dylan-escobar1.jpg",
       "alt": "dylan-escobar2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://dylanescobarportfolio.com",
     "quoteAttribution": "Kanye West"
   },
   {
@@ -878,7 +878,7 @@ const studentData = [
       "default": "clint-pickett1.jpg",
       "alt": "clint-pickett2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://readymag.website/u1104659/6146436",
     "quoteAttribution": "Ethan Hawke"
   },
   {
@@ -899,7 +899,7 @@ const studentData = [
       "default": "ava-warren1.jpg",
       "alt": "ava-warren2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://avawarrendesign.com",
     "quoteAttribution": "Antoine De Saint-Exupéry"
   },
   {
@@ -920,7 +920,7 @@ const studentData = [
       "default": "paige-erickson1.jpg",
       "alt": "paige-erickson2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://paige-erickson.com",
     "quoteAttribution": "Dieter F. Uchtdorf"
   },
   {
@@ -941,7 +941,7 @@ const studentData = [
       "default": "summer-belle-puryear1.jpg",
       "alt": "summer-belle-puryear2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://summerbellepuryear.com",
     "quoteAttribution": "The Beatles"
   },
   {
@@ -962,7 +962,7 @@ const studentData = [
       "default": "lucy-beaty1.jpg",
       "alt": "lucy-beaty2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://lucykatedesign.com",
     "quoteAttribution": "LK"
   },
   {
@@ -983,7 +983,7 @@ const studentData = [
       "default": "Jarell-Carr1.jpg",
       "alt": "Jarell-Carr2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://jarellcarr.com",
     "quoteAttribution": "Me"
   },
   {
@@ -1004,7 +1004,7 @@ const studentData = [
       "default": "madison-rey1.jpg",
       "alt": "madison-rey2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://madisonrrey.com",
     "quoteAttribution": "Spider-Man"
   },
   {
@@ -1025,7 +1025,7 @@ const studentData = [
       "default": "zain-fernandez1.jpg",
       "alt": "zain-fernandez2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://zainromeo.design",
     "quoteAttribution": "Me"
   },
   {
@@ -1046,7 +1046,7 @@ const studentData = [
       "default": "austin-daubert1.jpg",
       "alt": "austin-daubert2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://austindaubert.com",
     "quoteAttribution": "Asato Asato"
   },
   {
@@ -1067,7 +1067,7 @@ const studentData = [
       "default": "heidi-brandt1.jpg",
       "alt": "heidi-brandt2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://heidibrandtdesign.com",
     "quoteAttribution": "Matthew Gray Gubler"
   },
   {
@@ -1088,7 +1088,7 @@ const studentData = [
       "default": "ryan-lemoine1.jpg",
       "alt": "ryan-lemoine2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://ryanlemoinecreate.com",
     "quoteAttribution": "Me"
   },
   {
@@ -1109,7 +1109,7 @@ const studentData = [
       "default": "jackson-pickett1.jpg",
       "alt": "jackson-pickett2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://jacksonpickett.com",
     "quoteAttribution": "JP"
   },
   {
@@ -1130,7 +1130,7 @@ const studentData = [
       "default": "juliet-work1.jpg",
       "alt": "juliet-work2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://julietwork.com",
     "quoteAttribution": "Eve Babitz"
   },
   {
@@ -1151,7 +1151,7 @@ const studentData = [
       "default": "riana-de-luna1.jpg",
       "alt": "riana-de-luna2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://rianadeluna.design",
     "quoteAttribution": "My Mom"
   },
   {
@@ -1172,7 +1172,7 @@ const studentData = [
       "default": "derick-gafford1.jpg",
       "alt": "derick-gafford2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://derickgafford.com",
     "quoteAttribution": "Paula Scher"
   },
   {
@@ -1193,7 +1193,7 @@ const studentData = [
       "default": "bethany-raup1.jpg",
       "alt": "bethany-raup2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://bethraup.com",
     "quoteAttribution": "Beth Raup"
   },
   {
@@ -1214,7 +1214,7 @@ const studentData = [
       "default": "autumn-potter1.jpg",
       "alt": "autumn-potter2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://autumnpotter.art",
     "quoteAttribution": "Mom’s Spaghetti"
   },
   {
@@ -1235,7 +1235,7 @@ const studentData = [
       "default": "lilliana-boon1.jpg",
       "alt": "lilliana-boon2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://lillianaboon.com",
     "quoteAttribution": "Me"
   },
   {
@@ -1256,7 +1256,7 @@ const studentData = [
       "default": "arianna-saco1.jpg",
       "alt": "arianna-saco2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://ariannasaco.com",
     "quoteAttribution": "Marc Jacobs"
   },
   {
@@ -1277,7 +1277,7 @@ const studentData = [
       "default": "nick-patterson1.jpg",
       "alt": "nick-patterson2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://nicholas-patterson.com",
     "quoteAttribution": "Kurt Vonnegut"
   },
   {
@@ -1298,7 +1298,7 @@ const studentData = [
       "default": "jayda-robertson1.jpg",
       "alt": "jayda-robertson2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://jrdsign.com",
     "quoteAttribution": "Me"
   },
   {
@@ -1319,7 +1319,7 @@ const studentData = [
       "default": "steve1.jpg",
       "alt": "steve2.jpg"
     },
-    "websiteLink": "",
+    "websiteLink": "https://steve.directory",
     "quoteAttribution": "Me"
   }
 ];
@@ -1386,8 +1386,11 @@ const studentData = [
       ".skeleton-li-icon-wrap img:last-of-type,.skeleton-web-icon-wrap img:last-of-type{opacity:0;transition:opacity .25s}" +
       "[data-id=card-link-linkedin]:hover .skeleton-li-icon-wrap img:first-of-type,[data-id=card-link-website]:not(.is-portfolio-soon):hover .skeleton-web-icon-wrap img:first-of-type{opacity:0!important}" +
       "[data-id=card-link-linkedin]:hover .skeleton-li-icon-wrap img:last-of-type,[data-id=card-link-website]:not(.is-portfolio-soon):hover .skeleton-web-icon-wrap img:last-of-type{opacity:1!important}" +
-      "img[data-id=card-image-default],img[data-id=card-image-alt]{object-fit:cover;width:100%;height:100%;display:block}" +
-      "[data-id=card-image-default]:not(img),[data-id=card-image-alt]:not(img){background-size:cover;background-position:center;width:100%;height:100%}" +
+      "img[data-id=card-image-default],img[data-id=card-image-alt]{object-fit:cover;object-position:center;width:100%;height:100%;min-height:100%;display:block;-webkit-transform:translateZ(0);transform:translateZ(0)}" +
+      "[data-id=card-image-default]:not(img),[data-id=card-image-alt]:not(img){background-size:cover;background-position:center;width:100%;height:100%;min-height:100%;-webkit-transform:translateZ(0);transform:translateZ(0)}" +
+      "#student-grid .skeleton-image-section{overflow:hidden;line-height:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform:translateZ(0);transform:translateZ(0)}" +
+      "#student-grid .skeleton-body-mask{-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform:translateZ(0);transform:translateZ(0)}" +
+      "#student-grid .skeleton-portrait-layer{top:0!important;left:0!important;right:0!important;bottom:-3px!important;height:auto!important;min-height:calc(100% + 3px)!important;-webkit-transform:translateZ(0);transform:translateZ(0)}" +
       ".skeleton-card [data-id=card-body-mask]{pointer-events:none}" +
       "[data-id=card-link-website].is-portfolio-soon{pointer-events:none!important;cursor:default!important;background:#fff!important;color:#030303!important;text-decoration:none!important}" +
       "[data-id=card-link-website].is-portfolio-soon:hover{background:#fff!important}" +
