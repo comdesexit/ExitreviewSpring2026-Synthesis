@@ -1342,8 +1342,8 @@ const studentData = [
   // Footer later: keep these wrappers in document flow so a block footer below main stacks naturally;
   // for a sticky-to-viewport footer, use flex column + flex-grow on main or min-height on an outer shell.
   document.body.classList.add("synthesis-dynamic-main");
-  var BURGER_OPEN_ICON = "https://cdn.prod.website-files.com/6998c486514bf94d4fda2ae2/69f0eec2cfdca378607202f8_burgeropen.png";
-  var BURGER_CLOSE_ICON = "https://cdn.prod.website-files.com/6998c486514bf94d4fda2ae2/69f0eec3fa4b96304358e49c_burgerclose.png";
+  var BURGER_OPEN_ICON = "https://cdn.prod.website-files.com/6998c486514bf94d4fda2ae2/69f0eec3fa4b96304358e49c_burgerclose.png";
+  var BURGER_CLOSE_ICON = "https://cdn.prod.website-files.com/6998c486514bf94d4fda2ae2/69f0eec2cfdca378607202f8_burgeropen.png";
   var SAN_MARCOS_FILM_LAB_LOGO = "https://cdn.prod.website-files.com/6998c486514bf94d4fda2ae2/69f0ef29e55d187717eaa149_San%20Macros%20Film%20Lab%20Logo.png";
   var STYLE_ID = "w1";
   if (!document.getElementById(STYLE_ID)) {
@@ -1393,7 +1393,7 @@ const studentData = [
       /* Mobile / tablet: keep filters in document flow so they do not sit on top of the card grid.
          Webflow often pairs a sticky sidebar with a multi-column layout; sticky + z-index can read as a
          floating layer on narrow viewports. */
-      "@media screen and (max-width:991px){" +
+      "@media screen and (max-width:720px){" +
       "body.synthesis-dynamic-main .synthesis-nav-btn-corners{display:none!important}" +
       "body.synthesis-dynamic-main .synthesis-nav-bar{position:sticky;top:0;z-index:120}" +
       "body.synthesis-dynamic-main #synthesis-mobile-toggle{display:inline-flex!important;position:relative;z-index:122;align-items:center;justify-content:center;width:58px;height:58px;padding:0;border:0;background:transparent;cursor:pointer}" +
@@ -1402,14 +1402,18 @@ const studentData = [
       "body.synthesis-dynamic-main #synthesis-mobile-toggle .burger-close{opacity:0;transform:rotate(-8deg)}" +
       "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-toggle .burger-open{opacity:0;transform:rotate(8deg)}" +
       "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-toggle .burger-close{opacity:1;transform:rotate(0deg)}" +
-      "body.synthesis-dynamic-main #synthesis-mobile-menu{display:block!important;position:sticky;top:84px;z-index:121;padding:16px 24px 24px;background:rgba(253,253,253,.72);-webkit-backdrop-filter:blur(17px);backdrop-filter:blur(17px);border-radius:0 0 8px 8px;max-height:0;overflow:hidden;opacity:0;transform:translateY(-8px);transition:max-height .4s cubic-bezier(.22,1,.36,1),opacity .28s ease,transform .28s ease}" +
+      "body.synthesis-dynamic-main #synthesis-mobile-menu{display:block!important;position:sticky;top:84px;z-index:121;width:100vw;margin-left:calc(50% - 50vw);padding:16px 40px 24px;background:rgba(253,253,253,.72);-webkit-backdrop-filter:blur(17px);backdrop-filter:blur(17px);border-radius:0;max-height:0;overflow:hidden;opacity:0;transform:translateY(-8px);transition:max-height .4s cubic-bezier(.22,1,.36,1),opacity .28s ease,transform .28s ease}" +
       "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu{max-height:78vh;overflow:auto;opacity:1;transform:translateY(0)}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-actions{padding:8px 8px 20px;display:flex;flex-direction:column}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-action-link{display:flex;align-items:center;height:40px;border-bottom:1px solid #141414;color:#030303;font-weight:600;letter-spacing:.01em;text-decoration:none}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-actions{padding:8px 0 20px;display:flex;flex-wrap:wrap;gap:10px}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-action-wrap{flex:1 1 240px;min-width:220px}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-action-wrap .cd-donate-btn{width:100%}" +
       "body.synthesis-dynamic-main .synthesis-mobile-title{margin:0;padding:6px 0 22px;font-size:52px;line-height:.89;color:#141414;font-family:'Veelo Neue',Arial,sans-serif;font-weight:400;letter-spacing:0;text-transform:lowercase}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-label{margin:0 0 8px;color:#e1008d;font-size:20px;font-weight:700}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-list{display:flex;flex-direction:column;border-radius:8px;overflow:hidden}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-item{display:flex;align-items:flex-end;height:48px;padding:8px;border-bottom:1px solid #030303;background:transparent;text-decoration:none}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-list{display:flex;flex-direction:column;border:1px solid #141414;border-radius:14px;overflow:hidden;width:100%}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item{display:flex;align-items:center;min-height:56px;padding:8px 18px;border-bottom:1px solid #141414;background:transparent;text-decoration:none}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item:last-child{border-bottom:0}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item:first-child{border-top-left-radius:14px;border-top-right-radius:14px}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item:last-child{border-bottom-left-radius:14px;border-bottom-right-radius:14px}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item .tag-label{color:#030303;font-size:16px;font-weight:600;letter-spacing:.01em}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc0:is(.wfp,:hover){background:#28b5ff!important}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc1:is(.wfp,:hover){background:#ffe23a!important}" +
@@ -1537,15 +1541,22 @@ const studentData = [
     menu.setAttribute("aria-hidden", "true");
     var actions = document.createElement("div");
     actions.className = "synthesis-mobile-actions";
-    function createAction(label, href) {
+    function createAction(label, href, isBehind) {
+      var wrap = document.createElement("div");
+      wrap.className = "div-block-7 synthesis-nav-btn-corners synthesis-mobile-action-wrap";
+      if (isBehind) wrap.classList.add("synthesis-nav-behind");
       var a = document.createElement("a");
       a.href = href || "#";
-      a.className = "synthesis-mobile-action-link";
-      a.textContent = label;
-      actions.appendChild(a);
+      a.className = "link-block cd-donate-btn w-inline-block";
+      var p = document.createElement("p");
+      p.className = "paragraph-2 cd-donate-label";
+      p.textContent = label;
+      a.appendChild(p);
+      wrap.appendChild(a);
+      actions.appendChild(wrap);
     }
-    createAction("Archive", archiveA && archiveA.getAttribute("href"));
-    createAction("Behind the scenes", behindA && behindA.getAttribute("href"));
+    createAction("Archive", archiveA && archiveA.getAttribute("href"), false);
+    createAction("Behind the scenes", behindA && behindA.getAttribute("href"), true);
     menu.appendChild(actions);
 
     var title = document.createElement("p");
