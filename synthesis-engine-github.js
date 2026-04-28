@@ -1361,13 +1361,13 @@ const studentData = [
       "!important}" +
       ".synthesis-sidebar .tag-label,.synthesis-sidebar a.tag-item .tag-label{font-weight:600!important;color:#141414!important}" +
       "@media screen and (min-width:992px){#student-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;column-gap:clamp(6px,1vw,18px)!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;padding-right:clamp(16px,2.5vw,48px)!important;padding-left:clamp(16px,2.5vw,48px)!important}#student-grid > .skeleton-card{min-width:0!important}}" +
-      "#student-grid > .skeleton-card.wfh{opacity:0;transform:scale(0.95);pointer-events:none;visibility:hidden;width:0!important;min-width:0!important;max-width:0!important;margin:0!important;padding:0!important;border-width:0!important;overflow:hidden!important;transition:opacity .45s cubic-bezier(0.22,1,0.36,1),transform .45s cubic-bezier(0.22,1,0.36,1),max-width .5s cubic-bezier(0.22,1,0.36,1),width .5s cubic-bezier(0.22,1,0.36,1),padding .4s ease,margin .4s ease}" +
+      "#student-grid > .skeleton-card.wfh{opacity:0;transform:scale(0.95);pointer-events:none;visibility:hidden;width:0!important;min-width:0!important;max-width:0!important;margin:0!important;padding:0!important;border-width:0!important;overflow:hidden!important;transition:opacity 1s cubic-bezier(0.22,1,0.36,1),transform 1s cubic-bezier(0.22,1,0.36,1),max-width 1s cubic-bezier(0.22,1,0.36,1),width 1s cubic-bezier(0.22,1,0.36,1),padding .9s ease,margin .9s ease}" +
       "@media (prefers-reduced-motion:reduce){#student-grid > .skeleton-card.wfh{transition:none!important;transform:none}}" +
       ".wft{mix-blend-mode:multiply;transition:background .15s;background:transparent}" +
       ".wft.wfc0:is(.wfp,:hover){background:#28b5ff}" +
       ".wft.wfc1:is(.wfp,:hover){background:#ffe23a}" +
       ".wft.wfc2:is(.wfp,:hover){background:#e1008d}" +
-      "#student-grid .wfa{transition:transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);z-index:2}" +
+      "#student-grid .wfa{transition:transform 1s cubic-bezier(0.22, 1, 0.36, 1);z-index:2}" +
       ".skeleton-card:hover [data-id=card-image-default]{opacity:0!important}" +
       ".skeleton-card:hover [data-id=card-switch-icon],.skeleton-card:hover [data-id=card-switch-icon] img{opacity:1!important}" +
       "[data-id=card-switch-icon] img{opacity:1;transition:opacity .35s}" +
@@ -1954,7 +1954,7 @@ const studentData = [
         c.style.display = "none";
         c.setAttribute("aria-hidden", "true");
         cardHideTimers.delete(c);
-      }, 220);
+      }, 1000);
       cardHideTimers.set(c, t);
     }
     function al() {
@@ -1968,7 +1968,7 @@ const studentData = [
       var to = main.scrollHeight;
       if (!from || !to || Math.abs(from - to) < 1) return;
       main.style.height = from + "px";
-      main.style.transition = "height .38s cubic-bezier(0.22,1,0.36,1)";
+      main.style.transition = "height 1s cubic-bezier(0.22,1,0.36,1)";
       requestAnimationFrame(function () {
         main.style.height = to + "px";
       });
@@ -1976,7 +1976,7 @@ const studentData = [
         main.style.height = "";
         main.style.transition = "";
         layoutAnimTimer = null;
-      }, 430);
+      }, 1050);
     }
     function ap() {
       ca();
@@ -2061,7 +2061,7 @@ const studentData = [
               x.classList.remove("wfa");
               x.style.transform = "";
             });
-          }, 600);
+          }, 1000);
         });
       });
     }
