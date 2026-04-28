@@ -1689,9 +1689,9 @@ const studentData = [
       var t1 = q("card-tag-1"),
         t2 = q("card-tag-2"),
         t3 = q("card-tag-3");
-      if (t1) t1.className = "skeleton-tag skeleton-tag-blue skeleton-tag-first";
+      if (t1) t1.className = "skeleton-tag skeleton-tag-blue";
       if (t2) t2.className = "skeleton-tag skeleton-tag-yellow";
-      if (t3) t3.className = "skeleton-tag skeleton-tag-pink skeleton-tag-last";
+      if (t3) t3.className = "skeleton-tag skeleton-tag-pink";
     })();
     var nameEl = q("card-name");
     if (nameEl) nameEl.textContent = student.preferredName;
@@ -1727,6 +1727,20 @@ const studentData = [
       if (tags[2]) tagText(tag3, tags[2]);
       else tag3.style.display = "none";
     }
+    (function normalizeSkeletonTagRowEnds() {
+      var slots = [tag1, tag2, tag3];
+      slots.forEach(function (el) {
+        if (!el) return;
+        el.classList.remove("skeleton-tag-first", "skeleton-tag-last");
+      });
+      var vis = slots.filter(function (el) {
+        return el && el.style.display !== "none";
+      });
+      if (!vis.length) return;
+      vis[0].classList.add("skeleton-tag-first");
+      if (vis.length === 1) vis[0].classList.add("skeleton-tag-last");
+      else vis[vis.length - 1].classList.add("skeleton-tag-last");
+    })();
     card.setAttribute("data-tags", student.focusTags || "");
     var rows = dr(student);
     var statQs = card.querySelectorAll(".skeleton-stat-q");
