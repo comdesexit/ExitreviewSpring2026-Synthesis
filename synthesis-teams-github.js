@@ -8,7 +8,7 @@
   var COLOR_ATTR = "data-synthesis-team-color";
   var ACTIVE_ATTR = "data-synthesis-active-team";
   var VERSION_ATTR = "data-synthesis-teams-version";
-  var VERSION = "1.1.0";
+  var VERSION = "1.1.1";
   var FADE_DURATION = 220;
   var LEAVING_PANE_CLASS = "synthesis-teams-pane-leaving";
 
@@ -156,13 +156,23 @@
     fadeTimers[key] = null;
   }
 
-  function showPane(pane) {
+  function showPane(pane, animate) {
     clearFadeTimer(pane);
-    pane.classList.remove(LEAVING_PANE_CLASS);
-    pane.classList.add(ACTIVE_PANE_CLASS, "is-open");
+    pane.classList.remove(LEAVING_PANE_CLASS, ACTIVE_PANE_CLASS);
     pane.classList.remove("w--tab-active");
     pane.setAttribute("aria-hidden", "false");
     pane.style.setProperty("display", "flex", "important");
+
+    if (!animate) {
+      pane.classList.add(ACTIVE_PANE_CLASS, "is-open");
+      return;
+    }
+
+    // Let the browser paint the pane at opacity 0 before fading it in.
+    pane.offsetWidth;
+    window.requestAnimationFrame(function () {
+      pane.classList.add(ACTIVE_PANE_CLASS, "is-open");
+    });
   }
 
   function hidePane(pane, animate) {
@@ -199,7 +209,8 @@
     var container = root();
     if (!container || !name) return;
 
-    var shouldAnimate = currentTabName && currentTabName !== name;
+    var previousTabName = currentTabName || initialTabName();
+    var shouldAnimate = previousTabName && previousTabName !== name;
 
     applying = true;
     currentTabName = name;
@@ -215,12 +226,14 @@
     });
 
     panes().forEach(function (pane) {
-      var isActive = pane.getAttribute("data-w-tab") === name;
+      var paneName = pane.getAttribute("data-w-tab");
+      var isActive = paneName === name;
+      var wasActive = paneName === previousTabName;
 
       if (isActive) {
-        showPane(pane);
+        showPane(pane, shouldAnimate);
       } else {
-        hidePane(pane, shouldAnimate);
+        hidePane(pane, shouldAnimate && wasActive);
       }
     });
 
