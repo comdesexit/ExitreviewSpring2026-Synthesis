@@ -1405,8 +1405,9 @@ const studentData = [
       "@media screen and (max-width:720px){" +
       "body.synthesis-dynamic-main .synthesis-nav-btn-corners{display:none!important}" +
       "body.synthesis-dynamic-main .synthesis-nav-bar{position:sticky;top:0;z-index:120;display:block;height:88px;min-height:88px;max-height:88px;flex-shrink:0;box-sizing:border-box;padding-left:40px!important;padding-right:40px!important}" +
-      "body.synthesis-dynamic-main .synthesis-nav-left{position:absolute;left:40px;top:0;bottom:0;display:flex;align-items:center;justify-content:flex-start;margin:0}" +
-      "body.synthesis-dynamic-main .synthesis-nav-logo-img{display:block;height:34px;width:auto;object-fit:contain;transform:translateY(2px)}" +
+      "body.synthesis-dynamic-main .synthesis-nav-left{position:absolute!important;left:40px;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;display:flex!important;align-items:center!important;justify-content:flex-start;margin:0}" +
+      "body.synthesis-dynamic-main .synthesis-nav-left .w-inline-block,body.synthesis-dynamic-main .synthesis-nav-left a{display:flex!important;align-items:center!important;line-height:0}" +
+      "body.synthesis-dynamic-main .synthesis-nav-logo-img{display:block;height:34px;width:auto;max-height:34px;object-fit:contain;transform:none}" +
       "body.synthesis-dynamic-main #synthesis-mobile-toggle{display:inline-flex!important;position:relative;z-index:122;align-items:center;justify-content:center;flex:0 0 auto;width:58px;height:58px;min-width:58px;min-height:58px;padding:0;border:0;background:transparent;cursor:pointer;line-height:0}" +
       "body.synthesis-dynamic-main #synthesis-mobile-toggle{position:absolute!important;right:40px;top:50%!important;transform:translateY(-50%)}" +
       "body.synthesis-dynamic-main #synthesis-mobile-toggle img{position:absolute;inset:0;margin:auto;width:54px;height:54px;object-fit:contain;transition:opacity .34s ease,transform .34s cubic-bezier(0.22,1,0.36,1)}" +
