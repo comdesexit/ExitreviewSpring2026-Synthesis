@@ -1167,7 +1167,7 @@ const studentData = [
     "myTools": "Drawing tablet",
     "whatsPlaying": "",
     "whatsOnYourDesk": "Various figurines",
-    "linkedinLink": "https://www.linkedin.com/in/derick-gafford-a307272a9/",
+    "linkedinLink": "www.linkedin.com/in/derick-g-a307272a9",
     "images": {
       "default": "derick-gafford1.jpg",
       "alt": "derick-gafford2.jpg"
