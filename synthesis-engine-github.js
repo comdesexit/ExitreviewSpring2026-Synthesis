@@ -1330,18 +1330,29 @@ const studentData = [
     (grid && grid.querySelector("#skeleton-card")) ||
     (grid && grid.querySelector(".skeleton-card")) ||
     document.querySelector(".skeleton-card");
-  if (typeof studentData === "undefined" || !grid || !skeleton) return;
-  if (grid.dataset.g1 === "1") return;
-  grid.dataset.g1 = "1";
+  var isGridPage =
+    typeof studentData !== "undefined" && !!grid && !!skeleton;
+
+  if (isGridPage) {
+    if (grid.dataset.g1 === "1") return;
+    grid.dataset.g1 = "1";
+  } else if (!document.getElementById("synthesis-nav")) {
+    return;
+  }
+
   var defaultPortfolioBtnLabel = "Website";
-  var skWebLabel = skeleton.querySelector("#card-link-website .skeleton-web-label");
-  if (skWebLabel && skWebLabel.textContent.trim()) {
-    defaultPortfolioBtnLabel = skWebLabel.textContent.trim();
+  if (isGridPage && skeleton) {
+    var skWebLabel = skeleton.querySelector("#card-link-website .skeleton-web-label");
+    if (skWebLabel && skWebLabel.textContent.trim()) {
+      defaultPortfolioBtnLabel = skWebLabel.textContent.trim();
+    }
   }
   // Let page height follow filtered card count; site wrappers use min-height:100vh in Webflow.
   // Footer later: keep these wrappers in document flow so a block footer below main stacks naturally;
   // for a sticky-to-viewport footer, use flex column + flex-grow on main or min-height on an outer shell.
-  document.body.classList.add("synthesis-dynamic-main");
+  if (document.getElementById("synthesis-nav") || isGridPage) {
+    document.body.classList.add("synthesis-dynamic-main");
+  }
   var BURGER_OPEN_ICON = "https://cdn.prod.website-files.com/6998c486514bf94d4fda2ae2/69f0eec3fa4b96304358e49c_burgerclose.png";
   var BURGER_CLOSE_ICON = "https://cdn.prod.website-files.com/6998c486514bf94d4fda2ae2/69f0eec2cfdca378607202f8_burgeropen.png";
   var SAN_MARCOS_FILM_LAB_LOGO = "https://cdn.prod.website-files.com/6998c486514bf94d4fda2ae2/69f0ef29e55d187717eaa149_San%20Macros%20Film%20Lab%20Logo.png";
@@ -1417,6 +1428,7 @@ const studentData = [
       "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-toggle .burger-close{opacity:1;transform:rotate(0deg)}" +
       "body.synthesis-dynamic-main #synthesis-mobile-menu{display:block!important;position:sticky;top:88px;z-index:121;width:100vw;margin-left:calc(50% - 50vw);margin-top:0;padding:0 40px 72px;background:rgba(253,253,253,.72);-webkit-backdrop-filter:blur(17px);backdrop-filter:blur(17px);border-radius:0;height:0;overflow:hidden;opacity:0;transform:translateY(0);transition:height .4s cubic-bezier(.22,1,.36,1),opacity .28s ease}" +
       "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu{height:calc(100vh - 88px);overflow:auto;opacity:1;transform:translateY(0)}" +
+      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu.synthesis-mobile-menu--links-only{height:auto!important;min-height:0;max-height:calc(100vh - 88px)}" +
       "body.synthesis-dynamic-main .synthesis-mobile-actions{padding:8px 0 20px;display:flex;flex-wrap:wrap;gap:10px}" +
       "body.synthesis-dynamic-main .synthesis-mobile-action-wrap{flex:1 1 240px;min-width:220px;border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;overflow:hidden}" +
       "body.synthesis-dynamic-main .synthesis-mobile-action-wrap .cd-donate-btn{width:100%;height:100%;border-radius:0!important}" +
@@ -1593,40 +1605,45 @@ const studentData = [
     createAction("Process", behindA && behindA.getAttribute("href"), true);
     menu.appendChild(actions);
 
-    var title = document.createElement("p");
-    title.className = "synthesis-mobile-title";
-    title.textContent = "meet the designers";
-    menu.appendChild(title);
+    var includeMobileFilters = !!document.getElementById("student-grid");
+    if (includeMobileFilters) {
+      var title = document.createElement("p");
+      title.className = "synthesis-mobile-title";
+      title.textContent = "meet the designers";
+      menu.appendChild(title);
 
-    var filterLabel = document.createElement("p");
-    filterLabel.className = "synthesis-mobile-filter-label";
-    filterLabel.textContent = "Filter";
-    menu.appendChild(filterLabel);
+      var filterLabel = document.createElement("p");
+      filterLabel.className = "synthesis-mobile-filter-label";
+      filterLabel.textContent = "Filter";
+      menu.appendChild(filterLabel);
 
-    var filterList = document.createElement("div");
-    filterList.className = "synthesis-mobile-filter-list";
-    function addFilterItem(label, isAll) {
-      var a = document.createElement("a");
-      a.href = "#";
-      a.className = "synthesis-mobile-filter-item wft";
-      if (isAll) a.setAttribute("data-all-filter", "1");
-      var p = document.createElement("p");
-      p.className = "tag-label";
-      p.textContent = label;
-      a.appendChild(p);
-      filterList.appendChild(a);
+      var filterList = document.createElement("div");
+      filterList.className = "synthesis-mobile-filter-list";
+      function addFilterItem(label, isAll) {
+        var a = document.createElement("a");
+        a.href = "#";
+        a.className = "synthesis-mobile-filter-item wft";
+        if (isAll) a.setAttribute("data-all-filter", "1");
+        var p = document.createElement("p");
+        p.className = "tag-label";
+        p.textContent = label;
+        a.appendChild(p);
+        filterList.appendChild(a);
+      }
+      addFilterItem("All", true);
+      var used = { all: true };
+      var sidebarLabels = document.querySelectorAll(".synthesis-sidebar .tag-label");
+      sidebarLabels.forEach(function (el) {
+        var t = String(el.textContent || "").trim();
+        var k = t.toLowerCase();
+        if (!t || used[k]) return;
+        used[k] = true;
+        addFilterItem(t, false);
+      });
+      menu.appendChild(filterList);
+    } else {
+      menu.classList.add("synthesis-mobile-menu--links-only");
     }
-    addFilterItem("All", true);
-    var used = { all: true };
-    var sidebarLabels = document.querySelectorAll(".synthesis-sidebar .tag-label");
-    sidebarLabels.forEach(function (el) {
-      var t = String(el.textContent || "").trim();
-      var k = t.toLowerCase();
-      if (!t || used[k]) return;
-      used[k] = true;
-      addFilterItem(t, false);
-    });
-    menu.appendChild(filterList);
     nav.insertAdjacentElement("afterend", menu);
 
     toggle.addEventListener("click", function () {
@@ -1680,6 +1697,9 @@ const studentData = [
   setupDesktopAllFilter();
   setupSidebarTitleLines();
   setupFooterFilmLabLogo();
+  if (!isGridPage) {
+    return;
+  }
   var fragment = document.createDocumentFragment();
   var firstClone = null;
   var P = "https://cdn.jsdelivr.net/gh/comdesexit/ExitreviewSpring2026-Synthesis@main/Synthesis-Images/Portraits/";
