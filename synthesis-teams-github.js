@@ -8,13 +8,16 @@
   var COLOR_ATTR = "data-synthesis-team-color";
   var ACTIVE_ATTR = "data-synthesis-active-team";
   var VERSION_ATTR = "data-synthesis-teams-version";
-  var VERSION = "1.0.0";
+  var VERSION = "1.1.0";
+  var FADE_DURATION = 220;
+  var LEAVING_PANE_CLASS = "synthesis-teams-pane-leaving";
 
   var COLORS = ["blue", "yellow", "pink"];
   var currentTabName = null;
   var observer = null;
   var applying = false;
   var scheduled = false;
+  var fadeTimers = {};
 
   function toArray(list) {
     return Array.prototype.slice.call(list || []);
@@ -50,6 +53,18 @@
       " p.about-teams-name{white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important}" +
       ROOT_SELECTOR +
       " .about-teams-links a.about-teams-tab-link{background-color:#fdfdfd!important;color:#030303!important;transition:background-color .15s ease!important;text-decoration:none!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-content .about-teams-pane{opacity:0!important;transition:opacity " +
+      FADE_DURATION +
+      "ms ease!important;will-change:opacity!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-content .about-teams-pane." +
+      ACTIVE_PANE_CLASS +
+      "{opacity:1!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-content .about-teams-pane." +
+      LEAVING_PANE_CLASS +
+      "{opacity:0!important}" +
       ROOT_SELECTOR +
       " .about-teams-links a.about-teams-tab-link:last-child{border-bottom-width:0!important;border-bottom-style:none!important}" +
       ROOT_SELECTOR +
@@ -129,9 +144,62 @@
     return firstTabName();
   }
 
+  function paneKey(pane) {
+    return pane.getAttribute("data-w-tab") || "";
+  }
+
+  function clearFadeTimer(pane) {
+    var key = paneKey(pane);
+    if (!key || !fadeTimers[key]) return;
+
+    window.clearTimeout(fadeTimers[key]);
+    fadeTimers[key] = null;
+  }
+
+  function showPane(pane) {
+    clearFadeTimer(pane);
+    pane.classList.remove(LEAVING_PANE_CLASS);
+    pane.classList.add(ACTIVE_PANE_CLASS, "is-open");
+    pane.classList.remove("w--tab-active");
+    pane.setAttribute("aria-hidden", "false");
+    pane.style.setProperty("display", "flex", "important");
+  }
+
+  function hidePane(pane, animate) {
+    var key = paneKey(pane);
+
+    pane.classList.remove(ACTIVE_PANE_CLASS, "is-open", "w--tab-active");
+    pane.setAttribute("aria-hidden", "true");
+
+    if (!animate && pane.classList.contains(LEAVING_PANE_CLASS) && fadeTimers[key]) {
+      return;
+    }
+
+    if (!animate) {
+      clearFadeTimer(pane);
+      pane.classList.remove(LEAVING_PANE_CLASS);
+      pane.style.setProperty("display", "none", "important");
+      return;
+    }
+
+    pane.classList.add(LEAVING_PANE_CLASS);
+    pane.style.setProperty("display", "flex", "important");
+    clearFadeTimer(pane);
+
+    fadeTimers[key] = window.setTimeout(function () {
+      applying = true;
+      pane.classList.remove(LEAVING_PANE_CLASS);
+      pane.style.setProperty("display", "none", "important");
+      applying = false;
+      fadeTimers[key] = null;
+    }, FADE_DURATION);
+  }
+
   function applyState(name) {
     var container = root();
     if (!container || !name) return;
+
+    var shouldAnimate = currentTabName && currentTabName !== name;
 
     applying = true;
     currentTabName = name;
@@ -148,11 +216,12 @@
 
     panes().forEach(function (pane) {
       var isActive = pane.getAttribute("data-w-tab") === name;
-      pane.classList.toggle(ACTIVE_PANE_CLASS, isActive);
-      pane.classList.toggle("is-open", isActive);
-      pane.classList.remove("w--tab-active");
-      pane.setAttribute("aria-hidden", isActive ? "false" : "true");
-      pane.style.setProperty("display", isActive ? "flex" : "none", "important");
+
+      if (isActive) {
+        showPane(pane);
+      } else {
+        hidePane(pane, shouldAnimate);
+      }
     });
 
     applying = false;
