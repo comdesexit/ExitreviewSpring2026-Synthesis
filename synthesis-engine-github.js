@@ -33,7 +33,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "Minimum 3 beverages",
-    "linkedinLink": "www.linkedin.com/in/maggie-brigleb-2498ab311",
+    "linkedinLink": "https://www.linkedin.com/in/maggie-brigleb-2498ab311/",
     "images": {
       "default": "maggie-brigleb1.jpg",
       "alt": "maggie-brigleb2.jpg"
@@ -75,7 +75,7 @@ const studentData = [
     "myTools": "Illustrator, Figma, IPad",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/angelroman07",
+    "linkedinLink": "https://www.linkedin.com/in/angelroman07/",
     "images": {
       "default": "angel-roman1.jpg",
       "alt": "angel-roman2.jpg"
@@ -96,7 +96,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Spanish rock: Mana",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/nathalia-posadas-a328822a3",
+    "linkedinLink": "https://www.linkedin.com/in/nathalia-posadas-a328822a3/",
     "images": {
       "default": "nathalia-posadas1.jpg",
       "alt": "nathalia-posadas2.jpg"
@@ -117,7 +117,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Jazz",
     "whatsOnYourDesk": "My cat Ciggy",
-    "linkedinLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/savannah-flores-978208304/",
     "images": {
       "default": "savannah-flores1.jpg",
       "alt": "savannah-flores2.jpg"
@@ -222,7 +222,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Sleep Token",
     "whatsOnYourDesk": "",
-    "linkedinLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/kristina-sustaita-3156212ab/",
     "images": {
       "default": "christina-sustanita1.jpg",
       "alt": "christina-sustanita2.jpg"
@@ -642,7 +642,7 @@ const studentData = [
     "myTools": "Figma, AI, PS, AD",
     "whatsPlaying": "Lo-fi",
     "whatsOnYourDesk": "Laptop, Charger, And too many tabs open",
-    "linkedinLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/yulam/",
     "images": {
       "default": "yuladraft.jpg",
       "alt": "yuladraft-2.jpg"
@@ -684,7 +684,7 @@ const studentData = [
     "myTools": "Sketchbook",
     "whatsPlaying": "The Smiths, Etc.",
     "whatsOnYourDesk": "Graphite pencils",
-    "linkedinLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/alexander-yen-179991277/",
     "images": {
       "default": "alex1.jpg",
       "alt": "alex2.jpg"
@@ -873,7 +873,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Deftones",
     "whatsOnYourDesk": "",
-    "linkedinLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/clintjpdesign/",
     "images": {
       "default": "clint-pickett1.jpg",
       "alt": "clint-pickett2.jpg"
@@ -1020,7 +1020,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/zain-romeo-fernandez-9070b734b/",
     "images": {
       "default": "zain-fernandez1.jpg",
       "alt": "zain-fernandez2.jpg"
@@ -1272,7 +1272,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Korn & Classical Piano",
     "whatsOnYourDesk": "",
-    "linkedinLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/nicholas-patterson-74a408114/",
     "images": {
       "default": "nick-patterson1.jpg",
       "alt": "nick-patterson2.jpg"
