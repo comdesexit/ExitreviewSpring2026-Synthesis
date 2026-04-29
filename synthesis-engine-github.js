@@ -1366,7 +1366,7 @@ const studentData = [
       "body.synthesis-dynamic-main .cd-page-wrapper," +
       "body.synthesis-dynamic-main .synthesis-page-wrap{min-height:auto!important}" +
       ".synthesis-sidebar{position:sticky!important;top:48px!important;z-index:5!important;align-self:flex-start!important;max-height:calc(100vh - 64px)!important;overflow:auto!important;overscroll-behavior:contain}" +
-      "#student-grid{--card-slide-y:-278px}" +
+      "#student-grid{--card-slide-y:-278px;justify-items:center!important}" +
       "@media screen and (max-width:991px){#student-grid{column-gap:24px!important;row-gap:24px!important}}" +
       "#student-grid,#student-grid .skeleton-card,#student-grid .skeleton-card *{font-family:" +
       cardFont +
@@ -1377,6 +1377,7 @@ const studentData = [
       "@media screen and (min-width:992px) and (max-width:1360px){.synthesis-sidebar{flex:0 0 clamp(158px,17vw,214px)!important;max-width:clamp(158px,17vw,214px)!important}.synthesis-sidebar .synthesis-sidebar-title{width:clamp(150px,16vw,214px)!important;max-width:100%!important;font-size:clamp(26px,3.2vw,42px)!important;line-height:.82!important}.synthesis-sidebar .synthesis-filter-wrap{width:clamp(150px,16vw,214px)!important;max-width:100%!important}.synthesis-sidebar .tag-item{width:100%!important;max-width:100%!important}}" +
       "@media screen and (min-width:992px) and (max-width:1169px){#student-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;column-gap:24px!important;row-gap:24px!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;padding-right:clamp(10px,1.3vw,20px)!important;padding-left:clamp(2px,.5vw,8px)!important}#student-grid > .skeleton-card{min-width:0!important}}" +
       "@media screen and (min-width:1170px){#student-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;column-gap:24px!important;row-gap:24px!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;padding-right:clamp(12px,1.5vw,24px)!important;padding-left:clamp(2px,.4vw,6px)!important}#student-grid > .skeleton-card{min-width:0!important}}" +
+      "#student-grid > .skeleton-card{width:100%!important;max-width:350px!important;justify-self:center!important}" +
       "#student-grid > .skeleton-card.wfh{opacity:0;transform:scale(0.95);pointer-events:none;visibility:hidden;width:0!important;min-width:0!important;max-width:0!important;margin:0!important;padding:0!important;border-width:0!important;overflow:hidden!important;transition:opacity 1s cubic-bezier(0.22,1,0.36,1),transform 1s cubic-bezier(0.22,1,0.36,1),max-width 1s cubic-bezier(0.22,1,0.36,1),width 1s cubic-bezier(0.22,1,0.36,1),padding .9s ease,margin .9s ease}" +
       "@media (prefers-reduced-motion:reduce){#student-grid > .skeleton-card.wfh{transition:none!important;transform:none}}" +
       ".wft{mix-blend-mode:multiply;transition:background .15s;background:transparent}" +
@@ -1552,6 +1553,21 @@ const studentData = [
     if (!nav || document.getElementById("synthesis-mobile-toggle")) return;
     var navLeft = nav.querySelector(".synthesis-nav-left");
     if (!navLeft) return;
+    var logoLink = navLeft.querySelector("a");
+    if (logoLink) {
+      logoLink.href = "/synthesis";
+      logoLink.removeAttribute("target");
+      logoLink.removeAttribute("rel");
+    } else {
+      var logo = navLeft.querySelector(".synthesis-nav-logo-img");
+      if (logo) {
+        logoLink = document.createElement("a");
+        logoLink.href = "/synthesis";
+        logoLink.setAttribute("aria-label", "Synthesis");
+        logo.parentNode.insertBefore(logoLink, logo);
+        logoLink.appendChild(logo);
+      }
+    }
     var archiveA = document.getElementById("nav-skeleton-archive");
     var behindA = document.getElementById("nav-skeleton-behind");
     var toggle = document.createElement("button");
@@ -1589,6 +1605,10 @@ const studentData = [
         a = source.cloneNode(true);
         a.removeAttribute("id");
         a.href = href || source.getAttribute("href") || "#";
+        if (isBehind) {
+          a.removeAttribute("target");
+          a.removeAttribute("rel");
+        }
       } else {
         a = document.createElement("a");
         a.href = href || "#";
@@ -1602,7 +1622,7 @@ const studentData = [
       actions.appendChild(wrap);
     }
     createAction("Archive", archiveA && archiveA.getAttribute("href"), false);
-    createAction("Process", behindA && behindA.getAttribute("href"), true);
+    createAction("Process", "/process", true);
     menu.appendChild(actions);
 
     var includeMobileFilters = !!document.getElementById("student-grid");
