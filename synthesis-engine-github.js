@@ -1811,6 +1811,13 @@ const studentData = [
       liLink.href = student.linkedinLink;
       liLink.target = "_blank";
       liLink.rel = "noopener noreferrer";
+      liLink.style.display = "";
+    } else if (liLink) {
+      liLink.style.display = "none";
+      liLink.removeAttribute("href");
+      liLink.removeAttribute("target");
+      liLink.removeAttribute("rel");
+      liLink.setAttribute("aria-hidden", "true");
     }
     if (webLink) {
       var portfolioHref = nh(student.websiteLink);
