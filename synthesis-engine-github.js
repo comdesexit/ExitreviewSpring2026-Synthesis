@@ -926,7 +926,7 @@ const studentData = [
   {
     "preferredName": "Summer Belle Puryear",
     "focusTags": "Branding, Typography, Packaging",
-    "seniorQuote": "\"There's nothing you can do that can't be done Nothing you can make that can't be made All you need is love, love Love is all you need\"",
+    "seniorQuote": "\"There's nothing you can do that can't be done; nothing you can make that can't be made. All you need is love, love. Love is all you need.\"",
     "designStats": "Go-to font:, Collecting:, What's playing?",
     "goToFont": "Niveau Grotesk",
     "currentlyInspiredBy": "",
