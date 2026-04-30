@@ -33,7 +33,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "Minimum 3 beverages",
-    "linkedinLink": "https://www.linkedin.com/in/maggie-brigleb-2498ab311/",
+    "linkedinLink": "https://www.linkedin.com/in/maggie-brigleb/",
     "images": {
       "default": "maggie-brigleb1.jpg",
       "alt": "maggie-brigleb2.jpg"
@@ -54,7 +54,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "My cat, Probably",
-    "linkedinLink": "https://www.linkedin.com/in/addison-champaign-270648267",
+    "linkedinLink": "https://www.linkedin.com/in/addison-champaign-270648267/",
     "images": {
       "default": "addison-champaign1.jpg",
       "alt": "addison-champaign2.jpg"
@@ -159,7 +159,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Wish U Well- underscores",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/dylancrose",
+    "linkedinLink": "https://www.linkedin.com/in/dylancrose/",
     "images": {
       "default": "dylan-crose1.jpg",
       "alt": "dylan-crose2.jpg"
@@ -180,7 +180,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Jazz house",
     "whatsOnYourDesk": "Like 6 monitors",
-    "linkedinLink": "linkedin.com/in/yasseen-elassar",
+    "linkedinLink": "https://www.linkedin.com/in/yasseen-elassar/",
     "images": {
       "default": "yasseen-elassar1.jpg",
       "alt": "yasseen-elassar2.jpg"
@@ -285,7 +285,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "So much Climbing Chalk",
-    "linkedinLink": "www.linkedin.com/in/emily-milo-4012b1278",
+    "linkedinLink": "https://www.linkedin.com/in/emily-milo-4012b1278/",
     "images": {
       "default": "emily-milo1.jpg",
       "alt": "emily-milo2.jpg"
@@ -369,7 +369,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "NFR - LDR",
     "whatsOnYourDesk": "",
-    "linkedinLink": "linkedin.com/in/gregoryknipp",
+    "linkedinLink": "https://www.linkedin.com/in/gregoryknipp/",
     "images": {
       "default": "greg-knipp1.jpg",
       "alt": "greg-knipp2.jpg"
@@ -453,7 +453,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "The strokes",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/cogan-mcbride-0b7a4128a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    "linkedinLink": "https://www.linkedin.com/in/cogan-mcbride-0b7a4128a/",
     "images": {
       "default": "cogan-mcbride1.jpg",
       "alt": "cogan-mcbride2.jpg"
@@ -495,7 +495,7 @@ const studentData = [
     "myTools": "Moleskines, InDesign",
     "whatsPlaying": "Chet Baker",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/mia-kromer-a34437264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "linkedinLink": "https://www.linkedin.com/in/mia-kromer-a34437264/",
     "images": {
       "default": "mia-kromer1.jpg",
       "alt": "mia-kromer2.jpg"
@@ -579,7 +579,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Jane Remover",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/emily-chu-designs",
+    "linkedinLink": "https://www.linkedin.com/in/emily-chu-designs/",
     "images": {
       "default": "emily-chu1.jpg",
       "alt": "emily-chu2.jpg"
@@ -621,7 +621,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Depeche Mode",
     "whatsOnYourDesk": "To-do sticky notes",
-    "linkedinLink": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+    "linkedinLink": "https://www.linkedin.com/in/jez-brown-aa051a3a7/",
     "images": {
       "default": "jez-brown1.jpg",
       "alt": "jez-brown2.jpg"
@@ -705,7 +705,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/connor-le-85b42023b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "linkedinLink": "https://www.linkedin.com/in/connor-le-85b42023b/",
     "images": {
       "default": "connor-le1.jpg",
       "alt": "connor-le2.jpg"
@@ -726,7 +726,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Kpop & Mexican Oldies",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/guadalupe-acosta-arroyo-248190380",
+    "linkedinLink": "https://www.linkedin.com/in/guadalupe-acosta-arroyo-248190380/",
     "images": {
       "default": "lupita-acosta-arroyo1.jpg",
       "alt": "lupita-acosta-arroyo2.jpg"
@@ -747,7 +747,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Loco",
     "whatsOnYourDesk": "Rosie's album",
-    "linkedinLink": "www.linkedin.com/in/contacttienpham",
+    "linkedinLink": "https://www.linkedin.com/in/kristen-ypham/",
     "images": {
       "default": "kristen-pham1.jpg",
       "alt": "kristen-pham2.jpg"
@@ -789,7 +789,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/gabriel-irvine",
+    "linkedinLink": "https://www.linkedin.com/in/gabriel-irvine/",
     "images": {
       "default": "gabriel-irvine1.jpg",
       "alt": "gabriel-irvine2.jpg"
@@ -810,7 +810,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "70's funk",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/rowan-chadick-a90646303",
+    "linkedinLink": "https://www.linkedin.com/in/rowan-chadick-a90646303/",
     "images": {
       "default": "rowan-chadick1.jpg",
       "alt": "rowan-chadick2.jpg"
@@ -831,7 +831,7 @@ const studentData = [
     "myTools": "Ball, Toy soldier, Train",
     "whatsPlaying": "Carole King always.",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/lucy-morley-ab6b02296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "linkedinLink": "https://www.linkedin.com/in/lucy-morley-ab6b02296/",
     "images": {
       "default": "lucy-morely1.jpg",
       "alt": "lucy-morely2.jpg"
@@ -852,7 +852,7 @@ const studentData = [
     "myTools": "Sony A7r3",
     "whatsPlaying": "",
     "whatsOnYourDesk": "SD cards & my cats",
-    "linkedinLink": "https://www.linkedin.com/in/dylanandrewescobar?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    "linkedinLink": "https://www.linkedin.com/in/dylanandrewescobar/",
     "images": {
       "default": "dylan-escobar1.jpg",
       "alt": "dylan-escobar2.jpg"
@@ -915,7 +915,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Tame Impala",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/paige-goose-erickson",
+    "linkedinLink": "https://www.linkedin.com/in/paige-goose-erickson/",
     "images": {
       "default": "paige-erickson1.jpg",
       "alt": "paige-erickson2.jpg"
@@ -936,7 +936,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "The Beatles",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/summer-belle-puryear",
+    "linkedinLink": "https://www.linkedin.com/in/summer-belle-puryear/",
     "images": {
       "default": "summer-belle-puryear1.jpg",
       "alt": "summer-belle-puryear2.jpg"
@@ -978,7 +978,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "linkedin.com/in/jarell-carr-bb87a832b",
+    "linkedinLink": "https://www.linkedin.com/in/jarell-carr-bb87a832b/",
     "images": {
       "default": "Jarell-Carr1.jpg",
       "alt": "Jarell-Carr2.jpg"
@@ -999,7 +999,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/madison-rey-690464309?trk=contact-info",
+    "linkedinLink": "https://www.linkedin.com/in/madison-rey-690464309/",
     "images": {
       "default": "madison-rey1.jpg",
       "alt": "madison-rey2.jpg"
@@ -1062,7 +1062,7 @@ const studentData = [
     "myTools": "Illustrator & Iced Chai",
     "whatsPlaying": "Caamp",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/h-brandt",
+    "linkedinLink": "https://www.linkedin.com/in/h-brandt/",
     "images": {
       "default": "heidi-brandt1.jpg",
       "alt": "heidi-brandt2.jpg"
@@ -1083,7 +1083,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Camellia",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/ryan-lemoine-b04a663b2",
+    "linkedinLink": "https://www.linkedin.com/in/ryan-lemoine-b04a663b2/",
     "images": {
       "default": "ryan-lemoine1.jpg",
       "alt": "ryan-lemoine2.jpg"
@@ -1104,7 +1104,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/jacksonpickettdesign",
+    "linkedinLink": "https://www.linkedin.com/in/jacksonpickettdesign/",
     "images": {
       "default": "jackson-pickett1.jpg",
       "alt": "jackson-pickett2.jpg"
@@ -1125,7 +1125,7 @@ const studentData = [
     "myTools": "Illustrator, Photoshop",
     "whatsPlaying": "House",
     "whatsOnYourDesk": "Candles, Old projects",
-    "linkedinLink": "www.linkedin.com/in/julietwork",
+    "linkedinLink": "https://www.linkedin.com/in/julietwork/",
     "images": {
       "default": "juliet-work1.jpg",
       "alt": "juliet-work2.jpg"
@@ -1146,7 +1146,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/riana-de-luna-936185296",
+    "linkedinLink": "https://www.linkedin.com/in/riana-de-luna-936185296/",
     "images": {
       "default": "riana-de-luna1.jpg",
       "alt": "riana-de-luna2.jpg"
@@ -1167,7 +1167,7 @@ const studentData = [
     "myTools": "Drawing tablet",
     "whatsPlaying": "",
     "whatsOnYourDesk": "Various figurines",
-    "linkedinLink": "www.linkedin.com/in/derick-g-a307272a9",
+    "linkedinLink": "https://www.linkedin.com/in/derick-g-a307272a9/",
     "images": {
       "default": "derick-gafford1.jpg",
       "alt": "derick-gafford2.jpg"
@@ -1209,7 +1209,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "http://linkedin.com/in/autumn-potter-65281b270",
+    "linkedinLink": "https://www.linkedin.com/in/autumn-potter-65281b270/",
     "images": {
       "default": "autumn-potter1.jpg",
       "alt": "autumn-potter2.jpg"
@@ -1251,7 +1251,7 @@ const studentData = [
     "myTools": "Illustrator, Figma",
     "whatsPlaying": "Tyler, The Creator",
     "whatsOnYourDesk": "A plethora of lip balms",
-    "linkedinLink": "www.linkedin.com/in/arianna-saco-6049a8300",
+    "linkedinLink": "https://www.linkedin.com/in/arianna-saco-6049a8300/",
     "images": {
       "default": "arianna-saco1.jpg",
       "alt": "arianna-saco2.jpg"
