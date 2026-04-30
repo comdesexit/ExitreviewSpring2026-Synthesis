@@ -1722,7 +1722,7 @@ const studentData = [
   }
   var fragment = document.createDocumentFragment();
   var firstClone = null;
-  var P = "https://cdn.jsdelivr.net/gh/comdesexit/ExitreviewSpring2026-Synthesis@main/Synthesis-Images/Portraitsv2/";
+  var P = "https://cdn.jsdelivr.net/gh/comdesexit/ExitreviewSpring2026-Synthesis@main/Synthesis-Images/Portraitsv2.5/";
   studentData.forEach(function (student) {
     var card = skeleton.cloneNode(true);
     card.style.display = "flex";
