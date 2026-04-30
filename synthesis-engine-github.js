@@ -1400,15 +1400,14 @@ const studentData = [
       ".wft.wfc1:is(.wfp,:hover){background:#ffe23a}" +
       ".wft.wfc2:is(.wfp,:hover){background:#e1008d}" +
       "#student-grid .wfa{transition:transform 1s cubic-bezier(0.22, 1, 0.36, 1);z-index:2}" +
-      "#student-grid .skeleton-card [data-id=card-image-default]{opacity:1;transition:opacity .45s ease-in-out;transition-delay:0s}" +
-      "#student-grid .skeleton-card:hover [data-id=card-image-default]{opacity:0!important;transition-delay:.12s}" +
-      "#student-grid .skeleton-card [data-id=card-image-alt]{opacity:0;transition:opacity .45s ease-in-out;transition-delay:0s}" +
-      "#student-grid .skeleton-card:hover [data-id=card-image-alt]{opacity:1!important;transition-delay:.12s}" +
+      "#student-grid .skeleton-card [data-id=card-image-alt]{opacity:1!important;z-index:1}" +
+      "#student-grid .skeleton-card [data-id=card-image-default]{opacity:1;z-index:2;transition:opacity .45s ease-in-out;transition-delay:0s}" +
+      "#student-grid .skeleton-card:hover [data-id=card-image-default]{opacity:0!important;transition-delay:.1s}" +
       ".skeleton-card:hover [data-id=card-switch-icon],.skeleton-card:hover [data-id=card-switch-icon] img{opacity:1!important}" +
       "[data-id=card-switch-icon] img{opacity:1;transition:opacity .4s ease-in-out}" +
       "@media (prefers-reduced-motion:reduce){" +
-      "#student-grid .skeleton-card [data-id=card-image-default],#student-grid .skeleton-card [data-id=card-image-alt]{transition:none!important;transition-delay:0s!important}" +
-      "#student-grid .skeleton-card:hover [data-id=card-image-default],#student-grid .skeleton-card:hover [data-id=card-image-alt]{transition-delay:0s!important}" +
+      "#student-grid .skeleton-card [data-id=card-image-default]{transition:none!important;transition-delay:0s!important}" +
+      "#student-grid .skeleton-card:hover [data-id=card-image-default]{transition-delay:0s!important}" +
       "}" +
       "#student-grid [data-id=card-slide-wrapper]{transition:transform .45s ease!important}" +
       "#student-grid .skeleton-card.is-open [data-id=card-slide-wrapper]{transform:translate3d(0,var(--card-slide-y),0)!important}" +
@@ -1422,7 +1421,7 @@ const studentData = [
       "[data-id=card-link-linkedin]:hover .skeleton-li-icon-wrap img:last-of-type,[data-id=card-link-website]:not(.is-portfolio-soon):hover .skeleton-web-icon-wrap img:last-of-type{opacity:1!important}" +
       "img[data-id=card-image-default],img[data-id=card-image-alt]{object-fit:cover;object-position:center;width:100%;height:100%;min-height:100%;display:block;-webkit-transform:translateZ(0);transform:translateZ(0)}" +
       "[data-id=card-image-default]:not(img),[data-id=card-image-alt]:not(img){background-size:cover;background-position:center;width:100%;height:100%;min-height:100%;-webkit-transform:translateZ(0);transform:translateZ(0)}" +
-      "#student-grid .skeleton-image-section{overflow:hidden;line-height:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform:translateZ(0);transform:translateZ(0)}" +
+      "#student-grid .skeleton-image-section{overflow:hidden;line-height:0;isolation:isolate;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform:translateZ(0);transform:translateZ(0)}" +
       "#student-grid .skeleton-body-mask{-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform:translateZ(0);transform:translateZ(0)}" +
       "#student-grid .skeleton-portrait-layer{top:0!important;left:0!important;right:0!important;bottom:-3px!important;height:auto!important;min-height:calc(100% + 3px)!important;-webkit-transform:translateZ(0);transform:translateZ(0)}" +
       ".skeleton-card [data-id=card-body-mask]{pointer-events:none}" +
