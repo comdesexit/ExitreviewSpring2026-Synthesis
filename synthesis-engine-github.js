@@ -1400,9 +1400,16 @@ const studentData = [
       ".wft.wfc1:is(.wfp,:hover){background:#ffe23a}" +
       ".wft.wfc2:is(.wfp,:hover){background:#e1008d}" +
       "#student-grid .wfa{transition:transform 1s cubic-bezier(0.22, 1, 0.36, 1);z-index:2}" +
-      ".skeleton-card:hover [data-id=card-image-default]{opacity:0!important}" +
+      "#student-grid .skeleton-card [data-id=card-image-default]{opacity:1;transition:opacity .45s ease-in-out;transition-delay:0s}" +
+      "#student-grid .skeleton-card:hover [data-id=card-image-default]{opacity:0!important;transition-delay:.12s}" +
+      "#student-grid .skeleton-card [data-id=card-image-alt]{opacity:0;transition:opacity .45s ease-in-out;transition-delay:0s}" +
+      "#student-grid .skeleton-card:hover [data-id=card-image-alt]{opacity:1!important;transition-delay:.12s}" +
       ".skeleton-card:hover [data-id=card-switch-icon],.skeleton-card:hover [data-id=card-switch-icon] img{opacity:1!important}" +
-      "[data-id=card-switch-icon] img{opacity:1;transition:opacity .35s}" +
+      "[data-id=card-switch-icon] img{opacity:1;transition:opacity .4s ease-in-out}" +
+      "@media (prefers-reduced-motion:reduce){" +
+      "#student-grid .skeleton-card [data-id=card-image-default],#student-grid .skeleton-card [data-id=card-image-alt]{transition:none!important;transition-delay:0s!important}" +
+      "#student-grid .skeleton-card:hover [data-id=card-image-default],#student-grid .skeleton-card:hover [data-id=card-image-alt]{transition-delay:0s!important}" +
+      "}" +
       "#student-grid [data-id=card-slide-wrapper]{transition:transform .45s ease!important}" +
       "#student-grid .skeleton-card.is-open [data-id=card-slide-wrapper]{transform:translate3d(0,var(--card-slide-y),0)!important}" +
       "[data-id=card-link-linkedin]:hover{background:#28b5ff!important}" +
@@ -1753,33 +1760,25 @@ const studentData = [
   function applyStudentPortraitLayer(el, fileName, displayName, isHoverDecorative) {
     if (!el || !fileName) return;
     var path = P + fileName;
+    var primaryLabel = "Portrait of " + displayName;
+    var alternateLabel = "Alternate portrait of " + displayName;
     if (el.tagName === "IMG") {
       el.src = path;
-      if (isHoverDecorative) {
-        el.alt = "";
-        el.setAttribute("aria-hidden", "true");
-      } else {
-        el.removeAttribute("aria-hidden");
-        el.alt = "Portrait of " + displayName;
-      }
+      el.alt = isHoverDecorative ? alternateLabel : primaryLabel;
+      el.removeAttribute("aria-hidden");
     } else {
       el.style.backgroundImage = "url('" + path + "')";
-      if (isHoverDecorative) {
-        el.removeAttribute("role");
-        el.removeAttribute("aria-label");
-        el.setAttribute("aria-hidden", "true");
-      } else {
-        el.setAttribute("role", "img");
-        el.setAttribute("aria-label", "Portrait of " + displayName);
-        el.removeAttribute("aria-hidden");
-      }
+      el.setAttribute("role", "img");
+      el.setAttribute("aria-label", isHoverDecorative ? alternateLabel : primaryLabel);
+      el.removeAttribute("aria-hidden");
     }
   }
   function markDecorativeCardIconImages(card) {
     card
       .querySelectorAll(".skeleton-li-icon-wrap img, .skeleton-web-icon-wrap img")
       .forEach(function (ic) {
-        ic.alt = "";
+        var inLi = ic.closest && ic.closest(".skeleton-li-icon-wrap");
+        ic.alt = inLi ? "LinkedIn icon" : "Portfolio website icon";
         ic.setAttribute("aria-hidden", "true");
       });
   }
