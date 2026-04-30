@@ -182,8 +182,8 @@ const studentData = [
     "whatsOnYourDesk": "Like 6 monitors",
     "linkedinLink": "linkedin.com/in/yasseen-elassar",
     "images": {
-      "default": "yaseen-elassar1.jpg",
-      "alt": "yaseen-elassar2.jpg"
+      "default": "yasseen-elassar1.jpg",
+      "alt": "yasseen-elassar2.jpg"
     },
     "websiteLink": "https://yasseen.design",
     "quoteAttribution": "Robert A. Heinlein"
@@ -224,8 +224,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/kristina-sustaita-3156212ab/",
     "images": {
-      "default": "christina-sustanita1.jpg",
-      "alt": "christina-sustanita2.jpg"
+      "default": "kristina-sustaita.jpg",
+      "alt": "kristina-sustaita2.jpg"
     },
     "websiteLink": "https://kristina-sustaita.com",
     "quoteAttribution": "Ron Swanson"
@@ -413,8 +413,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/nicholas-bookout-090237367/",
     "images": {
-      "default": "nick-bookout1.jpg",
-      "alt": "nick-bookout2.jpg"
+      "default": "nicholas-bookout1.jpg",
+      "alt": "nicholas-bookout2.jpg"
     },
     "websiteLink": "https://nicholasbookout.com",
     "quoteAttribution": "Me"
@@ -476,8 +476,8 @@ const studentData = [
     "whatsOnYourDesk": "Yarn, PCB Coaster, Wichu",
     "linkedinLink": "https://www.linkedin.com/in/alejandrasosalopez/",
     "images": {
-      "default": "ale-sosa.jpg",
-      "alt": "ale-sosa1.jpg"
+      "default": "alejandra-sosa1.jpg",
+      "alt": "alejandra-sosa2.jpg"
     },
     "websiteLink": "https://alejandra.design",
     "quoteAttribution": "Elliott Smith"
@@ -539,8 +539,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/kasey-mcmullen/",
     "images": {
-      "default": "Kasey-McMullen1.jpg",
-      "alt": "Kasey-McMullen2.jpg"
+      "default": "kasey-mcmullen1.jpg",
+      "alt": "kasey-mcmullen2.jpg"
     },
     "websiteLink": "https://kaseymacdesign.com",
     "quoteAttribution": "Alan Watts"
@@ -610,7 +610,7 @@ const studentData = [
   },
   {
     "preferredName": "Jez Brown",
-    "focusTags": "Branding, Art Direction, UI/UX",
+    "focusTags": "Branding, Art Direction",
     "seniorQuote": "\"Design is so simple, that’s why it is so complicated.\"",
     "designStats": "Favorite Color:, What's playing?, On my desk:",
     "goToFont": "",
@@ -686,8 +686,8 @@ const studentData = [
     "whatsOnYourDesk": "Graphite pencils",
     "linkedinLink": "https://www.linkedin.com/in/alexander-yen-179991277/",
     "images": {
-      "default": "alex1.jpg",
-      "alt": "alex2.jpg"
+      "default": "alex-yen1.jpg",
+      "alt": "alex-yen2.jpg"
     },
     "websiteLink": "https://ay-design.xyz",
     "quoteAttribution": "Alex"
@@ -959,8 +959,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/lucykatedesign/",
     "images": {
-      "default": "lucy-beaty1.jpg",
-      "alt": "lucy-beaty2.jpg"
+      "default": "lucy-kate1.jpg",
+      "alt": "lucy-kate2.jpg"
     },
     "websiteLink": "https://lucykatedesign.com",
     "quoteAttribution": "LK"
@@ -1190,8 +1190,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "https://www.linkedin.com/in/beth-raup-754a533b2/",
     "images": {
-      "default": "bethany-raup1.jpg",
-      "alt": "bethany-raup2.jpg"
+      "default": "beth-raup1.jpg",
+      "alt": "beth-raup2.jpg"
     },
     "websiteLink": "https://bethraup.com",
     "quoteAttribution": "Beth Raup"
@@ -1316,8 +1316,8 @@ const studentData = [
     "whatsOnYourDesk": "",
     "linkedinLink": "",
     "images": {
-      "default": "steve1.jpg",
-      "alt": "steve2.jpg"
+      "default": "steve-rodriguez-logsdon1.jpg",
+      "alt": "steve-rodriguez-logsdon2.jpg"
     },
     "websiteLink": "https://steve.directory",
     "quoteAttribution": "Me"
@@ -1722,7 +1722,7 @@ const studentData = [
   }
   var fragment = document.createDocumentFragment();
   var firstClone = null;
-  var P = "https://cdn.jsdelivr.net/gh/comdesexit/ExitreviewSpring2026-Synthesis@main/Synthesis-Images/Portraits/";
+  var P = "https://cdn.jsdelivr.net/gh/comdesexit/ExitreviewSpring2026-Synthesis@main/Synthesis-Images/Portraitsv2/";
   studentData.forEach(function (student) {
     var card = skeleton.cloneNode(true);
     card.style.display = "flex";
