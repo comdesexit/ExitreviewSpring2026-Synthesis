@@ -1314,7 +1314,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "",
+    "linkedinLink": "https://www.linkedin.com/in/steven-rodriguez-432211308/",
     "images": {
       "default": "steve-rodriguez-logsdon1.jpg",
       "alt": "steve-rodriguez-logsdon2.jpg"
@@ -1573,14 +1573,25 @@ const studentData = [
       logoLink.href = "/synthesis";
       logoLink.removeAttribute("target");
       logoLink.removeAttribute("rel");
+      var navLogoImg = logoLink.querySelector(".synthesis-nav-logo-img");
+      if (
+        navLogoImg &&
+        navLogoImg.tagName === "IMG" &&
+        !String(navLogoImg.getAttribute("alt") || "").trim()
+      ) {
+        navLogoImg.alt = "Synthesis";
+      }
     } else {
       var logo = navLeft.querySelector(".synthesis-nav-logo-img");
       if (logo) {
         logoLink = document.createElement("a");
         logoLink.href = "/synthesis";
-        logoLink.setAttribute("aria-label", "Synthesis");
+        logoLink.setAttribute("aria-label", "Synthesis home");
         logo.parentNode.insertBefore(logoLink, logo);
         logoLink.appendChild(logo);
+        if (logo.tagName === "IMG" && !String(logo.getAttribute("alt") || "").trim()) {
+          logo.alt = "Synthesis";
+        }
       }
     }
     var archiveA = document.getElementById("nav-skeleton-archive");
@@ -1723,8 +1734,6 @@ const studentData = [
     img.style.width = "100%";
     img.style.height = "100%";
     img.style.objectFit = "contain";
-    placeholder.setAttribute("role", "img");
-    placeholder.setAttribute("aria-label", "San Marcos Film Lab logo");
     placeholder.innerHTML = "";
     placeholder.appendChild(img);
   }
@@ -1738,6 +1747,42 @@ const studentData = [
   var fragment = document.createDocumentFragment();
   var firstClone = null;
   var P = "https://cdn.jsdelivr.net/gh/comdesexit/ExitreviewSpring2026-Synthesis@main/Synthesis-Images/Portraitsv2.5/";
+  function portraitDisplayName(student) {
+    return String((student && student.preferredName) || "").trim() || "Designer";
+  }
+  function applyStudentPortraitLayer(el, fileName, displayName, isHoverDecorative) {
+    if (!el || !fileName) return;
+    var path = P + fileName;
+    if (el.tagName === "IMG") {
+      el.src = path;
+      if (isHoverDecorative) {
+        el.alt = "";
+        el.setAttribute("aria-hidden", "true");
+      } else {
+        el.removeAttribute("aria-hidden");
+        el.alt = "Portrait of " + displayName;
+      }
+    } else {
+      el.style.backgroundImage = "url('" + path + "')";
+      if (isHoverDecorative) {
+        el.removeAttribute("role");
+        el.removeAttribute("aria-label");
+        el.setAttribute("aria-hidden", "true");
+      } else {
+        el.setAttribute("role", "img");
+        el.setAttribute("aria-label", "Portrait of " + displayName);
+        el.removeAttribute("aria-hidden");
+      }
+    }
+  }
+  function markDecorativeCardIconImages(card) {
+    card
+      .querySelectorAll(".skeleton-li-icon-wrap img, .skeleton-web-icon-wrap img")
+      .forEach(function (ic) {
+        ic.alt = "";
+        ic.setAttribute("aria-hidden", "true");
+      });
+  }
   studentData.forEach(function (student) {
     var card = skeleton.cloneNode(true);
     card.style.display = "flex";
@@ -1820,6 +1865,7 @@ const studentData = [
       attribEl.textContent = atx;
       attribEl.style.display = atx ? "" : "none";
     }
+    var displayName = portraitDisplayName(student);
     var liLink = q("card-link-linkedin"),
       webLink = q("card-link-website");
     if (liLink && student.linkedinLink) {
@@ -1827,11 +1873,14 @@ const studentData = [
       liLink.target = "_blank";
       liLink.rel = "noopener noreferrer";
       liLink.style.display = "";
+      liLink.removeAttribute("aria-hidden");
+      liLink.setAttribute("aria-label", displayName + " on LinkedIn");
     } else if (liLink) {
       liLink.style.display = "none";
       liLink.removeAttribute("href");
       liLink.removeAttribute("target");
       liLink.removeAttribute("rel");
+      liLink.removeAttribute("aria-label");
       liLink.setAttribute("aria-hidden", "true");
     }
     if (webLink) {
@@ -1852,6 +1901,10 @@ const studentData = [
         if (webLabelEl) webLabelEl.textContent = defaultPortfolioBtnLabel;
         var webIconWrap = webLink.querySelector(".skeleton-web-icon-wrap");
         if (webIconWrap) webIconWrap.style.display = "";
+        webLink.setAttribute(
+          "aria-label",
+          displayName + " portfolio (" + defaultPortfolioBtnLabel + ")",
+        );
       } else {
         var webParent = webLink.parentNode;
         var soonEl = document.createElement("div");
@@ -1859,7 +1912,10 @@ const studentData = [
         soonEl.id = "card-link-website";
         soonEl.setAttribute("role", "status");
         soonEl.setAttribute("aria-live", "polite");
-        soonEl.setAttribute("aria-label", "Portfolio coming soon");
+        soonEl.setAttribute(
+          "aria-label",
+          displayName + ", portfolio coming soon",
+        );
         var srcLbl = webLink.querySelector(".skeleton-web-label");
         if (srcLbl) {
           var soonLbl = srcLbl.cloneNode(false);
@@ -1878,13 +1934,22 @@ const studentData = [
     var imgDef = q("card-image-default");
     var imgAlt = q("card-image-alt");
     if (imgDef && student.images && student.images.default) {
-      if (imgDef.tagName === "IMG") imgDef.src = P + student.images.default;
-      else imgDef.style.backgroundImage = "url('" + P + student.images.default + "')";
+      applyStudentPortraitLayer(
+        imgDef,
+        student.images.default,
+        displayName,
+        false,
+      );
     }
     if (imgAlt && student.images && student.images.alt) {
-      if (imgAlt.tagName === "IMG") imgAlt.src = P + student.images.alt;
-      else imgAlt.style.backgroundImage = "url('" + P + student.images.alt + "')";
+      applyStudentPortraitLayer(
+        imgAlt,
+        student.images.alt,
+        displayName,
+        true,
+      );
     }
+    markDecorativeCardIconImages(card);
     card.querySelectorAll("[id]").forEach(function (el) {
       el.setAttribute("data-id", el.id);
       el.removeAttribute("id");
