@@ -1325,6 +1325,21 @@ const studentData = [
 ];
 
 (function () {
+  var STICKY_FOOTER_STYLE_ID = "comdes-sticky-footer-layout";
+  if (!document.getElementById(STICKY_FOOTER_STYLE_ID)) {
+    var stickyFooterCss =
+      "html{height:100%}" +
+      "body{min-height:100dvh;min-height:100vh;display:flex;flex-direction:column}" +
+      "body>.page-wrapper,body>.cd-page-wrapper{flex:1 0 auto;display:flex;flex-direction:column;min-height:0}" +
+      ".page-wrapper>.cd-footer:last-child,.cd-page-wrapper>.cd-footer:last-child{margin-top:auto;flex-shrink:0}" +
+      ".archive-page-stack{align-content:flex-start;min-height:100dvh}" +
+      ".archive-site-footer-host,.archive-footer-fill{flex-basis:100%;width:100%;max-width:100%;margin-top:auto}";
+    var stickyFooterEl = document.createElement("style");
+    stickyFooterEl.id = STICKY_FOOTER_STYLE_ID;
+    stickyFooterEl.textContent = stickyFooterCss;
+    document.head.appendChild(stickyFooterEl);
+  }
+
   var grid = document.getElementById("student-grid");
   var skeleton =
     (grid && grid.querySelector("#skeleton-card")) ||
