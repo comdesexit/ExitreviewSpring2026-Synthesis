@@ -2103,27 +2103,20 @@ const studentData = [
         var lb = pill ? String(pill.textContent || "").trim() : "";
         if (!lb) return;
         /*
-         * Touch devices fire touchend then a synthetic click on the same tap; hf() would run twice
-         * and toggle selection back (cannot deselect the active pill). Prevent duplicate handling.
+         * Mobile menu links are .wft — the delegated body click handler also runs hf() on bubble.
+         * Touchend + click stacked duplicate toggles on phones. Use capture-phase click only so we run
+         * before body delegation and stop the event (one toggle per tap).
          */
         item.addEventListener(
-          "touchend",
+          "click",
           function (e) {
             e.preventDefault();
-            item.setAttribute("data-synthesis-touch-ts", String(Date.now()));
+            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+            e.stopPropagation();
             hf(lb, e);
           },
-          { passive: false },
+          true,
         );
-        item.addEventListener("click", function (e) {
-          var ts = parseInt(item.getAttribute("data-synthesis-touch-ts") || "0", 10);
-          if (ts && Date.now() - ts < 700) {
-            e.preventDefault();
-            e.stopPropagation();
-            return;
-          }
-          hf(lb, e);
-        });
       });
     }
     function sp() {
@@ -2307,6 +2300,7 @@ const studentData = [
         var el = e.target;
         if (el.nodeType === 3) el = el.parentNode;
         if (!el || !el.closest) return;
+        if (el.closest("#synthesis-mobile-menu")) return;
         var hit = el.closest(".wft");
         if (!hit || grid.contains(hit)) return;
         var pill = hit.querySelector(".tag-label");

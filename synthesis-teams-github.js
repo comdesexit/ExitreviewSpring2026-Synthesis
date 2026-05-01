@@ -8,7 +8,7 @@
   var COLOR_ATTR = "data-synthesis-team-color";
   var ACTIVE_ATTR = "data-synthesis-active-team";
   var VERSION_ATTR = "data-synthesis-teams-version";
-  var VERSION = "1.3.1";
+  var VERSION = "1.5.0";
   var FADE_DURATION = 220;
   var LEAVING_PANE_CLASS = "synthesis-teams-pane-leaving";
 
@@ -71,6 +71,16 @@
   var applying = false;
   var scheduled = false;
   var fadeTimers = {};
+  /** Skip MutationObserver reactions briefly while script/Webflow sync tab DOM (reduces applyState races). */
+  var observerMutedUntil = 0;
+
+  function muteObserver(ms) {
+    observerMutedUntil = Date.now() + (ms || 500);
+  }
+
+  function observerIsMuted() {
+    return Date.now() < observerMutedUntil;
+  }
 
   function toArray(list) {
     return Array.prototype.slice.call(list || []);
@@ -172,10 +182,14 @@
       " .about-teams-names-grid p.about-teams-name," +
       ROOT_SELECTOR +
       " p.about-teams-name{white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important}" +
+      /* z-index on .about-teams-links does not stack against .about-teams-content (different parents).
+         Lift the whole side-nav column above the content column; keep links clickable inside it. */
       ROOT_SELECTOR +
-      " .about-teams-links{position:relative!important;z-index:3!important}" +
+      " .about-teams-side-nav{z-index:10!important}" +
       ROOT_SELECTOR +
-      " .about-teams-content{position:relative!important;z-index:1!important}" +
+      " .about-teams-links{position:relative!important;z-index:1!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-content{position:relative!important;z-index:0!important}" +
       ROOT_SELECTOR +
       " .about-teams-content .about-teams-pane:not(.is-open){pointer-events:none!important}" +
       ROOT_SELECTOR +
@@ -259,10 +273,16 @@
   }
 
   function initialTabName() {
-    var active = document.querySelector(
+    var syn = document.querySelector(
       ROOT_SELECTOR + " .about-teams-links a." + ACTIVE_CLASS + "[data-w-tab]",
     );
-    if (active) return active.getAttribute("data-w-tab");
+    if (syn) return syn.getAttribute("data-w-tab");
+
+    /* Webflow tabs often set w--current on the link before/without our ACTIVE_CLASS. */
+    var wfTab = document.querySelector(
+      ROOT_SELECTOR + " .about-teams-links a.w--current[data-w-tab]",
+    );
+    if (wfTab) return wfTab.getAttribute("data-w-tab");
 
     var activePane = document.querySelector(
       ROOT_SELECTOR + " .about-teams-content .about-teams-pane.is-open[data-w-tab]",
@@ -350,6 +370,7 @@
     var previousTabName = currentTabName || initialTabName();
     var shouldAnimate = previousTabName && previousTabName !== name;
 
+    muteObserver(520);
     applying = true;
     currentTabName = name;
     container.setAttribute(ACTIVE_ATTR, name);
@@ -408,6 +429,7 @@
     var name = tab.getAttribute("data-w-tab");
     if (!name) return;
 
+    muteObserver(520);
     applyState(name);
 
     /*
@@ -416,6 +438,7 @@
      */
     window.requestAnimationFrame(function () {
       if (currentTabName !== name) return;
+      muteObserver(520);
       applyState(name);
     });
   }
@@ -428,6 +451,29 @@
 
     container.setAttribute("data-synthesis-teams-bound", VERSION);
     container.addEventListener("click", handleClick, true);
+    /*
+     * Cold loads: Webflow may hydrate tab markup after our first init; the first tap then "wakes"
+     * sync. One-shot only — subsequent clicks use the normal capture handler.
+     */
+    container.addEventListener(
+      "pointerdown",
+      function onFirstPointer(e) {
+        if (
+          !e.target ||
+          !e.target.closest ||
+          !e.target.closest(ROOT_SELECTOR + " .about-teams-links a[data-w-tab]")
+        ) {
+          return;
+        }
+        container.removeEventListener("pointerdown", onFirstPointer, true);
+        muteObserver(600);
+        window.requestAnimationFrame(function () {
+          var n = initialTabName() || firstTabName();
+          if (n) applyState(n);
+        });
+      },
+      true,
+    );
   }
 
   function observeMutations() {
@@ -435,7 +481,7 @@
     if (!container || observer) return;
 
     observer = new MutationObserver(function () {
-      if (applying) return;
+      if (applying || observerIsMuted()) return;
       scheduleApply();
     });
 
@@ -449,24 +495,38 @@
     });
   }
 
-  function init() {
+  function bootstrapSync() {
     var container = root();
     if (!container) return;
 
     injectStyles();
     bindEvents();
-    applyState(currentTabName || initialTabName());
     observeMutations();
+
+    var tabName = initialTabName() || firstTabName();
+    if (tabName) {
+      currentTabName = null;
+      muteObserver(600);
+      applyState(tabName);
+    }
+
     applyMeetTheTeamsImageAlts();
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", bootstrapSync);
   } else {
-    init();
+    bootstrapSync();
   }
 
   window.addEventListener("load", function () {
-    window.setTimeout(init, 100);
+    /* Webflow deferred execution often lands after DOMContentLoaded; stagger resyncs like a refresh. */
+    [30, 120, 350, 800, 1800].forEach(function (ms) {
+      window.setTimeout(bootstrapSync, ms);
+    });
+  });
+
+  window.addEventListener("pageshow", function (ev) {
+    if (ev.persisted) window.setTimeout(bootstrapSync, 0);
   });
 })();
