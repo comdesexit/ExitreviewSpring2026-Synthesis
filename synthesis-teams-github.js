@@ -8,7 +8,7 @@
   var COLOR_ATTR = "data-synthesis-team-color";
   var ACTIVE_ATTR = "data-synthesis-active-team";
   var VERSION_ATTR = "data-synthesis-teams-version";
-  var VERSION = "1.2.1";
+  var VERSION = "1.3.1";
   var FADE_DURATION = 220;
   var LEAVING_PANE_CLASS = "synthesis-teams-pane-leaving";
 
@@ -173,7 +173,15 @@
       ROOT_SELECTOR +
       " p.about-teams-name{white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important}" +
       ROOT_SELECTOR +
-      " .about-teams-links a.about-teams-tab-link{background-color:#fdfdfd!important;color:#030303!important;transition:background-color .15s ease!important;text-decoration:none!important}" +
+      " .about-teams-links{position:relative!important;z-index:3!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-content{position:relative!important;z-index:1!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-content .about-teams-pane:not(.is-open){pointer-events:none!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-content .about-teams-pane.is-open{pointer-events:auto!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-links a.about-teams-tab-link{background-color:#fdfdfd!important;color:#030303!important;transition:background-color .15s ease!important;text-decoration:none!important;touch-action:manipulation!important}" +
       ROOT_SELECTOR +
       " .about-teams-content .about-teams-pane{opacity:0!important;transition:opacity " +
       FADE_DURATION +
@@ -288,6 +296,7 @@
     pane.classList.remove("w--tab-active");
     pane.setAttribute("aria-hidden", "false");
     pane.style.setProperty("display", "flex", "important");
+    pane.style.removeProperty("pointer-events");
 
     if (!animate) {
       pane.classList.add(ACTIVE_PANE_CLASS, "is-open");
@@ -306,6 +315,8 @@
 
     pane.classList.remove(ACTIVE_PANE_CLASS, "is-open", "w--tab-active");
     pane.setAttribute("aria-hidden", "true");
+    /* Opacity-0 / leaving panes still hit-test; CSS also sets pointer-events via .is-open. */
+    pane.style.setProperty("pointer-events", "none", "important");
 
     if (!animate && pane.classList.contains(LEAVING_PANE_CLASS) && fadeTimers[key]) {
       return;
@@ -326,6 +337,7 @@
       applying = true;
       pane.classList.remove(LEAVING_PANE_CLASS);
       pane.style.setProperty("display", "none", "important");
+      pane.style.removeProperty("pointer-events");
       applying = false;
       fadeTimers[key] = null;
     }, FADE_DURATION);
@@ -394,13 +406,16 @@
     if (event.stopImmediatePropagation) event.stopImmediatePropagation();
 
     var name = tab.getAttribute("data-w-tab");
+    if (!name) return;
+
     applyState(name);
 
-    // Run after any older Webflow/App listeners that may still be globally applied.
-    window.setTimeout(function () {
-      applyState(name);
-    }, 0);
+    /*
+     * Single follow-up sync: Webflow may mutate classes after capture phase.
+     * Avoid stacking multiple applyState calls (setTimeout + rAF + observer) that raced observers.
+     */
     window.requestAnimationFrame(function () {
+      if (currentTabName !== name) return;
       applyState(name);
     });
   }
@@ -426,7 +441,9 @@
 
     observer.observe(container, {
       attributes: true,
-      attributeFilter: ["class", "style", ACTIVE_ATTR, COLOR_ATTR],
+      /* Do not include "style": this script sets display/pointer-events on panes, which would
+         retrigger the observer every time and stack redundant applyState calls (racey with clicks). */
+      attributeFilter: ["class", ACTIVE_ATTR, COLOR_ATTR],
       childList: false,
       subtree: true,
     });

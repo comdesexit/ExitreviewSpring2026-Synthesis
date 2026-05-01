@@ -33,7 +33,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "Minimum 3 beverages",
-    "linkedinLink": "https://www.linkedin.com/in/maggie-brigleb-2498ab311/",
+    "linkedinLink": "https://www.linkedin.com/in/maggie-brigleb/",
     "images": {
       "default": "maggie-brigleb1.jpg",
       "alt": "maggie-brigleb2.jpg"
@@ -54,7 +54,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "My cat, Probably",
-    "linkedinLink": "https://www.linkedin.com/in/addison-champaign-270648267",
+    "linkedinLink": "https://www.linkedin.com/in/addison-champaign-270648267/",
     "images": {
       "default": "addison-champaign1.jpg",
       "alt": "addison-champaign2.jpg"
@@ -159,7 +159,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Wish U Well- underscores",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/dylancrose",
+    "linkedinLink": "https://www.linkedin.com/in/dylancrose/",
     "images": {
       "default": "dylan-crose1.jpg",
       "alt": "dylan-crose2.jpg"
@@ -170,7 +170,7 @@ const studentData = [
   {
     "preferredName": "Yasseen Elassar",
     "focusTags": "Branding, UI/UX, Motion",
-    "seniorQuote": "\"Specialization is for insects\"",
+    "seniorQuote": "\"Specialization is for insects.\"",
     "designStats": "Recharges with:, What's playing?, On my desk:",
     "goToFont": "",
     "currentlyInspiredBy": "",
@@ -180,7 +180,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Jazz house",
     "whatsOnYourDesk": "Like 6 monitors",
-    "linkedinLink": "linkedin.com/in/yasseen-elassar",
+    "linkedinLink": "https://www.linkedin.com/in/yasseen-elassar/",
     "images": {
       "default": "yasseen-elassar1.jpg",
       "alt": "yasseen-elassar2.jpg"
@@ -285,7 +285,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "So much Climbing Chalk",
-    "linkedinLink": "www.linkedin.com/in/emily-milo-4012b1278",
+    "linkedinLink": "https://www.linkedin.com/in/emily-milo-4012b1278/",
     "images": {
       "default": "emily-milo1.jpg",
       "alt": "emily-milo2.jpg"
@@ -369,7 +369,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "NFR - LDR",
     "whatsOnYourDesk": "",
-    "linkedinLink": "linkedin.com/in/gregoryknipp",
+    "linkedinLink": "https://www.linkedin.com/in/gregoryknipp/",
     "images": {
       "default": "greg-knipp1.jpg",
       "alt": "greg-knipp2.jpg"
@@ -422,7 +422,7 @@ const studentData = [
   {
     "preferredName": "Mace Klein",
     "focusTags": "Branding, Illustration, Packaging",
-    "seniorQuote": "\"As children, we all live in a world of imagination, of fantasy, and for some of us, that world of make-believe continues into adulthood\"",
+    "seniorQuote": "\"As children, we all live in a world of imagination, of fantasy, and for some of us, that world of make-believe continues into adulthood.\"",
     "designStats": "Collecting:, My tools:, On my desk:",
     "goToFont": "",
     "currentlyInspiredBy": "",
@@ -443,7 +443,7 @@ const studentData = [
   {
     "preferredName": "Cogan McBride",
     "focusTags": "Branding",
-    "seniorQuote": "\"Alright alright alright.\"\"",
+    "seniorQuote": "\"Alright alright alright.\"",
     "designStats": "Recharges with:, Favorite Color:, What's playing?",
     "goToFont": "",
     "currentlyInspiredBy": "",
@@ -453,7 +453,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "The strokes",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/cogan-mcbride-0b7a4128a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    "linkedinLink": "https://www.linkedin.com/in/cogan-mcbride-0b7a4128a/",
     "images": {
       "default": "cogan-mcbride1.jpg",
       "alt": "cogan-mcbride2.jpg"
@@ -495,7 +495,7 @@ const studentData = [
     "myTools": "Moleskines, InDesign",
     "whatsPlaying": "Chet Baker",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/mia-kromer-a34437264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "linkedinLink": "https://www.linkedin.com/in/mia-kromer-a34437264/",
     "images": {
       "default": "mia-kromer1.jpg",
       "alt": "mia-kromer2.jpg"
@@ -579,7 +579,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Jane Remover",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/emily-chu-designs",
+    "linkedinLink": "https://www.linkedin.com/in/emily-chu-designs/",
     "images": {
       "default": "emily-chu1.jpg",
       "alt": "emily-chu2.jpg"
@@ -621,7 +621,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Depeche Mode",
     "whatsOnYourDesk": "To-do sticky notes",
-    "linkedinLink": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+    "linkedinLink": "https://www.linkedin.com/in/jez-brown-aa051a3a7/",
     "images": {
       "default": "jez-brown1.jpg",
       "alt": "jez-brown2.jpg"
@@ -705,7 +705,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/connor-le-85b42023b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "linkedinLink": "https://www.linkedin.com/in/connor-le-85b42023b/",
     "images": {
       "default": "connor-le1.jpg",
       "alt": "connor-le2.jpg"
@@ -726,7 +726,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Kpop & Mexican Oldies",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/guadalupe-acosta-arroyo-248190380",
+    "linkedinLink": "https://www.linkedin.com/in/guadalupe-acosta-arroyo-248190380/",
     "images": {
       "default": "lupita-acosta-arroyo1.jpg",
       "alt": "lupita-acosta-arroyo2.jpg"
@@ -747,7 +747,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Loco",
     "whatsOnYourDesk": "Rosie's album",
-    "linkedinLink": "www.linkedin.com/in/contacttienpham",
+    "linkedinLink": "https://www.linkedin.com/in/kristen-ypham/",
     "images": {
       "default": "kristen-pham1.jpg",
       "alt": "kristen-pham2.jpg"
@@ -789,7 +789,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/gabriel-irvine",
+    "linkedinLink": "https://www.linkedin.com/in/gabriel-irvine/",
     "images": {
       "default": "gabriel-irvine1.jpg",
       "alt": "gabriel-irvine2.jpg"
@@ -810,7 +810,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "70's funk",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/rowan-chadick-a90646303",
+    "linkedinLink": "https://www.linkedin.com/in/rowan-chadick-a90646303/",
     "images": {
       "default": "rowan-chadick1.jpg",
       "alt": "rowan-chadick2.jpg"
@@ -831,7 +831,7 @@ const studentData = [
     "myTools": "Ball, Toy soldier, Train",
     "whatsPlaying": "Carole King always.",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/lucy-morley-ab6b02296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "linkedinLink": "https://www.linkedin.com/in/lucy-morley-ab6b02296/",
     "images": {
       "default": "lucy-morely1.jpg",
       "alt": "lucy-morely2.jpg"
@@ -852,7 +852,7 @@ const studentData = [
     "myTools": "Sony A7r3",
     "whatsPlaying": "",
     "whatsOnYourDesk": "SD cards & my cats",
-    "linkedinLink": "https://www.linkedin.com/in/dylanandrewescobar?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    "linkedinLink": "https://www.linkedin.com/in/dylanandrewescobar/",
     "images": {
       "default": "dylan-escobar1.jpg",
       "alt": "dylan-escobar2.jpg"
@@ -915,7 +915,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Tame Impala",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/paige-goose-erickson",
+    "linkedinLink": "https://www.linkedin.com/in/paige-goose-erickson/",
     "images": {
       "default": "paige-erickson1.jpg",
       "alt": "paige-erickson2.jpg"
@@ -936,7 +936,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "The Beatles",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/summer-belle-puryear",
+    "linkedinLink": "https://www.linkedin.com/in/summer-belle-puryear/",
     "images": {
       "default": "summer-belle-puryear1.jpg",
       "alt": "summer-belle-puryear2.jpg"
@@ -947,7 +947,7 @@ const studentData = [
   {
     "preferredName": "Lucy Kate",
     "focusTags": "Branding, Art Direction",
-    "seniorQuote": "\"Hey Siri, who is Lucy Kate : a designer, DJ, and self proclaimed silly goose\"",
+    "seniorQuote": "\"Hey Siri, who is Lucy Kate : a designer, DJ, and self proclaimed silly goose.\"",
     "designStats": "Collecting:, Favorite Color:, What's playing?",
     "goToFont": "",
     "currentlyInspiredBy": "",
@@ -978,7 +978,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "linkedin.com/in/jarell-carr-bb87a832b",
+    "linkedinLink": "https://www.linkedin.com/in/jarell-carr-bb87a832b/",
     "images": {
       "default": "Jarell-Carr1.jpg",
       "alt": "Jarell-Carr2.jpg"
@@ -999,7 +999,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/madison-rey-690464309?trk=contact-info",
+    "linkedinLink": "https://www.linkedin.com/in/madison-rey-690464309/",
     "images": {
       "default": "madison-rey1.jpg",
       "alt": "madison-rey2.jpg"
@@ -1010,7 +1010,7 @@ const studentData = [
   {
     "preferredName": "Zain Fernandez",
     "focusTags": "Branding, Art Direction, Typography",
-    "seniorQuote": "\"Green is mean, Me is mean, We is key…Lalalala…and…skip instead of gallop…lalalala…\"",
+    "seniorQuote": "\"Green is mean, Me is mean, We is key…Lalalala…and…skip instead of gallop…lalalala….\"",
     "designStats": "Inspired by:, Recharges with:, Favorite Color:",
     "goToFont": "",
     "currentlyInspiredBy": "Impromptu work",
@@ -1062,7 +1062,7 @@ const studentData = [
     "myTools": "Illustrator & Iced Chai",
     "whatsPlaying": "Caamp",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/h-brandt",
+    "linkedinLink": "https://www.linkedin.com/in/h-brandt/",
     "images": {
       "default": "heidi-brandt1.jpg",
       "alt": "heidi-brandt2.jpg"
@@ -1083,7 +1083,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "Camellia",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/ryan-lemoine-b04a663b2",
+    "linkedinLink": "https://www.linkedin.com/in/ryan-lemoine-b04a663b2/",
     "images": {
       "default": "ryan-lemoine1.jpg",
       "alt": "ryan-lemoine2.jpg"
@@ -1104,7 +1104,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "www.linkedin.com/in/jacksonpickettdesign",
+    "linkedinLink": "https://www.linkedin.com/in/jacksonpickettdesign/",
     "images": {
       "default": "jackson-pickett1.jpg",
       "alt": "jackson-pickett2.jpg"
@@ -1115,7 +1115,7 @@ const studentData = [
   {
     "preferredName": "Juliet Work",
     "focusTags": "Branding, Art Direction, Motion",
-    "seniorQuote": "\"\"She knew exactly, sort of, what she was going to do.”\"",
+    "seniorQuote": "\"She knew exactly, sort of, what she was going to do.\"",
     "designStats": "Go-to font:, Inspired by:, Collecting:",
     "goToFont": "Neue Haas Grotesk",
     "currentlyInspiredBy": "Vectorheart",
@@ -1125,7 +1125,7 @@ const studentData = [
     "myTools": "Illustrator, Photoshop",
     "whatsPlaying": "House",
     "whatsOnYourDesk": "Candles, Old projects",
-    "linkedinLink": "www.linkedin.com/in/julietwork",
+    "linkedinLink": "https://www.linkedin.com/in/julietwork/",
     "images": {
       "default": "juliet-work1.jpg",
       "alt": "juliet-work2.jpg"
@@ -1136,7 +1136,7 @@ const studentData = [
   {
     "preferredName": "Riana De Luna",
     "focusTags": "Branding, Packaging",
-    "seniorQuote": "\"Attitude is everything, pick a good one\"",
+    "seniorQuote": "\"Attitude is everything, pick a good one.\"",
     "designStats": "Collecting:, Recharges with:, Favorite Color:",
     "goToFont": "",
     "currentlyInspiredBy": "",
@@ -1146,7 +1146,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "https://www.linkedin.com/in/riana-de-luna-936185296",
+    "linkedinLink": "https://www.linkedin.com/in/riana-de-luna-936185296/",
     "images": {
       "default": "riana-de-luna1.jpg",
       "alt": "riana-de-luna2.jpg"
@@ -1167,7 +1167,7 @@ const studentData = [
     "myTools": "Drawing tablet",
     "whatsPlaying": "",
     "whatsOnYourDesk": "Various figurines",
-    "linkedinLink": "www.linkedin.com/in/derick-g-a307272a9",
+    "linkedinLink": "https://www.linkedin.com/in/derick-g-a307272a9/",
     "images": {
       "default": "derick-gafford1.jpg",
       "alt": "derick-gafford2.jpg"
@@ -1199,7 +1199,7 @@ const studentData = [
   {
     "preferredName": "Autumn Potter",
     "focusTags": "Illustration, Motion",
-    "seniorQuote": "\"So here I go, it’s my shot, feet, fail me not This may be the only opportunity that I got\"",
+    "seniorQuote": "\"So here I go, it’s my shot, feet, fail me not This may be the only opportunity that I got.\"",
     "designStats": "Go-to font:, Inspired by:, Collecting:",
     "goToFont": "Comic Sans",
     "currentlyInspiredBy": "Those who come before me",
@@ -1209,7 +1209,7 @@ const studentData = [
     "myTools": "",
     "whatsPlaying": "",
     "whatsOnYourDesk": "",
-    "linkedinLink": "http://linkedin.com/in/autumn-potter-65281b270",
+    "linkedinLink": "https://www.linkedin.com/in/autumn-potter-65281b270/",
     "images": {
       "default": "autumn-potter1.jpg",
       "alt": "autumn-potter2.jpg"
@@ -1251,7 +1251,7 @@ const studentData = [
     "myTools": "Illustrator, Figma",
     "whatsPlaying": "Tyler, The Creator",
     "whatsOnYourDesk": "A plethora of lip balms",
-    "linkedinLink": "www.linkedin.com/in/arianna-saco-6049a8300",
+    "linkedinLink": "https://www.linkedin.com/in/arianna-saco-6049a8300/",
     "images": {
       "default": "arianna-saco1.jpg",
       "alt": "arianna-saco2.jpg"
@@ -1386,6 +1386,12 @@ const studentData = [
       "#student-grid,#student-grid .skeleton-card,#student-grid .skeleton-card *{font-family:" +
       cardFont +
       "!important}" +
+      /* Card focus tags: Webflow flex + fixed widths can make overflow:auto areas show Win/Chromium
+         scrollbar arrows; force clip + ellipsis and hide any scrollbar chrome. */
+      "#student-grid .skeleton-tag,#student-grid .skeleton-tag-label,#student-grid .skeleton-tag p,#student-grid .skeleton-tag-stack,#student-grid .skeleton-tag-row,#student-grid [class*=\"skeleton-tag\"]{overflow:hidden!important;-ms-overflow-style:none!important;scrollbar-width:none!important;overscroll-behavior:none!important}" +
+      "#student-grid .skeleton-tag::-webkit-scrollbar,#student-grid .skeleton-tag-label::-webkit-scrollbar,#student-grid .skeleton-tag p::-webkit-scrollbar,#student-grid .skeleton-tag-stack::-webkit-scrollbar,#student-grid .skeleton-tag-row::-webkit-scrollbar,#student-grid [class*=\"skeleton-tag\"]::-webkit-scrollbar{width:0!important;height:0!important;display:none!important}" +
+      "#student-grid .skeleton-tag input::-webkit-outer-spin-button,#student-grid .skeleton-tag input::-webkit-inner-spin-button{-webkit-appearance:none!important;margin:0!important}" +
+      "#student-grid .skeleton-tag input[type=number]{-moz-appearance:textfield!important;appearance:textfield!important}" +
       ".synthesis-sidebar .tag-label,.synthesis-sidebar a.tag-item .tag-label{font-weight:600!important;color:#030303!important}" +
       ".synthesis-sidebar-title .mtd-l1,.synthesis-sidebar-title .mtd-l2{display:block!important;white-space:nowrap!important}" +
       "@media screen and (min-width:992px){.synthesis-main-columns{column-gap:clamp(10px,1.1vw,16px)!important}.synthesis-main-columns > .synthesis-grid-column{flex:1 1 0%!important;min-width:0!important;width:auto!important;max-width:none!important}.synthesis-main-columns > .synthesis-sidebar{flex:0 0 auto!important}.synthesis-sidebar .synthesis-sidebar-title{font-size:42px!important;line-height:.82!important}}" +
@@ -1436,6 +1442,7 @@ const studentData = [
          Webflow often pairs a sticky sidebar with a multi-column layout; sticky + z-index can read as a
          floating layer on narrow viewports. */
       "@media screen and (max-width:720px){" +
+      "html.synthesis-mobile-scroll-lock{overflow:hidden!important;height:100%;overscroll-behavior:none}" +
       "body.synthesis-dynamic-main .synthesis-nav-btn-corners{display:none!important}" +
       "body.synthesis-dynamic-main .synthesis-nav-bar{position:sticky;top:0;z-index:120;display:block;height:88px;min-height:88px;max-height:88px;flex-shrink:0;box-sizing:border-box;padding-left:40px!important;padding-right:40px!important;background:rgba(253,253,253,.3)!important;-webkit-backdrop-filter:blur(17px)!important;backdrop-filter:blur(17px)!important}" +
       "body.synthesis-dynamic-main .synthesis-nav-left{position:absolute!important;left:40px;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;display:flex!important;align-items:center!important;justify-content:flex-start;margin:0}" +
@@ -1698,12 +1705,52 @@ const studentData = [
     }
     nav.insertAdjacentElement("afterend", menu);
 
+    var synthesisMobileNavScrollY = 0;
+    function synthesisMobileNavMq() {
+      return typeof window.matchMedia === "function" && window.matchMedia("(max-width:720px)").matches;
+    }
+    function setSynthesisMobileBodyScrollLock(lock) {
+      if (!lock) {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.width = "";
+        document.documentElement.classList.remove("synthesis-mobile-scroll-lock");
+        window.scrollTo(0, synthesisMobileNavScrollY);
+        return;
+      }
+      if (!synthesisMobileNavMq()) return;
+      synthesisMobileNavScrollY = window.scrollY || window.pageYOffset || 0;
+      document.body.style.position = "fixed";
+      document.body.style.top = "-" + synthesisMobileNavScrollY + "px";
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
+      document.documentElement.classList.add("synthesis-mobile-scroll-lock");
+    }
+
     toggle.addEventListener("click", function () {
       var open = !document.body.classList.contains("synthesis-mobile-nav-open");
       document.body.classList.toggle("synthesis-mobile-nav-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       menu.setAttribute("aria-hidden", open ? "false" : "true");
+      setSynthesisMobileBodyScrollLock(open);
     });
+
+    window.addEventListener(
+      "resize",
+      function () {
+        if (!document.body.classList.contains("synthesis-mobile-nav-open")) return;
+        if (!synthesisMobileNavMq()) {
+          document.body.classList.remove("synthesis-mobile-nav-open");
+          toggle.setAttribute("aria-expanded", "false");
+          menu.setAttribute("aria-hidden", "true");
+          setSynthesisMobileBodyScrollLock(false);
+        }
+      },
+      { passive: true },
+    );
   }
   function setupDesktopAllFilter() {
     var stack = document.querySelector(".synthesis-sidebar .synthesis-tag-stack");
