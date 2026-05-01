@@ -1468,6 +1468,7 @@ const studentData = [
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item:last-child{border-bottom:0}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item:first-child{border-top-left-radius:14px;border-top-right-radius:14px}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item:last-child{border-bottom-left-radius:14px;border-bottom-right-radius:14px}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item{-webkit-tap-highlight-color:transparent;touch-action:manipulation}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item .tag-label{color:#030303;font-size:16px;font-weight:600;letter-spacing:.01em}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc0:is(.wfp,:hover){background:#28b5ff!important}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc1:is(.wfp,:hover){background:#ffe23a!important}" +
@@ -2101,14 +2102,26 @@ const studentData = [
         var pill = item.querySelector(".tag-label");
         var lb = pill ? String(pill.textContent || "").trim() : "";
         if (!lb) return;
+        /*
+         * Touch devices fire touchend then a synthetic click on the same tap; hf() would run twice
+         * and toggle selection back (cannot deselect the active pill). Prevent duplicate handling.
+         */
         item.addEventListener(
           "touchend",
           function (e) {
+            e.preventDefault();
+            item.setAttribute("data-synthesis-touch-ts", String(Date.now()));
             hf(lb, e);
           },
           { passive: false },
         );
         item.addEventListener("click", function (e) {
+          var ts = parseInt(item.getAttribute("data-synthesis-touch-ts") || "0", 10);
+          if (ts && Date.now() - ts < 700) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
           hf(lb, e);
         });
       });
