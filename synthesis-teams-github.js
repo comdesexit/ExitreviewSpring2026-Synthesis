@@ -8,7 +8,7 @@
   var COLOR_ATTR = "data-synthesis-team-color";
   var ACTIVE_ATTR = "data-synthesis-active-team";
   var VERSION_ATTR = "data-synthesis-teams-version";
-  var VERSION = "1.6.0";
+  var VERSION = "1.7.0";
   var FADE_DURATION = 220;
   var LEAVING_PANE_CLASS = "synthesis-teams-pane-leaving";
 
@@ -215,41 +215,21 @@
       ROOT_SELECTOR +
       " .about-teams-links a.about-teams-tab-link[" +
       COLOR_ATTR +
-      '="blue"].' +
-      ACTIVE_CLASS +
-      "{background-color:#28b5ff!important;color:#030303!important}" +
-      ROOT_SELECTOR +
-      " .about-teams-links a.about-teams-tab-link[" +
-      COLOR_ATTR +
-      '="yellow"].' +
-      ACTIVE_CLASS +
-      "{background-color:#ffe23a!important;color:#030303!important}" +
-      ROOT_SELECTOR +
-      " .about-teams-links a.about-teams-tab-link[" +
-      COLOR_ATTR +
-      '="pink"].' +
-      ACTIVE_CLASS +
-      "{background-color:#e1008d!important;color:#030303!important}" +
-      "@media (hover:hover) and (pointer:fine){" +
-      ROOT_SELECTOR +
-      " .about-teams-links a.about-teams-tab-link[" +
-      COLOR_ATTR +
-      '="blue"]:hover:not(.' +
+      '="blue"]:is(:hover,.' +
       ACTIVE_CLASS +
       "){background-color:#28b5ff!important;color:#030303!important}" +
       ROOT_SELECTOR +
       " .about-teams-links a.about-teams-tab-link[" +
       COLOR_ATTR +
-      '="yellow"]:hover:not(.' +
+      '="yellow"]:is(:hover,.' +
       ACTIVE_CLASS +
       "){background-color:#ffe23a!important;color:#030303!important}" +
       ROOT_SELECTOR +
       " .about-teams-links a.about-teams-tab-link[" +
       COLOR_ATTR +
-      '="pink"]:hover:not(.' +
+      '="pink"]:is(:hover,.' +
       ACTIVE_CLASS +
       "){background-color:#e1008d!important;color:#030303!important}" +
-      "}" +
       ROOT_SELECTOR +
       " .about-teams-links a.about-teams-tab-link." +
       ACTIVE_CLASS +
@@ -445,16 +425,6 @@
 
     muteObserver(520);
     applyState(name);
-
-    /*
-     * Single follow-up sync: Webflow may mutate classes after capture phase.
-     * Avoid stacking multiple applyState calls (setTimeout + rAF + observer) that raced observers.
-     */
-    window.requestAnimationFrame(function () {
-      if (currentTabName !== name) return;
-      muteObserver(520);
-      applyState(name);
-    });
   }
 
   function bindEvents() {
@@ -504,6 +474,6 @@
   }
 
   window.addEventListener("load", function () {
-    window.setTimeout(init, 150);
+    window.setTimeout(init, 100);
   });
 })();
