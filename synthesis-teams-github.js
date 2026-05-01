@@ -8,7 +8,7 @@
   var COLOR_ATTR = "data-synthesis-team-color";
   var ACTIVE_ATTR = "data-synthesis-active-team";
   var VERSION_ATTR = "data-synthesis-teams-version";
-  var VERSION = "1.5.0";
+  var VERSION = "1.6.0";
   var FADE_DURATION = 220;
   var LEAVING_PANE_CLASS = "synthesis-teams-pane-leaving";
 
@@ -215,25 +215,45 @@
       ROOT_SELECTOR +
       " .about-teams-links a.about-teams-tab-link[" +
       COLOR_ATTR +
-      '="blue"]:is(:hover,.' +
+      '="blue"].' +
+      ACTIVE_CLASS +
+      "{background-color:#28b5ff!important;color:#030303!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-links a.about-teams-tab-link[" +
+      COLOR_ATTR +
+      '="yellow"].' +
+      ACTIVE_CLASS +
+      "{background-color:#ffe23a!important;color:#030303!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-links a.about-teams-tab-link[" +
+      COLOR_ATTR +
+      '="pink"].' +
+      ACTIVE_CLASS +
+      "{background-color:#e1008d!important;color:#030303!important}" +
+      "@media (hover:hover) and (pointer:fine){" +
+      ROOT_SELECTOR +
+      " .about-teams-links a.about-teams-tab-link[" +
+      COLOR_ATTR +
+      '="blue"]:hover:not(.' +
       ACTIVE_CLASS +
       "){background-color:#28b5ff!important;color:#030303!important}" +
       ROOT_SELECTOR +
       " .about-teams-links a.about-teams-tab-link[" +
       COLOR_ATTR +
-      '="yellow"]:is(:hover,.' +
+      '="yellow"]:hover:not(.' +
       ACTIVE_CLASS +
       "){background-color:#ffe23a!important;color:#030303!important}" +
       ROOT_SELECTOR +
       " .about-teams-links a.about-teams-tab-link[" +
       COLOR_ATTR +
-      '="pink"]:is(:hover,.' +
+      '="pink"]:hover:not(.' +
       ACTIVE_CLASS +
       "){background-color:#e1008d!important;color:#030303!important}" +
+      "}" +
       ROOT_SELECTOR +
-      " .about-teams-links a.about-teams-tab-link:is(:hover,." +
+      " .about-teams-links a.about-teams-tab-link." +
       ACTIVE_CLASS +
-      ") .tag-label{color:#030303!important}";
+      " .tag-label{color:#030303!important}";
 
     var style = document.createElement("style");
     style.id = STYLE_ID;
@@ -273,16 +293,10 @@
   }
 
   function initialTabName() {
-    var syn = document.querySelector(
+    var active = document.querySelector(
       ROOT_SELECTOR + " .about-teams-links a." + ACTIVE_CLASS + "[data-w-tab]",
     );
-    if (syn) return syn.getAttribute("data-w-tab");
-
-    /* Webflow tabs often set w--current on the link before/without our ACTIVE_CLASS. */
-    var wfTab = document.querySelector(
-      ROOT_SELECTOR + " .about-teams-links a.w--current[data-w-tab]",
-    );
-    if (wfTab) return wfTab.getAttribute("data-w-tab");
+    if (active) return active.getAttribute("data-w-tab");
 
     var activePane = document.querySelector(
       ROOT_SELECTOR + " .about-teams-content .about-teams-pane.is-open[data-w-tab]",
@@ -451,29 +465,6 @@
 
     container.setAttribute("data-synthesis-teams-bound", VERSION);
     container.addEventListener("click", handleClick, true);
-    /*
-     * Cold loads: Webflow may hydrate tab markup after our first init; the first tap then "wakes"
-     * sync. One-shot only — subsequent clicks use the normal capture handler.
-     */
-    container.addEventListener(
-      "pointerdown",
-      function onFirstPointer(e) {
-        if (
-          !e.target ||
-          !e.target.closest ||
-          !e.target.closest(ROOT_SELECTOR + " .about-teams-links a[data-w-tab]")
-        ) {
-          return;
-        }
-        container.removeEventListener("pointerdown", onFirstPointer, true);
-        muteObserver(600);
-        window.requestAnimationFrame(function () {
-          var n = initialTabName() || firstTabName();
-          if (n) applyState(n);
-        });
-      },
-      true,
-    );
   }
 
   function observeMutations() {
@@ -495,38 +486,24 @@
     });
   }
 
-  function bootstrapSync() {
+  function init() {
     var container = root();
     if (!container) return;
 
     injectStyles();
     bindEvents();
+    applyState(currentTabName || initialTabName());
     observeMutations();
-
-    var tabName = initialTabName() || firstTabName();
-    if (tabName) {
-      currentTabName = null;
-      muteObserver(600);
-      applyState(tabName);
-    }
-
     applyMeetTheTeamsImageAlts();
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", bootstrapSync);
+    document.addEventListener("DOMContentLoaded", init);
   } else {
-    bootstrapSync();
+    init();
   }
 
   window.addEventListener("load", function () {
-    /* Webflow deferred execution often lands after DOMContentLoaded; stagger resyncs like a refresh. */
-    [30, 120, 350, 800, 1800].forEach(function (ms) {
-      window.setTimeout(bootstrapSync, ms);
-    });
-  });
-
-  window.addEventListener("pageshow", function (ev) {
-    if (ev.persisted) window.setTimeout(bootstrapSync, 0);
+    window.setTimeout(init, 150);
   });
 })();
