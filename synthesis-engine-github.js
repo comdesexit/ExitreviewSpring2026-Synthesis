@@ -23,23 +23,23 @@ const studentData = [
   {
     "preferredName": "Maggie Brigleb",
     "focusTags": "Branding, UI/UX",
-    "seniorQuote": "\"I like to feel dumb. That’s how I know there’s more in the world than me.\"",
+    "seniorQuote": "\"That without experimentation, a willingness to ask questions and try new things, we shall surely become static, repetitive, moribund.\"",
     "designStats": "Inspired by:, Collecting:, On my desk:",
     "goToFont": "",
-    "currentlyInspiredBy": "Speculative design",
-    "currentlyCollecting": "Poorly drawn cats",
+    "currentlyInspiredBy": "Critical design",
+    "currentlyCollecting": "Bad cat drawings",
     "rechargesWith": "",
     "favoriteColorHex": "",
     "myTools": "",
     "whatsPlaying": "",
-    "whatsOnYourDesk": "Minimum 3 beverages",
+    "whatsOnYourDesk": "At least 3 beverages",
     "linkedinLink": "https://www.linkedin.com/in/maggie-brigleb/",
     "images": {
       "default": "maggie-brigleb1.jpg",
       "alt": "maggie-brigleb2.jpg"
     },
     "websiteLink": "https://maggiebrigleb.com",
-    "quoteAttribution": "Susan Sontag"
+    "quoteAttribution": "Anthony Bourdain"
   },
   {
     "preferredName": "Addison Champaign",
