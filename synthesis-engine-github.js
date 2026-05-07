@@ -23,23 +23,23 @@ const studentData = [
   {
     "preferredName": "Maggie Brigleb",
     "focusTags": "Branding, UI/UX",
-    "seniorQuote": "\"That without experimentation, a willingness to ask questions and try new things, we shall surely become static, repetitive, moribund.\"",
+    "seniorQuote": "\"I like to feel dumb. That’s how I know there’s more in the world than me.\"",
     "designStats": "Inspired by:, Collecting:, On my desk:",
     "goToFont": "",
-    "currentlyInspiredBy": "Critical design",
-    "currentlyCollecting": "Bad cat drawings",
+    "currentlyInspiredBy": "Speculative design",
+    "currentlyCollecting": "Poorly drawn cats",
     "rechargesWith": "",
     "favoriteColorHex": "",
     "myTools": "",
     "whatsPlaying": "",
-    "whatsOnYourDesk": "At least 3 beverages",
+    "whatsOnYourDesk": "Minimum 3 beverages",
     "linkedinLink": "https://www.linkedin.com/in/maggie-brigleb/",
     "images": {
       "default": "maggie-brigleb1.jpg",
       "alt": "maggie-brigleb2.jpg"
     },
     "websiteLink": "https://maggiebrigleb.com",
-    "quoteAttribution": "Anthony Bourdain"
+    "quoteAttribution": "Susan Sontag"
   },
   {
     "preferredName": "Addison Champaign",
@@ -1402,14 +1402,9 @@ const studentData = [
       "#student-grid > .skeleton-card.wfh{opacity:0;transform:scale(0.95);pointer-events:none;visibility:hidden;width:0!important;min-width:0!important;max-width:0!important;margin:0!important;padding:0!important;border-width:0!important;overflow:hidden!important;transition:opacity 1s cubic-bezier(0.22,1,0.36,1),transform 1s cubic-bezier(0.22,1,0.36,1),max-width 1s cubic-bezier(0.22,1,0.36,1),width 1s cubic-bezier(0.22,1,0.36,1),padding .9s ease,margin .9s ease}" +
       "@media (prefers-reduced-motion:reduce){#student-grid > .skeleton-card.wfh{transition:none!important;transform:none}}" +
       ".wft{mix-blend-mode:multiply;transition:background .15s;background:transparent}" +
-      ".wft.wfc0.wfp{background:#28b5ff}" +
-      ".wft.wfc1.wfp{background:#ffe23a}" +
-      ".wft.wfc2.wfp{background:#e1008d}" +
-      "@media (hover:hover) and (pointer:fine){" +
-      ".wft.wfc0:hover:not(.wfp){background:#28b5ff}" +
-      ".wft.wfc1:hover:not(.wfp){background:#ffe23a}" +
-      ".wft.wfc2:hover:not(.wfp){background:#e1008d}" +
-      "}" +
+      ".wft.wfc0:is(.wfp,:hover){background:#28b5ff}" +
+      ".wft.wfc1:is(.wfp,:hover){background:#ffe23a}" +
+      ".wft.wfc2:is(.wfp,:hover){background:#e1008d}" +
       "#student-grid .wfa{transition:transform 1s cubic-bezier(0.22, 1, 0.36, 1);z-index:2}" +
       "#student-grid .skeleton-card [data-id=card-image-alt]{opacity:1!important;z-index:1}" +
       "#student-grid .skeleton-card [data-id=card-image-default]{opacity:1;z-index:2;transition:opacity .45s ease-in-out;transition-delay:0s}" +
@@ -1462,7 +1457,9 @@ const studentData = [
       "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-toggle .burger-close{opacity:1;transform:rotate(0deg)}" +
       "body.synthesis-dynamic-main #synthesis-mobile-menu{display:block!important;position:sticky;top:88px;z-index:121;width:100vw;margin-left:calc(50% - 50vw);margin-top:0;padding:0 40px 72px;background:rgba(253,253,253,.3);-webkit-backdrop-filter:blur(17px);backdrop-filter:blur(17px);border-radius:0;height:0;overflow:hidden;opacity:0;transform:translateY(0);transition:height .4s cubic-bezier(.22,1,.36,1),opacity .28s ease}" +
       "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu{height:calc(100vh - 88px);overflow:auto;opacity:1;transform:translateY(0)}" +
-      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu.synthesis-mobile-menu--links-only{height:auto!important;min-height:0;max-height:calc(100vh - 88px)}" +
+      /* Links-only menu must use the same concrete open height as the filter menu. Height:0 → height:auto
+         is not animatable and breaks after scrolling (body fixed + collapsed panel); user sees a stuck scroll lock. */
+      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu.synthesis-mobile-menu--links-only{height:calc(100vh - 88px)!important;min-height:0;max-height:none}" +
       "body.synthesis-dynamic-main .synthesis-mobile-actions{padding:8px 0 20px;display:flex;flex-wrap:wrap;gap:10px}" +
       "body.synthesis-dynamic-main .synthesis-mobile-action-wrap{flex:1 1 240px;min-width:220px;border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;overflow:hidden}" +
       "body.synthesis-dynamic-main .synthesis-mobile-action-wrap .cd-donate-btn{width:100%;height:100%;border-radius:0!important}" +
@@ -1473,18 +1470,11 @@ const studentData = [
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item:last-child{border-bottom:0}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item:first-child{border-top-left-radius:14px;border-top-right-radius:14px}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item:last-child{border-bottom-left-radius:14px;border-bottom-right-radius:14px}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-item{-webkit-tap-highlight-color:transparent;touch-action:manipulation}" +
       "body.synthesis-dynamic-main .synthesis-mobile-filter-item .tag-label{color:#030303;font-size:16px;font-weight:600;letter-spacing:.01em}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc0.wfp{background:#28b5ff!important}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc1.wfp{background:#ffe23a!important}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc2.wfp{background:#e1008d!important}" +
-      "@media (hover:hover) and (pointer:fine){" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc0:hover:not(.wfp){background:#28b5ff!important}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc1:hover:not(.wfp){background:#ffe23a!important}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc2:hover:not(.wfp){background:#e1008d!important}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-item:hover:not(.wfp) .tag-label{color:#030303!important}" +
-      "}" +
-      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfp .tag-label{color:#030303!important}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc0:is(.wfp,:hover){background:#28b5ff!important}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc1:is(.wfp,:hover){background:#ffe23a!important}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfc2:is(.wfp,:hover){background:#e1008d!important}" +
+      "body.synthesis-dynamic-main .synthesis-mobile-filter-item.wfp .tag-label,body.synthesis-dynamic-main .synthesis-mobile-filter-item:hover .tag-label{color:#030303!important}" +
       "body.synthesis-dynamic-main .synthesis-sidebar{" +
       "position:relative!important;top:auto!important;bottom:auto!important;" +
       "left:auto!important;right:auto!important;inset:auto!important;" +
@@ -2113,21 +2103,16 @@ const studentData = [
         var pill = item.querySelector(".tag-label");
         var lb = pill ? String(pill.textContent || "").trim() : "";
         if (!lb) return;
-        /*
-         * Mobile menu links are .wft — the delegated body click handler also runs hf() on bubble.
-         * Touchend + click stacked duplicate toggles on phones. Use capture-phase click only so we run
-         * before body delegation and stop the event (one toggle per tap).
-         */
         item.addEventListener(
-          "click",
+          "touchend",
           function (e) {
-            e.preventDefault();
-            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
-            e.stopPropagation();
             hf(lb, e);
           },
-          true,
+          { passive: false },
         );
+        item.addEventListener("click", function (e) {
+          hf(lb, e);
+        });
       });
     }
     function sp() {
@@ -2311,7 +2296,6 @@ const studentData = [
         var el = e.target;
         if (el.nodeType === 3) el = el.parentNode;
         if (!el || !el.closest) return;
-        if (el.closest("#synthesis-mobile-menu")) return;
         var hit = el.closest(".wft");
         if (!hit || grid.contains(hit)) return;
         var pill = hit.querySelector(".tag-label");

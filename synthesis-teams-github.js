@@ -8,7 +8,7 @@
   var COLOR_ATTR = "data-synthesis-team-color";
   var ACTIVE_ATTR = "data-synthesis-active-team";
   var VERSION_ATTR = "data-synthesis-teams-version";
-  var VERSION = "1.3.2";
+  var VERSION = "1.3.4";
   var FADE_DURATION = 220;
   var LEAVING_PANE_CLASS = "synthesis-teams-pane-leaving";
 
@@ -223,9 +223,13 @@
       " .about-teams-links a.about-teams-tab-link:is(:hover,." +
       ACTIVE_CLASS +
       ") .tag-label{color:#030303!important}" +
-      /* Faculty pane: one group photo spans two columns of the images grid (fallback if Webflow class alone is insufficient). */
+      /* Faculty pane: one group photo spans two columns; frame + img respect landscape aspect (overrides square image frames). */
       ROOT_SELECTOR +
-      " .about-teams-pane[data-w-tab=\"Faculty\"] .about-teams-images .about-teams-faculty-span{grid-column:span 2!important;max-width:100%!important}";
+      " .about-teams-pane[data-w-tab=\"Faculty\"] .about-teams-images .about-teams-faculty-span{grid-column:span 2!important;max-width:100%!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-pane[data-w-tab=\"Faculty\"] .about-teams-faculty-landscape{aspect-ratio:auto!important;height:auto!important;min-height:0!important;padding-top:0!important;padding-bottom:0!important}" +
+      ROOT_SELECTOR +
+      " .about-teams-pane[data-w-tab=\"Faculty\"] .about-teams-image.about-teams-faculty-img{width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;object-fit:contain!important;display:block!important}";
 
     var style = document.createElement("style");
     style.id = STYLE_ID;
@@ -305,10 +309,13 @@
     pane.style.removeProperty("pointer-events");
 
     if (!animate) {
+      pane.style.removeProperty("z-index");
       pane.classList.add(ACTIVE_PANE_CLASS, "is-open");
       return;
     }
 
+    /* Incoming pane on top during crossfade so opacity overlap does not flash unrelated panes below. */
+    pane.style.setProperty("z-index", "5", "important");
     // Let the browser paint the pane at opacity 0 before fading it in.
     pane.offsetWidth;
     window.requestAnimationFrame(function () {
@@ -331,10 +338,12 @@
     if (!animate) {
       clearFadeTimer(pane);
       pane.classList.remove(LEAVING_PANE_CLASS);
+      pane.style.removeProperty("z-index");
       pane.style.setProperty("display", "none", "important");
       return;
     }
 
+    pane.style.setProperty("z-index", "4", "important");
     pane.classList.add(LEAVING_PANE_CLASS);
     pane.style.setProperty("display", "flex", "important");
     clearFadeTimer(pane);
@@ -344,6 +353,7 @@
       pane.classList.remove(LEAVING_PANE_CLASS);
       pane.style.setProperty("display", "none", "important");
       pane.style.removeProperty("pointer-events");
+      pane.style.removeProperty("z-index");
       applying = false;
       fadeTimers[key] = null;
     }, FADE_DURATION);
