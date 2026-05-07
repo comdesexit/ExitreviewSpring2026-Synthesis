@@ -8,7 +8,7 @@
   var COLOR_ATTR = "data-synthesis-team-color";
   var ACTIVE_ATTR = "data-synthesis-active-team";
   var VERSION_ATTR = "data-synthesis-teams-version";
-  var VERSION = "1.3.4";
+  var VERSION = "1.3.5";
   var FADE_DURATION = 220;
   var LEAVING_PANE_CLASS = "synthesis-teams-pane-leaving";
 
@@ -74,6 +74,8 @@
   var applying = false;
   var scheduled = false;
   var fadeTimers = {};
+  /** Bumped when a new sequential fade-out starts; stale hidePane callbacks must not show panes. */
+  var paneTransitionGen = 0;
 
   function toArray(list) {
     return Array.prototype.slice.call(list || []);
@@ -300,6 +302,46 @@
     fadeTimers[key] = null;
   }
 
+  /** Hard-stop any in-flight pane fades so rapid clicks do not stack crossfades. */
+  function cancelPaneTransitions() {
+    panes().forEach(function (pane) {
+      clearFadeTimer(pane);
+      pane.classList.remove(LEAVING_PANE_CLASS);
+    });
+  }
+
+  /** Which tab’s pane is currently presented (open / fading in / fading out). */
+  function getOpenPaneTabKey() {
+    var el =
+      document.querySelector(
+        ROOT_SELECTOR +
+          " .about-teams-content .about-teams-pane." +
+          ACTIVE_PANE_CLASS +
+          "[data-w-tab]",
+      ) ||
+      document.querySelector(
+        ROOT_SELECTOR +
+          " .about-teams-content .about-teams-pane." +
+          LEAVING_PANE_CLASS +
+          "[data-w-tab]",
+      ) ||
+      document.querySelector(
+        ROOT_SELECTOR +
+          " .about-teams-content .about-teams-pane.is-open[data-w-tab]",
+      );
+    return el ? paneKey(el) : "";
+  }
+
+  /** Keep panel in DOM for fade-out but invisible to user until fade-in (no crossfade overlap). */
+  function stageIncomingPaneHidden(pane) {
+    clearFadeTimer(pane);
+    pane.classList.remove(LEAVING_PANE_CLASS, ACTIVE_PANE_CLASS, "is-open", "w--tab-active");
+    pane.setAttribute("aria-hidden", "true");
+    pane.style.setProperty("pointer-events", "none", "important");
+    pane.style.setProperty("display", "none", "important");
+    pane.style.removeProperty("z-index");
+  }
+
   function showPane(pane, animate) {
     clearFadeTimer(pane);
     pane.classList.remove(LEAVING_PANE_CLASS, ACTIVE_PANE_CLASS);
@@ -314,21 +356,19 @@
       return;
     }
 
-    /* Incoming pane on top during crossfade so opacity overlap does not flash unrelated panes below. */
     pane.style.setProperty("z-index", "5", "important");
-    // Let the browser paint the pane at opacity 0 before fading it in.
     pane.offsetWidth;
     window.requestAnimationFrame(function () {
+      if (!pane.isConnected) return;
       pane.classList.add(ACTIVE_PANE_CLASS, "is-open");
     });
   }
 
-  function hidePane(pane, animate) {
+  function hidePane(pane, animate, onDone) {
     var key = paneKey(pane);
 
     pane.classList.remove(ACTIVE_PANE_CLASS, "is-open", "w--tab-active");
     pane.setAttribute("aria-hidden", "true");
-    /* Opacity-0 / leaving panes still hit-test; CSS also sets pointer-events via .is-open. */
     pane.style.setProperty("pointer-events", "none", "important");
 
     if (!animate && pane.classList.contains(LEAVING_PANE_CLASS) && fadeTimers[key]) {
@@ -340,6 +380,7 @@
       pane.classList.remove(LEAVING_PANE_CLASS);
       pane.style.removeProperty("z-index");
       pane.style.setProperty("display", "none", "important");
+      if (typeof onDone === "function") onDone();
       return;
     }
 
@@ -356,6 +397,7 @@
       pane.style.removeProperty("z-index");
       applying = false;
       fadeTimers[key] = null;
+      if (typeof onDone === "function") onDone();
     }, FADE_DURATION);
   }
 
@@ -364,7 +406,7 @@
     if (!container || !name) return;
 
     var previousTabName = currentTabName || initialTabName();
-    var shouldAnimate = previousTabName && previousTabName !== name;
+    var shouldAnimate = !!previousTabName && previousTabName !== name;
 
     applying = true;
     currentTabName = name;
@@ -379,20 +421,48 @@
       tab.setAttribute("aria-selected", isActive ? "true" : "false");
     });
 
+    var outgoingKey = getOpenPaneTabKey();
+    if (!outgoingKey && shouldAnimate) outgoingKey = previousTabName;
+    var outgoingPane = null;
+    var incomingPane = null;
+
     panes().forEach(function (pane) {
       var paneName = pane.getAttribute("data-w-tab");
       pane.setAttribute("role", "tabpanel");
       if (paneName) {
         pane.setAttribute("aria-labelledby", synthesisTeamTabId(paneName));
       }
-      var isActive = paneName === name;
-      var wasActive = paneName === previousTabName;
+      if (paneName === name) incomingPane = pane;
+      if (paneName === outgoingKey) outgoingPane = pane;
+    });
 
-      if (isActive) {
-        showPane(pane, shouldAnimate);
-      } else {
-        hidePane(pane, shouldAnimate && wasActive);
-      }
+    cancelPaneTransitions();
+
+    if (shouldAnimate && outgoingPane && incomingPane && outgoingPane !== incomingPane) {
+      paneTransitionGen += 1;
+      var myGen = paneTransitionGen;
+      panes().forEach(function (pane) {
+        var paneName = pane.getAttribute("data-w-tab");
+        if (pane === outgoingPane || pane === incomingPane) return;
+        hidePane(pane, false);
+      });
+      stageIncomingPaneHidden(incomingPane);
+      hidePane(outgoingPane, true, function () {
+        if (myGen !== paneTransitionGen) return;
+        if (currentTabName !== name) return;
+        showPane(incomingPane, true);
+      });
+      applying = false;
+      return;
+    }
+
+    panes().forEach(function (pane) {
+      var paneName = pane.getAttribute("data-w-tab");
+      if (paneName !== name) hidePane(pane, false);
+    });
+    panes().forEach(function (pane) {
+      var paneName = pane.getAttribute("data-w-tab");
+      if (paneName === name) showPane(pane, false);
     });
 
     applying = false;
