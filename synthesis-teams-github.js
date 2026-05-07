@@ -8,7 +8,7 @@
   var COLOR_ATTR = "data-synthesis-team-color";
   var ACTIVE_ATTR = "data-synthesis-active-team";
   var VERSION_ATTR = "data-synthesis-teams-version";
-  var VERSION = "1.7.0";
+  var VERSION = "1.3.2";
   var FADE_DURATION = 220;
   var LEAVING_PANE_CLASS = "synthesis-teams-pane-leaving";
 
@@ -55,6 +55,9 @@
       "Two students sit at a desk facing the camera with a sticker-covered laptop, art posters and studio signage on the wall behind them.",
       "Three students collaborate at a white desk; a laptop shows a spreadsheet tracking teams such as Branding, Website, and Promotion.",
     ],
+    faculty: [
+      "Communication Design portfolio faculty Dimitry Tetin, Holly Sterling, Vic Rodriguez Tang, and Mark Brinkman seated together in a studio with bookshelves and printed work visible behind them.",
+    ],
   };
 
   function synthesisTeamTabId(tabName) {
@@ -71,16 +74,6 @@
   var applying = false;
   var scheduled = false;
   var fadeTimers = {};
-  /** Skip MutationObserver reactions briefly while script/Webflow sync tab DOM (reduces applyState races). */
-  var observerMutedUntil = 0;
-
-  function muteObserver(ms) {
-    observerMutedUntil = Date.now() + (ms || 500);
-  }
-
-  function observerIsMuted() {
-    return Date.now() < observerMutedUntil;
-  }
 
   function toArray(list) {
     return Array.prototype.slice.call(list || []);
@@ -182,14 +175,10 @@
       " .about-teams-names-grid p.about-teams-name," +
       ROOT_SELECTOR +
       " p.about-teams-name{white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important}" +
-      /* z-index on .about-teams-links does not stack against .about-teams-content (different parents).
-         Lift the whole side-nav column above the content column; keep links clickable inside it. */
       ROOT_SELECTOR +
-      " .about-teams-side-nav{z-index:10!important}" +
+      " .about-teams-links{position:relative!important;z-index:3!important}" +
       ROOT_SELECTOR +
-      " .about-teams-links{position:relative!important;z-index:1!important}" +
-      ROOT_SELECTOR +
-      " .about-teams-content{position:relative!important;z-index:0!important}" +
+      " .about-teams-content{position:relative!important;z-index:1!important}" +
       ROOT_SELECTOR +
       " .about-teams-content .about-teams-pane:not(.is-open){pointer-events:none!important}" +
       ROOT_SELECTOR +
@@ -231,9 +220,12 @@
       ACTIVE_CLASS +
       "){background-color:#e1008d!important;color:#030303!important}" +
       ROOT_SELECTOR +
-      " .about-teams-links a.about-teams-tab-link." +
+      " .about-teams-links a.about-teams-tab-link:is(:hover,." +
       ACTIVE_CLASS +
-      " .tag-label{color:#030303!important}";
+      ") .tag-label{color:#030303!important}" +
+      /* Faculty pane: one group photo spans two columns of the images grid (fallback if Webflow class alone is insufficient). */
+      ROOT_SELECTOR +
+      " .about-teams-pane[data-w-tab=\"Faculty\"] .about-teams-images .about-teams-faculty-span{grid-column:span 2!important;max-width:100%!important}";
 
     var style = document.createElement("style");
     style.id = STYLE_ID;
@@ -364,7 +356,6 @@
     var previousTabName = currentTabName || initialTabName();
     var shouldAnimate = previousTabName && previousTabName !== name;
 
-    muteObserver(520);
     applying = true;
     currentTabName = name;
     container.setAttribute(ACTIVE_ATTR, name);
@@ -423,8 +414,16 @@
     var name = tab.getAttribute("data-w-tab");
     if (!name) return;
 
-    muteObserver(520);
     applyState(name);
+
+    /*
+     * Single follow-up sync: Webflow may mutate classes after capture phase.
+     * Avoid stacking multiple applyState calls (setTimeout + rAF + observer) that raced observers.
+     */
+    window.requestAnimationFrame(function () {
+      if (currentTabName !== name) return;
+      applyState(name);
+    });
   }
 
   function bindEvents() {
@@ -442,7 +441,7 @@
     if (!container || observer) return;
 
     observer = new MutationObserver(function () {
-      if (applying || observerIsMuted()) return;
+      if (applying) return;
       scheduleApply();
     });
 
