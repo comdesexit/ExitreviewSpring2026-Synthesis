@@ -1443,6 +1443,7 @@ const studentData = [
          floating layer on narrow viewports. */
       "@media screen and (max-width:720px){" +
       "html.synthesis-mobile-scroll-lock{overflow:hidden!important;height:100%;overscroll-behavior:none}" +
+      "body.synthesis-dynamic-main.synthesis-mobile-body-lock{overscroll-behavior:none!important}" +
       "body.synthesis-dynamic-main .synthesis-nav-btn-corners{display:none!important}" +
       "body.synthesis-dynamic-main .synthesis-nav-bar{position:sticky;top:0;z-index:120;display:block;height:88px;min-height:88px;max-height:88px;flex-shrink:0;box-sizing:border-box;padding-left:40px!important;padding-right:40px!important;background:rgba(253,253,253,.3)!important;-webkit-backdrop-filter:blur(17px)!important;backdrop-filter:blur(17px)!important}" +
       "body.synthesis-dynamic-main .synthesis-nav-left{position:absolute!important;left:40px;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;display:flex!important;align-items:center!important;justify-content:flex-start;margin:0}" +
@@ -1455,11 +1456,10 @@ const studentData = [
       "body.synthesis-dynamic-main #synthesis-mobile-toggle .burger-close{opacity:0;transform:rotate(-20deg)}" +
       "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-toggle .burger-open{opacity:0;transform:rotate(20deg)}" +
       "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-toggle .burger-close{opacity:1;transform:rotate(0deg)}" +
-      "body.synthesis-dynamic-main #synthesis-mobile-menu{display:block!important;position:sticky;top:88px;z-index:121;width:100vw;margin-left:calc(50% - 50vw);margin-top:0;padding:0 40px 72px;background:rgba(253,253,253,.3);-webkit-backdrop-filter:blur(17px);backdrop-filter:blur(17px);border-radius:0;height:0;overflow:hidden;opacity:0;transform:translateY(0);transition:height .4s cubic-bezier(.22,1,.36,1),opacity .28s ease}" +
-      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu{height:calc(100vh - 88px);overflow:auto;opacity:1;transform:translateY(0)}" +
-      /* Links-only menu must use the same concrete open height as the filter menu. Height:0 → height:auto
-         is not animatable and breaks after scrolling (body fixed + collapsed panel); user sees a stuck scroll lock. */
-      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu.synthesis-mobile-menu--links-only{height:calc(100vh - 88px)!important;min-height:0;max-height:none}" +
+      /* Pin nav + overlay above typical Webflow nav/modals. body { position:fixed; top:-scrollY } while open stops iOS background scroll/jump when overflow:hidden alone fails. */
+      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:10050!important;width:100%!important;max-width:100%!important;margin:0!important;box-sizing:border-box!important}" +
+      "body.synthesis-dynamic-main #synthesis-mobile-menu{display:block!important;position:fixed!important;top:88px!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;max-width:100%!important;margin:0!important;padding:0 40px 72px!important;background:rgba(253,253,253,.3);-webkit-backdrop-filter:blur(17px);backdrop-filter:blur(17px);border-radius:0;z-index:10049!important;overflow-x:hidden!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior:contain!important;touch-action:pan-y!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transition:opacity .28s ease,visibility .28s ease!important}" +
+      "body.synthesis-dynamic-main.synthesis-mobile-nav-open #synthesis-mobile-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important}" +
       "body.synthesis-dynamic-main .synthesis-mobile-actions{padding:8px 0 20px;display:flex;flex-wrap:wrap;gap:10px}" +
       "body.synthesis-dynamic-main .synthesis-mobile-action-wrap{flex:1 1 240px;min-width:220px;border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;overflow:hidden}" +
       "body.synthesis-dynamic-main .synthesis-mobile-action-wrap .cd-donate-btn{width:100%;height:100%;border-radius:0!important}" +
@@ -1713,23 +1713,33 @@ const studentData = [
     }
     function setSynthesisMobileBodyScrollLock(lock) {
       if (!lock) {
+        document.body.classList.remove("synthesis-mobile-body-lock");
         document.body.style.position = "";
         document.body.style.top = "";
         document.body.style.left = "";
         document.body.style.right = "";
         document.body.style.width = "";
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
         document.documentElement.classList.remove("synthesis-mobile-scroll-lock");
-        window.scrollTo(0, synthesisMobileNavScrollY);
+        var y = synthesisMobileNavScrollY;
+        window.scrollTo(0, y);
+        requestAnimationFrame(function () {
+          window.scrollTo(0, y);
+        });
         return;
       }
       if (!synthesisMobileNavMq()) return;
       synthesisMobileNavScrollY = window.scrollY || window.pageYOffset || 0;
+      document.documentElement.classList.add("synthesis-mobile-scroll-lock");
+      document.body.classList.add("synthesis-mobile-body-lock");
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
       document.body.style.position = "fixed";
       document.body.style.top = "-" + synthesisMobileNavScrollY + "px";
       document.body.style.left = "0";
       document.body.style.right = "0";
       document.body.style.width = "100%";
-      document.documentElement.classList.add("synthesis-mobile-scroll-lock");
     }
 
     toggle.addEventListener("click", function () {
