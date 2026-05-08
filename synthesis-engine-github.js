@@ -164,7 +164,7 @@ const studentData = [
       "default": "dylan-crose1.jpg",
       "alt": "dylan-crose2.jpg"
     },
-    "websiteLink": "https://studioceres.net",
+    "websiteLink": "",
     "quoteAttribution": "FLCL"
   },
   {
@@ -185,7 +185,7 @@ const studentData = [
       "default": "yasseen-elassar1.jpg",
       "alt": "yasseen-elassar2.jpg"
     },
-    "websiteLink": "https://yasseen.design",
+    "websiteLink": "",
     "quoteAttribution": "Robert A. Heinlein"
   },
   {
@@ -416,7 +416,7 @@ const studentData = [
       "default": "nicholas-bookout1.jpg",
       "alt": "nicholas-bookout2.jpg"
     },
-    "websiteLink": "https://nicholasbookout.com",
+    "websiteLink": "",
     "quoteAttribution": "Me"
   },
   {
@@ -689,7 +689,7 @@ const studentData = [
       "default": "alex-yen1.jpg",
       "alt": "alex-yen2.jpg"
     },
-    "websiteLink": "https://ay-design.xyz",
+    "websiteLink": "",
     "quoteAttribution": "Alex"
   },
   {
@@ -857,7 +857,7 @@ const studentData = [
       "default": "dylan-escobar1.jpg",
       "alt": "dylan-escobar2.jpg"
     },
-    "websiteLink": "https://dylanescobarportfolio.com",
+    "websiteLink": "",
     "quoteAttribution": "Kanye West"
   },
   {
@@ -1319,7 +1319,7 @@ const studentData = [
       "default": "steve-rodriguez-logsdon1.jpg",
       "alt": "steve-rodriguez-logsdon2.jpg"
     },
-    "websiteLink": "https://steve.directory",
+    "websiteLink": "",
     "quoteAttribution": "Me"
   }
 ];
